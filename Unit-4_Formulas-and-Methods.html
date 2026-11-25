@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Unit 4: Material Characterization, Testing and Surface Coating Technologies - Formulas and Methods</title><style>
+:root{--u:#3b6fd4;--bg:#f6f6f3;--fg:#1d2125;--mut:#5d646d;--card:#ffffff;--soft:#f3f4f6;--line:#e2e4e8;--box:#f5f8fc;--boxl:#dce5f2;--ok:#eef6f0;--okl:#b9d9c3}
+@media (prefers-color-scheme:dark){:root{--bg:#17191d;--fg:#e3e5e8;--mut:#a2a9b2;--card:#1f2227;--soft:#262a30;--line:#33383f;--box:#1d2330;--boxl:#2f3b50;--ok:#1b2a21;--okl:#2f4a39}}
+*{box-sizing:border-box}
+html{scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+[id]{scroll-margin-top:64px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16.5px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ut:color-mix(in srgb,var(--u) 80%,#000000)}
+@media (prefers-color-scheme:dark){body{--ut:color-mix(in srgb,var(--u) 45%,#ffffff)}}
+main{max-width:880px;margin:0 auto;padding:16px 20px 96px}
+.top{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:3px solid var(--u);display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:8px 12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.top a,.top .off{white-space:nowrap;color:var(--fg);text-decoration:none;padding:6px 12px;border-radius:7px;font-size:14px;line-height:1.2;border:1px solid var(--line);background:var(--card)}
+.top a:hover{background:var(--soft)}
+.top a.on{background:var(--u);border-color:var(--u);color:#fff;font-weight:600}
+.top .off{color:var(--mut);opacity:.6;cursor:not-allowed}
+.top .sep{width:1px;align-self:stretch;background:var(--line);margin:2px 4px}
+h1{font-size:1.55em;line-height:1.3;margin:.6em 0 .15em;font-weight:700}
+h1+p{color:var(--mut);margin:0 0 10px}
+h2{font-size:1.28em;line-height:1.35;border-bottom:2px solid var(--u);padding-bottom:5px;margin:2.4em 0 .8em;font-weight:700}
+h3{font-size:1.08em;margin:1.8em 0 .55em;font-weight:700;color:var(--fg);padding-left:10px;border-left:4px solid var(--u)}
+a{color:var(--ut)}
+p{margin:.6em 0}
+ul,ol{padding-left:1.5em;margin:.55em 0}
+li{margin:.35em 0}
+strong,b{font-weight:650}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:.9em}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 24px;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.jump a{border:1px solid var(--line);color:var(--fg);background:var(--soft);border-radius:999px;padding:5px 12px;font-size:14px;line-height:1.3;text-decoration:none}
+.jump a:hover{border-color:var(--u)}
+table{border-collapse:collapse;margin:14px 0;width:100%;font-size:15px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:8px 11px;vertical-align:top;text-align:left;overflow-wrap:break-word}
+th{background:var(--soft);font-weight:650}
+.box{background:var(--box);border:1px solid var(--boxl);border-radius:10px;margin:14px 0 16px;overflow:hidden}
+.frow{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4px 18px;padding:10px 16px;border-top:1px solid var(--boxl);align-items:baseline}
+.frow:first-child{border-top:0}
+.frow.wide{grid-template-columns:minmax(0,1fr)}
+.flab{font-weight:650;font-size:14.5px;color:var(--fg)}
+.fml{min-width:0}
+.fml>p{margin:.2em 0}
+.fml math{font-size:1.12em}
+.fml math[display=block]{width:fit-content;max-width:100%;margin:2px 0}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:20px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--mut);margin-bottom:8px;line-height:1.4}
+.qhead .id{background:var(--soft);border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:1px 8px;font-weight:700}
+.qhead .mk{border:1px solid var(--line);color:var(--fg);border-radius:999px;padding:0 8px;font-weight:600}
+.qtext>p:first-child{margin-top:0}
+.opts{list-style:none;padding:0;margin:10px 0 6px;display:grid;gap:6px}
+.opts.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts li{margin:0;padding:6px 11px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}
+.opts .ok{color:var(--mut);margin-right:2px}
+details{margin-top:10px}
+details>summary{cursor:pointer;font-weight:650;color:var(--fg);list-style:none;padding:4px 0;display:inline-flex;align-items:center;gap:8px}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";width:7px;height:7px;border-right:2px solid var(--u);border-bottom:2px solid var(--u);transform:rotate(-45deg)}
+details[open]>summary::before{transform:rotate(45deg)}
+.ans{border-top:1px solid var(--line);margin-top:6px;padding-top:8px}
+.ans li{margin:.45em 0}
+math{font-size:1.07em}
+math:not([display=block]),mstyle[displaystyle=false]{math-style:normal}
+math:not([display=block]) munder,math:not([display=block]) munderover{math-style:compact}
+math[display=block]{overflow-x:auto;overflow-y:hidden;padding:6px 0;margin:4px 0}
+.mw{display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding:2px 0}
+.texerr{color:#cf222e}
+.mw,math[display=block]{scrollbar-width:thin}
+menclose[notation~=box]{border:1.5px solid var(--okl);padding:4px 10px;border-radius:6px;background:var(--ok)}
+.home{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:18px}
+.card{border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:16px 18px;background:var(--card)}
+.card h2{margin:0 0 2px;font-size:1.2em;border:0;padding:0}
+.card p{color:var(--mut);margin:0 0 12px}
+.card a{display:block;margin:8px 0;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--soft);color:var(--fg);text-decoration:none;font-weight:600}
+.card a:hover{border-color:var(--c)}
+.fab{position:fixed;right:14px;bottom:14px;z-index:6;background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.dm-w{display:block}.dm-n{display:none}
+.tsc{overflow-x:auto;scrollbar-width:thin;margin:14px 0}.tsc table{margin:0}
+table.t-alt{display:none;width:auto;min-width:60%}
+@media (max-width:1000px){table.t-wide.t10{display:none}table.t-alt.t10{display:table}}
+@media (max-width:700px){table.t-wide{display:none}table.t-alt{display:table}}
+@media (max-width:700px){.dm-w{display:none}.dm-n{display:block}table.stk,table.stk tbody,table.stk tr,table.stk td{display:block;width:100%}table.stk thead{display:none}table.stk tr{border:1px solid var(--line);border-radius:8px;margin:0 0 10px;overflow:hidden;background:var(--card)}table.stk td{border:0;border-top:1px solid var(--line);padding:6px 10px}table.stk td:first-child{border-top:0;background:var(--soft);font-weight:600}table.stk td[data-l]:not(:first-child)::before{content:attr(data-l);display:block;font-size:12px;font-weight:700;color:var(--mut)}}
+@media (max-width:640px){body{font-size:16px}main{padding:10px 12px 88px}.q{padding:12px 13px}h1{font-size:1.32em}h2{font-size:1.16em}.opts.two{grid-template-columns:1fr}table{font-size:14px}th,td{padding:6px 7px}.frow{grid-template-columns:minmax(0,1fr);padding:9px 12px}.flab{font-size:13.5px;color:var(--mut)}.top{gap:5px;padding:6px 8px}.top a,.top .off{padding:5px 9px;font-size:13.5px}.fab{right:10px;bottom:10px;padding:7px 13px;font-size:13px}}
+:root{--navh:52px;--h2h:46px}
+.lg{display:inline}.sh{display:none}
+.sec>h2{position:sticky;top:var(--navh);z-index:3;background:var(--bg);height:var(--h2h);margin:2.2em 0 .6em;padding:12px 0 6px;font-size:1.15em;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box}
+.sub>h3{position:sticky;top:calc(var(--navh) + var(--h2h));z-index:2;background:var(--bg);margin:1.4em 0 .5em;padding:7px 10px;line-height:1.35;font-size:1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 6px 6px -6px rgba(0,0,0,.12)}
+[id]{scroll-margin-top:calc(var(--navh) + var(--h2h) + 44px)}
+.sec>h2[id],.sub>h3[id]{scroll-margin-top:var(--navh)}
+.idx{display:none}
+.idx b,.idxp b{display:block;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);margin:4px 8px 8px}
+.idx a,.idxp a{display:flex;justify-content:space-between;gap:8px;text-decoration:none;color:var(--fg);border-radius:6px;padding:5px 8px;font-size:13.5px;line-height:1.35}
+.idx a:hover,.idxp a:hover{background:var(--soft)}
+.idx a.i2,.idxp a.i2{font-weight:700;margin-top:10px;border-top:1px solid var(--line);border-radius:0 0 6px 6px;padding-top:9px}
+.idx a.i3,.idxp a.i3{padding-left:18px;color:var(--fg)}
+.idx .n,.idxp .n{flex:0 0 auto;color:var(--mut);font-size:12px;font-weight:600;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:0 7px;height:fit-content}
+.idxm{position:static;margin-left:auto}
+.idxm>summary{list-style:none;cursor:pointer;white-space:nowrap;padding:6px 12px;border-radius:7px;font-size:14px;line-height:1.2;border:1px solid var(--u);background:var(--u);color:#fff;font-weight:600}
+.idxm>summary::-webkit-details-marker{display:none}
+.idxm>summary::before{content:"³0  Index"}
+.idxm[open]>summary::before{content:"¹5  Close"}
+.top .idxp a{border:0;background:none;white-space:normal;color:var(--fg);font-size:14px;padding:7px 8px}
+.top .idxp a:hover{background:var(--soft)}
+.top .idxp a.i2{border-top:1px solid var(--line);border-radius:0}
+.idxm[open]>summary{background:var(--card);color:var(--fg)}
+details.idxm>summary::before,details.idxm[open]>summary::before{width:auto;height:auto;border:0;transform:none;display:inline}
+.idxp{position:absolute;left:8px;right:8px;top:100%;margin-top:6px;max-height:62vh;overflow-y:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:9}
+@media (min-width:1180px){
+ body.has-idx{padding-left:290px}
+ body.has-idx .idx{display:block;position:fixed;left:0;top:var(--navh);bottom:0;width:280px;overflow-y:auto;padding:12px 10px 40px;border-right:1px solid var(--line);background:var(--card);z-index:4}
+ body.has-idx .idxm{display:none}
+}
+@media (min-width:701px) and (max-width:1179px){:root{--navh:60px}}
+@media (max-width:700px){:root{--navh:86px;--h2h:42px}.lg{display:none}.sh{display:inline}.top{height:var(--navh);align-content:flex-start}.sec>h2{font-size:1.02em;padding:11px 0 6px}.sub>h3{font-size:.95em}}
+@media print{.idx,.idxm{display:none}body.has-idx{padding-left:0}.sec>h2,.sub>h3{position:static}}
+.exam{border:1px solid var(--u);border-left:5px solid var(--u);border-radius:10px;padding:10px 16px;margin:12px 0 18px;background:color-mix(in srgb,var(--u) 7%,transparent)}.exam>p:first-child{margin-top:0;color:var(--u);font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.04em}.exam h4{margin:12px 0 4px}.fig{margin:14px auto;text-align:center}.fig svg{max-width:100%;height:auto}.fig figcaption{font-size:14px;color:var(--mut)}
+.fig svg text{fill:var(--fg)}
+/* reading layout modelled on a clean chat-style page: 16px/26px text, one idea per line, centred equations */
+body{font-size:16px;line-height:1.5}
+main{max-width:760px}
+p{margin:5px 0}
+ul,ol{margin:4px 0 8px;padding-left:1.6em}
+li{margin:2px 0;line-height:1.5}
+li>p{margin:2px 0}
+li>ul,li>ol{margin:2px 0}
+.ans{padding-top:8px}
+.ans>p,.qtext>p{margin:5px 0}
+.ans>p>strong:first-child{display:block;margin-bottom:2px}
+math{line-height:1.4;font-size:1.1em}
+math[display=block]{margin:8px 0;padding:2px 0;white-space:nowrap}
+.q{padding:14px 18px;margin:20px 0}
+.qhead{margin-bottom:8px}
+.box{margin:14px 0}
+table{margin:10px 0;line-height:1.45}
+th,td{padding:6px 10px}
+.fig{margin:14px auto}
+h2{margin:1.8em 0 .6em}
+h3{margin:1.2em 0 .4em}
+.exam h4{margin:8px 0 2px}
+@media (max-width:640px){body{font-size:16px}.q{padding:14px 12px}}
+@media print{.top,.jump,.fab{display:none}body{font-size:12pt;background:#fff;color:#000}.q,.box{break-inside:avoid;box-shadow:none}details>summary{display:none}}
+:root{--u:#b5652a}</style></head><body id="top" class="has-idx"><nav class="top"><a href="index.html">Home</a><span class="off" title="Not built yet"><span class="lg">Unit </span><span class="sh">U</span>1</span><span class="off" title="Not built yet"><span class="lg">Unit </span><span class="sh">U</span>2</span><a href="Unit-3_Concepts.html"><span class="lg">Unit </span><span class="sh">U</span>3</a><a href="Unit-4_Concepts.html" class="on"><span class="lg">Unit </span><span class="sh">U</span>4</a><span class="sep"></span><a href="Unit-4_Concepts.html"><span class="lg">Concepts</span><span class="sh">Concepts</span></a><a href="Unit-4_Formulas-and-Methods.html" class="on"><span class="lg">Formulas</span><span class="sh">Formulas</span></a><a href="Unit-4_Question-Bank-Solved.html"><span class="lg">Question Bank</span><span class="sh">QB</span></a><details class="idxm"><summary></summary><div class="idxp"><b>On this page</b><a class="i2" href="#sheet">1. Formula and rule sheet</a><a class="i3" href="#tensile">1.1 Tensile test</a><a class="i3" href="#elastic">1.2 Elastic energy</a><a class="i3" href="#fatigue">1.3 Fatigue stress parameters</a><a class="i3" href="#creep">1.4 Creep</a><a class="i3" href="#hardness">1.5 Hardness</a><a class="i3" href="#bragg">1.6 X-ray diffraction</a><a class="i3" href="#props">1.7 Properties at a glance</a><a class="i3" href="#points">1.8 Points on the stress-strain curve</a><a class="i3" href="#slip">1.9 Slip and twinning</a><a class="i3" href="#fracture">1.10 Fracture types</a><a class="i3" href="#creep-stages">1.11 Creep stages</a><a class="i3" href="#fatigue-sheet">1.12 Fatigue</a><a class="i3" href="#tests">1.13 Test tables</a><a class="i3" href="#chars">1.14 Characterization and coatings</a><a class="i2" href="#methods">2. Methods with one solved example each</a><a class="i3" href="#m1">Method 1. Stress, strain and Young&#x27;s modulus</a><a class="i3" href="#m2">Method 2. Percentage elongation and reduction in area</a><a class="i3" href="#m3">Method 3. Fracture strength, nominal and true</a><a class="i3" href="#m4">Method 4. Modulus of resilience</a><a class="i3" href="#m5">Method 5. Secant and tangent modulus; resilience of a non-linear material</a><a class="i3" href="#m6">Method 6. The 0.2 % offset yield strength (graphical)</a><a class="i3" href="#m7">Method 7. Fatigue stress parameters</a><a class="i3" href="#m8">Method 8. Hardness numbers</a><a class="i3" href="#m9">Method 9. Bragg&#x27;s law</a><a class="i3" href="#m10">Method 10. Logarithmic creep</a><a class="i2" href="#table">3. Tests, stages and processes: what, when, why</a><a class="i2" href="#which">4. Which method to pick</a></div></details></nav><aside class="idx"><b>On this page</b><a class="i2" href="#sheet">1. Formula and rule sheet</a><a class="i3" href="#tensile">1.1 Tensile test</a><a class="i3" href="#elastic">1.2 Elastic energy</a><a class="i3" href="#fatigue">1.3 Fatigue stress parameters</a><a class="i3" href="#creep">1.4 Creep</a><a class="i3" href="#hardness">1.5 Hardness</a><a class="i3" href="#bragg">1.6 X-ray diffraction</a><a class="i3" href="#props">1.7 Properties at a glance</a><a class="i3" href="#points">1.8 Points on the stress-strain curve</a><a class="i3" href="#slip">1.9 Slip and twinning</a><a class="i3" href="#fracture">1.10 Fracture types</a><a class="i3" href="#creep-stages">1.11 Creep stages</a><a class="i3" href="#fatigue-sheet">1.12 Fatigue</a><a class="i3" href="#tests">1.13 Test tables</a><a class="i3" href="#chars">1.14 Characterization and coatings</a><a class="i2" href="#methods">2. Methods with one solved example each</a><a class="i3" href="#m1">Method 1. Stress, strain and Young&#x27;s modulus</a><a class="i3" href="#m2">Method 2. Percentage elongation and reduction in area</a><a class="i3" href="#m3">Method 3. Fracture strength, nominal and true</a><a class="i3" href="#m4">Method 4. Modulus of resilience</a><a class="i3" href="#m5">Method 5. Secant and tangent modulus; resilience of a non-linear material</a><a class="i3" href="#m6">Method 6. The 0.2 % offset yield strength (graphical)</a><a class="i3" href="#m7">Method 7. Fatigue stress parameters</a><a class="i3" href="#m8">Method 8. Hardness numbers</a><a class="i3" href="#m9">Method 9. Bragg&#x27;s law</a><a class="i3" href="#m10">Method 10. Logarithmic creep</a><a class="i2" href="#table">3. Tests, stages and processes: what, when, why</a><a class="i2" href="#which">4. Which method to pick</a></aside><main><h1>Unit 4: Material Characterization, Testing and Surface Coating Technologies - Formulas and Methods</h1><p>Material Science and Metallurgy (UE25ME231A)</p><div class="jump"><a href="#sheet">1. Formula and rule sheet</a><a href="#methods">2. Methods with one solved example each</a><a href="#table">3. Tests, stages and processes: what, when, why</a><a href="#which">4. Which method to pick</a></div><section class="sec"><h2 id="sheet">1. Formula and rule sheet</h2>
+<p>Every line cites where it comes from. N = notes (the formula sheet is), C = class slides (merged page numbers).</p>
+<div class="sub"><h3 id="tensile">1.1 Tensile test</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Formula</th>
+<th>Symbols and source</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Quantity">Engineering stress</td><td data-l="Formula"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>P</mi><msub><mi>A</mi><mn>0</mn></msub></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\sigma=\dfrac{P}{A_0}</annotation></semantics></math></span></td><td data-l="Symbols and source">P load (N), A0 original area (mm2); N/mm2 = MPa</td></tr>
+<tr><td data-l="Quantity">Engineering strain</td><td data-l="Formula"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>L</mi><mo>−</mo><msub><mi>L</mi><mn>0</mn></msub></mrow><msub><mi>L</mi><mn>0</mn></msub></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\varepsilon=\dfrac{L-L_0}{L_0}</annotation></semantics></math></span></td><td data-l="Symbols and source">L0 original length, L loaded length</td></tr>
+<tr><td data-l="Quantity">Young's modulus</td><td data-l="Formula"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mi>σ</mi><mi>ε</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">E=\dfrac{\sigma}{\varepsilon}</annotation></semantics></math></span></td><td data-l="Symbols and source">slope of the linear elastic region</td></tr>
+<tr><td data-l="Quantity">Percentage elongation</td><td data-l="Formula"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msub><mi>L</mi><mi>f</mi></msub><mo>−</mo><msub><mi>L</mi><mn>0</mn></msub></mrow><msub><mi>L</mi><mn>0</mn></msub></mfrac></mstyle><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\dfrac{L_f-L_0}{L_0}\times100</annotation></semantics></math></span></td><td data-l="Symbols and source">L_f final gauge length</td></tr>
+<tr><td data-l="Quantity">Reduction in area</td><td data-l="Formula"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>−</mo><msub><mi>A</mi><mi>f</mi></msub></mrow><msub><mi>A</mi><mn>0</mn></msub></mfrac></mstyle><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\dfrac{A_0-A_f}{A_0}\times100</annotation></semantics></math></span></td><td data-l="Symbols and source">A_f final minimum area</td></tr>
+<tr><td data-l="Quantity">Fracture strength</td><td data-l="Formula"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi>f</mi></msub><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><msub><mi>P</mi><mi>f</mi></msub><msub><mi>A</mi><mn>0</mn></msub></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\sigma_f=\dfrac{P_f}{A_0}</annotation></semantics></math></span></td><td data-l="Symbols and source">P_f fracture load, N/mm2</td></tr>
+<tr><td data-l="Quantity">True fracture stress</td><td data-l="Formula">fracture load over the actual neck area</td><td data-l="Symbols and source">may exceed the UTS</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="elastic">1.2 Elastic energy</h3>
+<p>Modulus of resilience (linear elastic):</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>U</mi><mi>r</mi></msub><mo>=</mo><mfrac><msup><mi>σ</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>E</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">U_r=\dfrac{\sigma^2}{2E}</annotation></semantics></math></span></p>
+<p>sigma is the stress at the elastic limit or yield stress used, E is Young's modulus.</p>
+<p>Non-linear elastic materials:</p>
+<ul>
+<li>secant modulus: slope of the line from the origin to a chosen point, average stiffness</li>
+<li>tangent modulus: slope of the tangent at a chosen point, instantaneous stiffness</li>
+<li>strain energy per unit volume: the area under the stress-strain curve</li>
+<li>resilience for a non-linear material:</li>
+</ul>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Resilience</mtext><mo>=</mo><mfrac><mtext>area under the unloading curve</mtext><mtext>area under the loading curve</mtext></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\text{Resilience}=\dfrac{\text{area under the unloading curve}}{\text{area under the loading curve}}\times100</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="fatigue">1.3 Fatigue stress parameters</h3>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>σ</mi><mo>=</mo><msub><mi>σ</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>−</mo><msub><mi>σ</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><mspace width="2em"/><msub><mi>σ</mi><mi>a</mi></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>σ</mi></mrow><mn>2</mn></mfrac><mspace width="2em"/><msub><mi>σ</mi><mi>m</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>σ</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>+</mo><msub><mi>σ</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow><mn>2</mn></mfrac><mspace width="2em"/><mi>R</mi><mo>=</mo><mfrac><msub><mi>σ</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><msub><mi>σ</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">\Delta\sigma=\sigma_{max}-\sigma_{min}\qquad\sigma_a=\dfrac{\Delta\sigma}{2}\qquad\sigma_m=\dfrac{\sigma_{max}+\sigma_{min}}{2}\qquad R=\dfrac{\sigma_{min}}{\sigma_{max}}</annotation></semantics></math></span></p>
+<p>For completely reversed loading the mean stress is zero. Follow the convention given in the problem for R.</p>
+</div><div class="sub"><h3 id="creep">1.4 Creep</h3>
+<p>Logarithmic creep (low temperature):</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ε</mi><mo>=</mo><mi>α</mi><mi>ln</mi><mo>⁡</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">\varepsilon=\alpha\ln t</annotation></semantics></math></span></p>
+<p>epsilon strain, alpha a constant, t time.</p>
+</div><div class="sub"><h3 id="hardness">1.5 Hardness</h3>
+<p>Brinell hardness number:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>B</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mi>P</mi><mrow><mfrac><mrow><mi>π</mi><mi>D</mi></mrow><mn>2</mn></mfrac><mrow><mo fence="true">[</mo><mi>D</mi><mo>−</mo><msqrt><mrow><msup><mi>D</mi><mn>2</mn></msup><mo>−</mo><msup><mi>d</mi><mn>2</mn></msup></mrow></msqrt><mo fence="true">]</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">BHN=\dfrac{P}{\dfrac{\pi D}{2}\left[D-\sqrt{D^2-d^2}\right]}</annotation></semantics></math></span></p>
+<p>P load in kgf, D ball diameter in mm, d mean impression diameter in mm.</p>
+<p>Vickers hardness:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>V</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mrow><mn>1.854</mn><mtext> </mtext><mi>P</mi></mrow><msup><mi>d</mi><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">VHN=\dfrac{1.854\,P}{d^2}</annotation></semantics></math></span></p>
+<p>P in kgf, d mean diagonal in mm.</p>
+<p>Rockwell: no formula; read the scale.</p>
+</div><div class="sub"><h3 id="bragg">1.6 X-ray diffraction</h3>
+<p>Bragg's law:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>n</mi><mi>λ</mi><mo>=</mo><mn>2</mn><mi>d</mi><mi>sin</mi><mo>⁡</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">n\lambda=2d\sin\theta</annotation></semantics></math></span></p>
+<p>n order of diffraction, lambda wavelength, d interplanar spacing, theta Bragg angle.</p>
+</div><div class="sub"><h3 id="props">1.7 Properties at a glance</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strength</td>
+<td>greatest stress withstood before failure</td>
+</tr>
+<tr>
+<td>Ductility</td>
+<td>plastic deformation before failure; % elongation and % reduction in area</td>
+</tr>
+<tr>
+<td>Elasticity</td>
+<td>retains original dimensions after unloading</td>
+</tr>
+<tr>
+<td>Stiffness</td>
+<td>resists elastic deformation; Young's modulus</td>
+</tr>
+<tr>
+<td>Hardness</td>
+<td>resistance to indentation or scratching</td>
+</tr>
+<tr>
+<td>Resilience</td>
+<td>absorbs energy elastically and recovers it</td>
+</tr>
+<tr>
+<td>Toughness</td>
+<td>absorbs energy up to fracture</td>
+</tr>
+<tr>
+<td>Malleability</td>
+<td>large plastic deformation under compression</td>
+</tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="points">1.8 Points on the stress-strain curve</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proportional limit</td>
+<td>up to it stress is proportional to strain (Hooke's law)</td>
+</tr>
+<tr>
+<td>Elastic limit</td>
+<td>just beyond it; full recovery on unloading</td>
+</tr>
+<tr>
+<td>Yield point</td>
+<td>start of large plastic deformation; use the lower yield stress</td>
+</tr>
+<tr>
+<td>Proof stress</td>
+<td>0.2 % offset line parallel to the elastic line, where it cuts the curve</td>
+</tr>
+<tr>
+<td>UTS</td>
+<td>maximum engineering stress</td>
+</tr>
+<tr>
+<td>Fracture strength</td>
+<td>load at fracture over the original area (nominal)</td>
+</tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="slip">1.9 Slip and twinning</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Slip</th>
+<th>Twinning</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Atom movement</td><td data-l="Slip">whole block moves the same distance</td><td data-l="Twinning">fraction of a distance, depending on distance from the twin plane</td></tr>
+<tr><td data-l="">Shear stress</td><td data-l="Slip">lower</td><td data-l="Twinning">higher</td></tr>
+<tr><td data-l="">Where</td><td data-l="Slip">many slip systems (Cu, FCC)</td><td data-l="Twinning">few slip systems (Zn, HCP)</td></tr>
+<tr><td data-l="">Favoured by</td><td data-l="Slip">higher temperature, gradual loading</td><td data-l="Twinning">low temperature, impact loading</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="fracture">1.10 Fracture types</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Features</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Type">I</td><td data-l="Name">ductile</td><td data-l="Features">extensive plastic deformation, slow crack, dull surface</td></tr>
+<tr><td data-l="Type">II</td><td data-l="Name">brittle</td><td data-l="Features">little plastic deformation, fast crack, cleavage</td></tr>
+<tr><td data-l="Type">III</td><td data-l="Name">shear</td><td data-l="Features">extensive shear and slip</td></tr>
+</tbody>
+</table></div>
+<p>Stages: crack initiation, crack propagation, failure. Cup-and-cone: necking, microvoids, crack, shear lip at about 45 degrees.</p>
+</div><div class="sub"><h3 id="creep-stages">1.11 Creep stages</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Stage</th>
+<th>Rate</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Stage">Primary</td><td data-l="Rate">decreasing</td><td data-l="Cause">work hardening</td></tr>
+<tr><td data-l="Stage">Secondary</td><td data-l="Rate">constant (minimum creep rate)</td><td data-l="Cause">work hardening and recovery balance</td></tr>
+<tr><td data-l="Stage">Tertiary</td><td data-l="Rate">increasing</td><td data-l="Cause">necking, voids, smaller section</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="fatigue-sheet">1.12 Fatigue</h3>
+<ul>
+<li>Three steps: crack initiation, crack growth, final fracture.</li>
+<li>Fatigue strength: stress at failure for a specified number of cycles.</li>
+<li>Fatigue limit: stress below which failure does not occur (some Fe and Ti alloys); non-ferrous metals have none.</li>
+<li>Fatigue life: cycles to failure at a specified stress.</li>
+<li>Low cycle: N below <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">10^5</annotation></semantics></math></span>, high loads, plastic and elastic. High cycle: N above <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">10^5</annotation></semantics></math></span>, low loads, elastic.</li>
+<li>Factors: stress concentrations, corrosion, residual stress, surface finish, high temperature.</li>
+</ul>
+</div><div class="sub"><h3 id="tests">1.13 Test tables</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Test</th>
+<th>Indenter or method</th>
+<th>Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Test">Brinell</td><td data-l="Indenter or method">steel ball 1 to 10 mm; 10 to 15 s for steel</td><td data-l="Reading">BHN by formula</td></tr>
+<tr><td data-l="Test">Rockwell</td><td data-l="Indenter or method">ball (B scale), 120 degree diamond cone (C scale); minor and major load</td><td data-l="Reading">scale reading</td></tr>
+<tr><td data-l="Test">Vickers</td><td data-l="Indenter or method">square-based diamond pyramid, 136 degrees</td><td data-l="Reading">VHN by formula</td></tr>
+<tr><td data-l="Test">Knoop</td><td data-l="Indenter or method">elongated diamond, small load</td><td data-l="Reading">microhardness</td></tr>
+<tr><td data-l="Test">Charpy</td><td data-l="Indenter or method">simply supported horizontal bar, struck opposite the notch</td><td data-l="Reading">energy absorbed</td></tr>
+<tr><td data-l="Test">Izod</td><td data-l="Indenter or method">vertical cantilever, struck on the notched side</td><td data-l="Reading">energy absorbed</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="chars">1.14 Characterization and coatings</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>What it gives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SEM, secondary electrons</td>
+<td>surface topography</td>
+</tr>
+<tr>
+<td>SEM, backscattered electrons</td>
+<td>compositional contrast</td>
+</tr>
+<tr>
+<td>SEM, X-rays (EDS)</td>
+<td>elements and local composition</td>
+</tr>
+<tr>
+<td>XRD</td>
+<td>phases, interplanar spacing, crystal structure</td>
+</tr>
+</tbody>
+</table></div>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Coating process</th>
+<th>Layer forms by</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Coating process">Electroplating</td><td data-l="Layer forms by">electrolysis; ions reduced at the cathode</td><td data-l="Notes">DC, electrolyte, conductive substrate</td></tr>
+<tr><td data-l="Coating process">CVD</td><td data-l="Layer forms by">gas reaction on a hot substrate, 500 to 1100 deg C</td><td data-l="Notes">thin, uniform, complex shapes; hot, toxic by-products</td></tr>
+<tr><td data-l="Coating process">PVD</td><td data-l="Layer forms by">vapour condenses in vacuum</td><td data-l="Notes">hard thin films; line-of-sight</td></tr>
+<tr><td data-l="Coating process">HVOF</td><td data-l="Layer forms by">particles at supersonic speed, partly molten</td><td data-l="Notes">dense, wear resistant; line-of-sight</td></tr>
+</tbody>
+</table></div>
+</div></section><section class="sec"><h2 id="methods">2. Methods with one solved example each</h2>
+<p>The course question bank, Q and A and assignment give no numbers for these quantities. Every example below uses made-up round numbers, labelled as an illustration, and each was checked by computing it. Formulas come from the sheet above.</p>
+<div class="sub"><h3 id="m1">Method 1. Stress, strain and Young's modulus</h3>
+<ol>
+<li>Measure the original area A0 and original gauge length L0.</li>
+<li>Read the load P and the loaded length L.</li>
+<li>Stress is P divided by A0.</li>
+<li>Strain is (L - L0) divided by L0.</li>
+<li>In the linear region E is stress divided by strain.</li>
+</ol>
+<p><strong>Illustration:</strong> P = 20 000 N, A0 = 100 mm2, L0 = 50 mm, L = 50.1 mm (in the linear region).</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>σ</mi><mo>=</mo><mfrac><mrow><mn>20</mn><mtext> </mtext><mn>000</mn></mrow><mn>100</mn></mfrac><mo>=</mo><mn>200</mn><mtext> MPa</mtext></mrow><annotation encoding="application/x-tex">\sigma=\dfrac{20\,000}{100}=200\ \text{MPa}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ε</mi><mo>=</mo><mfrac><mrow><mn>50.1</mn><mo>−</mo><mn>50</mn></mrow><mn>50</mn></mfrac><mo>=</mo><mn>0.002</mn></mrow><annotation encoding="application/x-tex">\varepsilon=\dfrac{50.1-50}{50}=0.002</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mfrac><mn>200</mn><mn>0.002</mn></mfrac><mo>=</mo><mn>100</mn><mtext> </mtext><mn>000</mn><mtext> MPa</mtext></mrow><annotation encoding="application/x-tex">E=\dfrac{200}{0.002}=100\,000\ \text{MPa}</annotation></semantics></math></span></p>
+<p><strong>Answer:</strong> stress 200 MPa, strain 0.002, E = 100 000 MPa (100 GPa).</p>
+</div><div class="sub"><h3 id="m2">Method 2. Percentage elongation and reduction in area</h3>
+<ol>
+<li>Measure the final gauge length L_f and the final minimum area A_f after fracture.</li>
+<li>Use the two ductility formulas.</li>
+</ol>
+<p><strong>Illustration:</strong> L0 = 50 mm, L_f = 62 mm, A0 = 100 mm2, A_f = 64 mm2.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> elongation</mtext><mo>=</mo><mfrac><mrow><mn>62</mn><mo>−</mo><mn>50</mn></mrow><mn>50</mn></mfrac><mo>×</mo><mn>100</mn><mo>=</mo><mn>24</mn><mtext> </mtext><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\%\ \text{elongation}=\dfrac{62-50}{50}\times100=24\ \%</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> reduction in area</mtext><mo>=</mo><mfrac><mrow><mn>100</mn><mo>−</mo><mn>64</mn></mrow><mn>100</mn></mfrac><mo>×</mo><mn>100</mn><mo>=</mo><mn>36</mn><mtext> </mtext><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\%\ \text{reduction in area}=\dfrac{100-64}{100}\times100=36\ \%</annotation></semantics></math></span></p>
+<p><strong>Answer:</strong> 24 % elongation and 36 % reduction in area.</p>
+</div><div class="sub"><h3 id="m3">Method 3. Fracture strength, nominal and true</h3>
+<ol>
+<li>Fracture strength is the fracture load over the original area.</li>
+<li>True fracture stress uses the actual neck area.</li>
+</ol>
+<p><strong>Illustration:</strong> P_f = 18 000 N, A0 = 100 mm2, neck area 40 mm2.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>σ</mi><mi>f</mi></msub><mo>=</mo><mfrac><mrow><mn>18</mn><mtext> </mtext><mn>000</mn></mrow><mn>100</mn></mfrac><mo>=</mo><mn>180</mn><mtext> MPa</mtext><mspace width="1em"/><mo stretchy="false">(</mo><mtext>nominal</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sigma_f=\dfrac{18\,000}{100}=180\ \text{MPa}\quad(\text{nominal})</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>σ</mi><mrow><mi>t</mi><mi>r</mi><mi>u</mi><mi>e</mi></mrow></msub><mo>=</mo><mfrac><mrow><mn>18</mn><mtext> </mtext><mn>000</mn></mrow><mn>40</mn></mfrac><mo>=</mo><mn>450</mn><mtext> MPa</mtext></mrow><annotation encoding="application/x-tex">\sigma_{true}=\dfrac{18\,000}{40}=450\ \text{MPa}</annotation></semantics></math></span></p>
+<p><strong>Answer:</strong> nominal 180 MPa, true 450 MPa. The true value is higher because the neck area is smaller.</p>
+</div><div class="sub"><h3 id="m4">Method 4. Modulus of resilience</h3>
+<ol>
+<li>Take the stress at the elastic limit or yield stress, sigma.</li>
+<li>Take Young's modulus E in the same units.</li>
+<li>Use the formula.</li>
+</ol>
+<p><strong>Illustration:</strong> sigma = 250 MPa, E = 200 000 MPa.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>U</mi><mi>r</mi></msub><mo>=</mo><mfrac><msup><mi>σ</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>E</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>25</mn><msup><mn>0</mn><mn>2</mn></msup></mrow><mrow><mn>2</mn><mo>×</mo><mn>200</mn><mtext> </mtext><mn>000</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">U_r=\dfrac{\sigma^2}{2E}=\dfrac{250^2}{2\times200\,000}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>U</mi><mi>r</mi></msub><mo>=</mo><mn>0.156</mn><mtext> </mtext><msup><mtext>MJ/m</mtext><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">U_r=0.156\ \text{MJ/m}^3</annotation></semantics></math></span></p>
+<p><strong>Answer:</strong> 0.156 MJ/m3 (strain energy per unit volume at the elastic limit).</p>
+</div><div class="sub"><h3 id="m5">Method 5. Secant and tangent modulus; resilience of a non-linear material</h3>
+<ol>
+<li>Secant modulus: pick a point on the curve and divide its stress by its strain (slope from the origin).</li>
+<li>Tangent modulus: draw the tangent at the point and take its slope.</li>
+<li>Resilience of a non-linear elastic material: area under the unloading curve over area under the loading curve, times 100.</li>
+</ol>
+<p><strong>Illustration:</strong> a point at stress 10 MPa and strain 0.02; a tangent through it rises 6 MPa over 0.03 strain; areas 40 (loading) and 30 (unloading) in the same units.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>E</mi><mrow><mi>s</mi><mi>e</mi><mi>c</mi><mi>a</mi><mi>n</mi><mi>t</mi></mrow></msub><mo>=</mo><mfrac><mn>10</mn><mn>0.02</mn></mfrac><mo>=</mo><mn>500</mn><mtext> MPa</mtext></mrow><annotation encoding="application/x-tex">E_{secant}=\dfrac{10}{0.02}=500\ \text{MPa}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>E</mi><mrow><mi>t</mi><mi>a</mi><mi>n</mi><mi>g</mi><mi>e</mi><mi>n</mi><mi>t</mi></mrow></msub><mo>=</mo><mfrac><mn>6</mn><mn>0.03</mn></mfrac><mo>=</mo><mn>200</mn><mtext> MPa</mtext></mrow><annotation encoding="application/x-tex">E_{tangent}=\dfrac{6}{0.03}=200\ \text{MPa}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Resilience</mtext><mo>=</mo><mfrac><mn>30</mn><mn>40</mn></mfrac><mo>×</mo><mn>100</mn><mo>=</mo><mn>75</mn><mtext> </mtext><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\text{Resilience}=\dfrac{30}{40}\times100=75\ \%</annotation></semantics></math></span></p>
+<p><strong>Answer:</strong> secant 500 MPa, tangent 200 MPa, resilience 75 %, so 25 % of the energy is lost to internal friction.</p>
+</div><div class="sub"><h3 id="m6">Method 6. The 0.2 % offset yield strength (graphical)</h3>
+<ol>
+<li>Mark 0.002 on the strain axis.</li>
+<li>Draw a line from that point parallel to the straight part of the curve.</li>
+<li>Read the stress where the line meets the curve.</li>
+</ol>
+<p>The result depends on the plotted curve. The course gives no coordinate values, so no number is derived here. See the figure in Concepts D3.</p>
+</div><div class="sub"><h3 id="m7">Method 7. Fatigue stress parameters</h3>
+<ol>
+<li>Read sigma_max and sigma_min (tension positive).</li>
+<li>Range is sigma_max minus sigma_min.</li>
+<li>Amplitude is half the range.</li>
+<li>Mean is the average of the two.</li>
+<li>R is sigma_min over sigma_max.</li>
+</ol>
+<p><strong>Illustration:</strong> sigma_max = 300 MPa, sigma_min = -100 MPa.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>σ</mi><mo>=</mo><mn>300</mn><mo>−</mo><mo stretchy="false">(</mo><mo>−</mo><mn>100</mn><mo stretchy="false">)</mo><mo>=</mo><mn>400</mn><mtext> MPa</mtext></mrow><annotation encoding="application/x-tex">\Delta\sigma=300-(-100)=400\ \text{MPa}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>σ</mi><mi>a</mi></msub><mo>=</mo><mfrac><mn>400</mn><mn>2</mn></mfrac><mo>=</mo><mn>200</mn><mtext> MPa</mtext></mrow><annotation encoding="application/x-tex">\sigma_a=\dfrac{400}{2}=200\ \text{MPa}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>σ</mi><mi>m</mi></msub><mo>=</mo><mfrac><mrow><mn>300</mn><mo>+</mo><mo stretchy="false">(</mo><mo>−</mo><mn>100</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac><mo>=</mo><mn>100</mn><mtext> MPa</mtext></mrow><annotation encoding="application/x-tex">\sigma_m=\dfrac{300+(-100)}{2}=100\ \text{MPa}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>R</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mn>100</mn></mrow><mn>300</mn></mfrac><mo>=</mo><mo>−</mo><mn>0.333</mn></mrow><annotation encoding="application/x-tex">R=\dfrac{-100}{300}=-0.333</annotation></semantics></math></span></p>
+<p><strong>Answer:</strong> range 400, amplitude 200, mean 100 MPa, R = -0.333. For completely reversed loading, sigma_min = -sigma_max, so the mean is 0 and R = -1.</p>
+</div><div class="sub"><h3 id="m8">Method 8. Hardness numbers</h3>
+<p><strong>Brinell.</strong> Use P, D, d in kgf and mm.</p>
+<p><strong>Illustration:</strong> P = 3000 kgf, D = 10 mm, d = 4 mm.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>B</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mn>3000</mn><mrow><mfrac><mrow><mi>π</mi><mo>×</mo><mn>10</mn></mrow><mn>2</mn></mfrac><mrow><mo fence="true">[</mo><mn>10</mn><mo>−</mo><msqrt><mrow><mn>1</mn><msup><mn>0</mn><mn>2</mn></msup><mo>−</mo><msup><mn>4</mn><mn>2</mn></msup></mrow></msqrt><mo fence="true">]</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">BHN=\dfrac{3000}{\dfrac{\pi\times10}{2}\left[10-\sqrt{10^2-4^2}\right]}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>B</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mn>3000</mn><mrow><mn>15.708</mn><mo>×</mo><mn>0.8348</mn></mrow></mfrac><mo>≈</mo><mn>228.8</mn></mrow><annotation encoding="application/x-tex">BHN=\dfrac{3000}{15.708\times0.8348}\approx228.8</annotation></semantics></math></span></p>
+<p><strong>Vickers.</strong> Use P in kgf and the mean diagonal d in mm.</p>
+<p><strong>Illustration:</strong> P = 30 kgf, d = 0.5 mm.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>V</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mrow><mn>1.854</mn><mo>×</mo><mn>30</mn></mrow><mrow><mn>0.</mn><msup><mn>5</mn><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mn>222.5</mn></mrow><annotation encoding="application/x-tex">VHN=\dfrac{1.854\times30}{0.5^2}=222.5</annotation></semantics></math></span></p>
+<p><strong>Rockwell:</strong> no calculation; read the scale (B for a ball on softer steel, C for the diamond cone on harder material).</p>
+</div><div class="sub"><h3 id="m9">Method 9. Bragg's law</h3>
+<ol>
+<li>Take n (use 1 for the first-order reflection), the wavelength lambda and the spacing d or the angle.</li>
+<li>Use n lambda = 2 d sin(theta).</li>
+</ol>
+<p><strong>Illustration:</strong> n = 1, lambda = 0.154 nm, d = 0.2 nm.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>sin</mi><mo>⁡</mo><mi>θ</mi><mo>=</mo><mfrac><mrow><mi>n</mi><mi>λ</mi></mrow><mrow><mn>2</mn><mi>d</mi></mrow></mfrac><mo>=</mo><mfrac><mn>0.154</mn><mrow><mn>2</mn><mo>×</mo><mn>0.2</mn></mrow></mfrac><mo>=</mo><mn>0.385</mn></mrow><annotation encoding="application/x-tex">\sin\theta=\dfrac{n\lambda}{2d}=\dfrac{0.154}{2\times0.2}=0.385</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>θ</mi><mo>=</mo><mn>22.</mn><msup><mn>6</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta=22.6^\circ</annotation></semantics></math></span></p>
+<p><strong>Answer:</strong> theta = 22.6 degrees. Going the other way, measured angles give d.</p>
+</div><div class="sub"><h3 id="m10">Method 10. Logarithmic creep</h3>
+<ol>
+<li>Take the constant alpha.</li>
+<li>Strain is alpha times ln t.</li>
+</ol>
+<p><strong>Illustration:</strong> alpha = 0.002, t = 10 and then t = 100 (same time unit).</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ε</mi><mo stretchy="false">(</mo><mn>10</mn><mo stretchy="false">)</mo><mo>=</mo><mn>0.002</mn><mi>ln</mi><mo>⁡</mo><mn>10</mn><mo>=</mo><mn>0.0046</mn></mrow><annotation encoding="application/x-tex">\varepsilon(10)=0.002\ln10=0.0046</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ε</mi><mo stretchy="false">(</mo><mn>100</mn><mo stretchy="false">)</mo><mo>=</mo><mn>0.002</mn><mi>ln</mi><mo>⁡</mo><mn>100</mn><mo>=</mo><mn>0.0092</mn></mrow><annotation encoding="application/x-tex">\varepsilon(100)=0.002\ln100=0.0092</annotation></semantics></math></span></p>
+<p><strong>Answer:</strong> a ten-fold increase in time doubles the strain from 0.0046 to 0.0092 here. This law is for low-temperature creep.</p>
+</div></section><section class="sec"><h2 id="table">3. Tests, stages and processes: what, when, why</h2>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Item</th>
+<th>What</th>
+<th>When it applies</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Item">Tensile test</td><td data-l="What">stress-strain curve</td><td data-l="When it applies">any material strength and ductility check</td><td data-l="Why it matters">gives E, yield, UTS, elongation</td></tr>
+<tr><td data-l="Item">Charpy and Izod</td><td data-l="What">impact energy</td><td data-l="When it applies">shock loading, notches</td><td data-l="Why it matters">toughness and notch sensitivity</td></tr>
+<tr><td data-l="Item">Brinell, Rockwell</td><td data-l="What">macro hardness</td><td data-l="When it applies">tools, dies, sheet</td><td data-l="Why it matters">simple hardness by indentation</td></tr>
+<tr><td data-l="Item">Vickers, Knoop</td><td data-l="What">micro hardness</td><td data-l="When it applies">thin layers, small parts</td><td data-l="Why it matters">hardness of coatings and hardened skins</td></tr>
+<tr><td data-l="Item">Fatigue test</td><td data-l="What">S-N curve</td><td data-l="When it applies">cyclic loading</td><td data-l="Why it matters">fatigue limit and life</td></tr>
+<tr><td data-l="Item">Creep test</td><td data-l="What">strain against time</td><td data-l="When it applies">high temperature, constant load</td><td data-l="Why it matters">steady-state creep rate</td></tr>
+<tr><td data-l="Item">SEM</td><td data-l="What">surface images, composition</td><td data-l="When it applies">microstructure and fracture surface study</td><td data-l="Why it matters">high magnification and depth of field</td></tr>
+<tr><td data-l="Item">XRD</td><td data-l="What">diffraction pattern</td><td data-l="When it applies">phase and structure identification</td><td data-l="Why it matters">crystalline phases and spacing</td></tr>
+<tr><td data-l="Item">Electroplating</td><td data-l="What">metal layer by electrolysis</td><td data-l="When it applies">conductive parts</td><td data-l="Why it matters">corrosion, wear, appearance</td></tr>
+<tr><td data-l="Item">CVD</td><td data-l="What">film by gas reaction</td><td data-l="When it applies">hot-tolerant substrates</td><td data-l="Why it matters">uniform hard films</td></tr>
+<tr><td data-l="Item">PVD</td><td data-l="What">film by vapour condensation</td><td data-l="When it applies">thin hard films, lower temperature</td><td data-l="Why it matters">hard, clean coating</td></tr>
+<tr><td data-l="Item">HVOF</td><td data-l="What">thermal-spray coating</td><td data-l="When it applies">wear-resistant surfaces</td><td data-l="Why it matters">dense coating with strong bond</td></tr>
+</tbody>
+</table></div>
+</section><section class="sec"><h2 id="which">4. Which method to pick</h2>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>You are asked</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stress, strain or E from a test</td>
+<td>Method 1</td>
+</tr>
+<tr>
+<td>ductility numbers</td>
+<td>Method 2</td>
+</tr>
+<tr>
+<td>fracture strength, nominal or true</td>
+<td>Method 3</td>
+</tr>
+<tr>
+<td>energy stored elastically</td>
+<td>Method 4</td>
+</tr>
+<tr>
+<td>curved elastic region</td>
+<td>Method 5</td>
+</tr>
+<tr>
+<td>yield with no clear yield point</td>
+<td>Method 6</td>
+</tr>
+<tr>
+<td>cyclic loading numbers</td>
+<td>Method 7</td>
+</tr>
+<tr>
+<td>hardness number</td>
+<td>Method 8</td>
+</tr>
+<tr>
+<td>crystal plane spacing or angle</td>
+<td>Method 9</td>
+</tr>
+<tr>
+<td>low-temperature creep strain</td>
+<td>Method 10</td>
+</tr>
+</tbody>
+</table></div></section></main><a class="fab" href="#top">Top &uarr;</a></body></html>

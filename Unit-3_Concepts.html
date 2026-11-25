@@ -1,0 +1,1871 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Unit 3: Phase Diagrams, Heat Treatment and Structure-Property Correlation - Concepts</title><style>
+:root{--u:#3b6fd4;--bg:#f6f6f3;--fg:#1d2125;--mut:#5d646d;--card:#ffffff;--soft:#f3f4f6;--line:#e2e4e8;--box:#f5f8fc;--boxl:#dce5f2;--ok:#eef6f0;--okl:#b9d9c3}
+@media (prefers-color-scheme:dark){:root{--bg:#17191d;--fg:#e3e5e8;--mut:#a2a9b2;--card:#1f2227;--soft:#262a30;--line:#33383f;--box:#1d2330;--boxl:#2f3b50;--ok:#1b2a21;--okl:#2f4a39}}
+*{box-sizing:border-box}
+html{scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+[id]{scroll-margin-top:64px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16.5px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ut:color-mix(in srgb,var(--u) 80%,#000000)}
+@media (prefers-color-scheme:dark){body{--ut:color-mix(in srgb,var(--u) 45%,#ffffff)}}
+main{max-width:880px;margin:0 auto;padding:16px 20px 96px}
+.top{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:3px solid var(--u);display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:8px 12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.top a,.top .off{white-space:nowrap;color:var(--fg);text-decoration:none;padding:6px 12px;border-radius:7px;font-size:14px;line-height:1.2;border:1px solid var(--line);background:var(--card)}
+.top a:hover{background:var(--soft)}
+.top a.on{background:var(--u);border-color:var(--u);color:#fff;font-weight:600}
+.top .off{color:var(--mut);opacity:.6;cursor:not-allowed}
+.top .sep{width:1px;align-self:stretch;background:var(--line);margin:2px 4px}
+h1{font-size:1.55em;line-height:1.3;margin:.6em 0 .15em;font-weight:700}
+h1+p{color:var(--mut);margin:0 0 10px}
+h2{font-size:1.28em;line-height:1.35;border-bottom:2px solid var(--u);padding-bottom:5px;margin:2.4em 0 .8em;font-weight:700}
+h3{font-size:1.08em;margin:1.8em 0 .55em;font-weight:700;color:var(--fg);padding-left:10px;border-left:4px solid var(--u)}
+a{color:var(--ut)}
+p{margin:.6em 0}
+ul,ol{padding-left:1.5em;margin:.55em 0}
+li{margin:.35em 0}
+strong,b{font-weight:650}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:.9em}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 24px;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.jump a{border:1px solid var(--line);color:var(--fg);background:var(--soft);border-radius:999px;padding:5px 12px;font-size:14px;line-height:1.3;text-decoration:none}
+.jump a:hover{border-color:var(--u)}
+table{border-collapse:collapse;margin:14px 0;width:100%;font-size:15px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:8px 11px;vertical-align:top;text-align:left;overflow-wrap:break-word}
+th{background:var(--soft);font-weight:650}
+.box{background:var(--box);border:1px solid var(--boxl);border-radius:10px;margin:14px 0 16px;overflow:hidden}
+.frow{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4px 18px;padding:10px 16px;border-top:1px solid var(--boxl);align-items:baseline}
+.frow:first-child{border-top:0}
+.frow.wide{grid-template-columns:minmax(0,1fr)}
+.flab{font-weight:650;font-size:14.5px;color:var(--fg)}
+.fml{min-width:0}
+.fml>p{margin:.2em 0}
+.fml math{font-size:1.12em}
+.fml math[display=block]{width:fit-content;max-width:100%;margin:2px 0}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:20px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--mut);margin-bottom:8px;line-height:1.4}
+.qhead .id{background:var(--soft);border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:1px 8px;font-weight:700}
+.qhead .mk{border:1px solid var(--line);color:var(--fg);border-radius:999px;padding:0 8px;font-weight:600}
+.qtext>p:first-child{margin-top:0}
+.opts{list-style:none;padding:0;margin:10px 0 6px;display:grid;gap:6px}
+.opts.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts li{margin:0;padding:6px 11px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}
+.opts .ok{color:var(--mut);margin-right:2px}
+details{margin-top:10px}
+details>summary{cursor:pointer;font-weight:650;color:var(--fg);list-style:none;padding:4px 0;display:inline-flex;align-items:center;gap:8px}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";width:7px;height:7px;border-right:2px solid var(--u);border-bottom:2px solid var(--u);transform:rotate(-45deg)}
+details[open]>summary::before{transform:rotate(45deg)}
+.ans{border-top:1px solid var(--line);margin-top:6px;padding-top:8px}
+.ans li{margin:.45em 0}
+math{font-size:1.07em}
+math:not([display=block]),mstyle[displaystyle=false]{math-style:normal}
+math:not([display=block]) munder,math:not([display=block]) munderover{math-style:compact}
+math[display=block]{overflow-x:auto;overflow-y:hidden;padding:6px 0;margin:4px 0}
+.mw{display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding:2px 0}
+.texerr{color:#cf222e}
+.mw,math[display=block]{scrollbar-width:thin}
+menclose[notation~=box]{border:1.5px solid var(--okl);padding:4px 10px;border-radius:6px;background:var(--ok)}
+.home{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:18px}
+.card{border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:16px 18px;background:var(--card)}
+.card h2{margin:0 0 2px;font-size:1.2em;border:0;padding:0}
+.card p{color:var(--mut);margin:0 0 12px}
+.card a{display:block;margin:8px 0;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--soft);color:var(--fg);text-decoration:none;font-weight:600}
+.card a:hover{border-color:var(--c)}
+.fab{position:fixed;right:14px;bottom:14px;z-index:6;background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.dm-w{display:block}.dm-n{display:none}
+.tsc{overflow-x:auto;scrollbar-width:thin;margin:14px 0}.tsc table{margin:0}
+table.t-alt{display:none;width:auto;min-width:60%}
+@media (max-width:1000px){table.t-wide.t10{display:none}table.t-alt.t10{display:table}}
+@media (max-width:700px){table.t-wide{display:none}table.t-alt{display:table}}
+@media (max-width:700px){.dm-w{display:none}.dm-n{display:block}table.stk,table.stk tbody,table.stk tr,table.stk td{display:block;width:100%}table.stk thead{display:none}table.stk tr{border:1px solid var(--line);border-radius:8px;margin:0 0 10px;overflow:hidden;background:var(--card)}table.stk td{border:0;border-top:1px solid var(--line);padding:6px 10px}table.stk td:first-child{border-top:0;background:var(--soft);font-weight:600}table.stk td[data-l]:not(:first-child)::before{content:attr(data-l);display:block;font-size:12px;font-weight:700;color:var(--mut)}}
+@media (max-width:640px){body{font-size:16px}main{padding:10px 12px 88px}.q{padding:12px 13px}h1{font-size:1.32em}h2{font-size:1.16em}.opts.two{grid-template-columns:1fr}table{font-size:14px}th,td{padding:6px 7px}.frow{grid-template-columns:minmax(0,1fr);padding:9px 12px}.flab{font-size:13.5px;color:var(--mut)}.top{gap:5px;padding:6px 8px}.top a,.top .off{padding:5px 9px;font-size:13.5px}.fab{right:10px;bottom:10px;padding:7px 13px;font-size:13px}}
+:root{--navh:52px;--h2h:46px}
+.lg{display:inline}.sh{display:none}
+.sec>h2{position:sticky;top:var(--navh);z-index:3;background:var(--bg);height:var(--h2h);margin:2.2em 0 .6em;padding:12px 0 6px;font-size:1.15em;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box}
+.sub>h3{position:sticky;top:calc(var(--navh) + var(--h2h));z-index:2;background:var(--bg);margin:1.4em 0 .5em;padding:7px 10px;line-height:1.35;font-size:1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 6px 6px -6px rgba(0,0,0,.12)}
+[id]{scroll-margin-top:calc(var(--navh) + var(--h2h) + 44px)}
+.sec>h2[id],.sub>h3[id]{scroll-margin-top:var(--navh)}
+.idx{display:none}
+.idx b,.idxp b{display:block;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);margin:4px 8px 8px}
+.idx a,.idxp a{display:flex;justify-content:space-between;gap:8px;text-decoration:none;color:var(--fg);border-radius:6px;padding:5px 8px;font-size:13.5px;line-height:1.35}
+.idx a:hover,.idxp a:hover{background:var(--soft)}
+.idx a.i2,.idxp a.i2{font-weight:700;margin-top:10px;border-top:1px solid var(--line);border-radius:0 0 6px 6px;padding-top:9px}
+.idx a.i3,.idxp a.i3{padding-left:18px;color:var(--fg)}
+.idx .n,.idxp .n{flex:0 0 auto;color:var(--mut);font-size:12px;font-weight:600;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:0 7px;height:fit-content}
+.idxm{position:static;margin-left:auto}
+.idxm>summary{list-style:none;cursor:pointer;white-space:nowrap;padding:6px 12px;border-radius:7px;font-size:14px;line-height:1.2;border:1px solid var(--u);background:var(--u);color:#fff;font-weight:600}
+.idxm>summary::-webkit-details-marker{display:none}
+.idxm>summary::before{content:"³0  Index"}
+.idxm[open]>summary::before{content:"¹5  Close"}
+.top .idxp a{border:0;background:none;white-space:normal;color:var(--fg);font-size:14px;padding:7px 8px}
+.top .idxp a:hover{background:var(--soft)}
+.top .idxp a.i2{border-top:1px solid var(--line);border-radius:0}
+.idxm[open]>summary{background:var(--card);color:var(--fg)}
+details.idxm>summary::before,details.idxm[open]>summary::before{width:auto;height:auto;border:0;transform:none;display:inline}
+.idxp{position:absolute;left:8px;right:8px;top:100%;margin-top:6px;max-height:62vh;overflow-y:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:9}
+@media (min-width:1180px){
+ body.has-idx{padding-left:290px}
+ body.has-idx .idx{display:block;position:fixed;left:0;top:var(--navh);bottom:0;width:280px;overflow-y:auto;padding:12px 10px 40px;border-right:1px solid var(--line);background:var(--card);z-index:4}
+ body.has-idx .idxm{display:none}
+}
+@media (min-width:701px) and (max-width:1179px){:root{--navh:60px}}
+@media (max-width:700px){:root{--navh:86px;--h2h:42px}.lg{display:none}.sh{display:inline}.top{height:var(--navh);align-content:flex-start}.sec>h2{font-size:1.02em;padding:11px 0 6px}.sub>h3{font-size:.95em}}
+@media print{.idx,.idxm{display:none}body.has-idx{padding-left:0}.sec>h2,.sub>h3{position:static}}
+.exam{border:1px solid var(--u);border-left:5px solid var(--u);border-radius:10px;padding:10px 16px;margin:12px 0 18px;background:color-mix(in srgb,var(--u) 7%,transparent)}.exam>p:first-child{margin-top:0;color:var(--u);font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.04em}.exam h4{margin:12px 0 4px}.fig{margin:14px auto;text-align:center}.fig svg{max-width:100%;height:auto}.fig figcaption{font-size:14px;color:var(--mut)}
+.fig svg text{fill:var(--fg)}
+/* reading layout modelled on a clean chat-style page: 16px/26px text, one idea per line, centred equations */
+body{font-size:16px;line-height:1.5}
+main{max-width:760px}
+p{margin:5px 0}
+ul,ol{margin:4px 0 8px;padding-left:1.6em}
+li{margin:2px 0;line-height:1.5}
+li>p{margin:2px 0}
+li>ul,li>ol{margin:2px 0}
+.ans{padding-top:8px}
+.ans>p,.qtext>p{margin:5px 0}
+.ans>p>strong:first-child{display:block;margin-bottom:2px}
+math{line-height:1.4;font-size:1.1em}
+math[display=block]{margin:8px 0;padding:2px 0;white-space:nowrap}
+.q{padding:14px 18px;margin:20px 0}
+.qhead{margin-bottom:8px}
+.box{margin:14px 0}
+table{margin:10px 0;line-height:1.45}
+th,td{padding:6px 10px}
+.fig{margin:14px auto}
+h2{margin:1.8em 0 .6em}
+h3{margin:1.2em 0 .4em}
+.exam h4{margin:8px 0 2px}
+@media (max-width:640px){body{font-size:16px}.q{padding:14px 12px}}
+@media print{.top,.jump,.fab{display:none}body{font-size:12pt;background:#fff;color:#000}.q,.box{break-inside:avoid;box-shadow:none}details>summary{display:none}}
+:root{--u:#2f855a}</style></head><body id="top" class="has-idx"><nav class="top"><a href="index.html">Home</a><span class="off" title="Not built yet"><span class="lg">Unit </span><span class="sh">U</span>1</span><span class="off" title="Not built yet"><span class="lg">Unit </span><span class="sh">U</span>2</span><a href="Unit-3_Concepts.html" class="on"><span class="lg">Unit </span><span class="sh">U</span>3</a><a href="Unit-4_Concepts.html"><span class="lg">Unit </span><span class="sh">U</span>4</a><span class="sep"></span><a href="Unit-3_Concepts.html" class="on"><span class="lg">Concepts</span><span class="sh">Concepts</span></a><a href="Unit-3_Formulas-and-Methods.html"><span class="lg">Formulas</span><span class="sh">Formulas</span></a><a href="Unit-3_Question-Bank-Solved.html"><span class="lg">Question Bank</span><span class="sh">QB</span></a><details class="idxm"><summary></summary><div class="idxp"><b>On this page</b><a class="i2" href="#a">A. Solid solutions</a><a class="i3" href="#a1">A1. Why start here</a><a class="i3" href="#a2">A2. What is a solid solution</a><a class="i3" href="#a3">A3. Two types</a><a class="i3" href="#a4">A4. Substitutional: disordered and ordered</a><a class="i3" href="#a5">A5. Interstitial</a><a class="i3" href="#a6">A6. Substitutional or interstitial, side by side</a><a class="i3" href="#a7">A7. Limited and complete solubility (picture)</a><a class="i2" href="#b">B. Hume-Rothery rules</a><a class="i3" href="#b1">B1. What the rules decide</a><a class="i3" href="#b2">B2. The four rules</a><a class="i3" href="#b3">B3. Why each rule matters, in one line each</a><a class="i3" href="#b4">B4. The size-factor number</a><a class="i3" href="#b5">B5. Example: Cu and Ni</a><a class="i3" href="#b6">B6. How to use the rules</a><a class="i2" href="#c">C. Phase, equilibrium and phase diagrams</a><a class="i3" href="#c1">C1. Phase, solution, mixture</a><a class="i3" href="#c2">C2. Solubility limit</a><a class="i3" href="#c3">C3. Equilibrium</a><a class="i3" href="#c4">C4. Equilibrium phase diagram</a><a class="i3" href="#c5">C5. Unary diagram (one component)</a><a class="i3" href="#c6">C6. Binary diagram (two components)</a><a class="i2" href="#d">D. Cu-Ni isomorphous diagram and the Gibbs phase rule</a><a class="i3" href="#d1">D1. Isomorphous means complete solubility</a><a class="i3" href="#d2">D2. Three regions</a><a class="i3" href="#d3">D3. Liquidus and solidus</a><a class="i3" href="#d4">D4. Reading the diagram: three rules</a><a class="i3" href="#d5">D5. Rule 1 worked on the slide</a><a class="i3" href="#d6">D6. Effect of temperature and composition</a><a class="i3" href="#d7">D7. Gibbs phase rule</a><a class="i3" href="#d8">D8. Slide example and two more</a><a class="i2" href="#e">E. Tie line and lever rule</a><a class="i3" href="#e1">E1. Tie line</a><a class="i3" href="#e2">E2. Slide example: 35 wt% Ni at 1250 deg C</a><a class="i3" href="#e3">E3. Lever rule: the procedure</a><a class="i3" href="#e4">E4. The equations</a><a class="i3" href="#e5">E5. Why these equations are true (short derivation)</a><a class="i3" href="#e6">E6. Worked example</a><a class="i3" href="#e7">E7. A second pair of readings on the next slide</a><a class="i3" href="#e8">E8. Mass of each phase</a><a class="i2" href="#f">F. Solidification: nucleation and growth</a><a class="i3" href="#f1">F1. Why undercooling is needed</a><a class="i3" href="#f2">F2. Two stages</a><a class="i3" href="#f3">F3. Embryo and nucleus</a><a class="i3" href="#f4">F4. Critical radius</a><a class="i3" href="#f5">F5. Undercooling and nucleus size</a><a class="i3" href="#f6">F6. Homogeneous and heterogeneous nucleation</a><a class="i3" href="#f7">F7. Where controlled nucleation is used</a><a class="i2" href="#g">G. Cast structure, dendrites and grain refinement</a><a class="i3" href="#g1">G1. From crystals to grains</a><a class="i3" href="#g2">G2. Dendrites</a><a class="i3" href="#g3">G3. Three zones of a cast ingot</a><a class="i3" href="#g4">G4. Why each zone forms</a><a class="i3" href="#g5">G5. Equiaxed or columnar</a><a class="i3" href="#g6">G6. Grain refinement</a><a class="i3" href="#g7">G7. Summary of what controls the cast structure</a><a class="i2" href="#h">H. The iron-carbon (Fe-Fe3C) diagram</a><a class="i3" href="#h1">H1. Why this diagram matters</a><a class="i3" href="#h2">H2. Allotropy of pure iron</a><a class="i3" href="#h3">H3. Why the diagram stops at 6.67 wt% C</a><a class="i3" href="#h4">H4. The phases</a><a class="i3" href="#h5">H5. Why austenite dissolves more carbon than ferrite</a><a class="i3" href="#h6">H6. Microconstituents</a><a class="i3" href="#h7">H7. Classification by carbon content</a><a class="i2" href="#i">I. Invariant reactions</a><a class="i3" href="#i1">I1. What an invariant reaction is</a><a class="i3" href="#i2">I2. The three reactions</a><a class="i3" href="#i3">I3. Where they matter</a><a class="i3" href="#i4">I4. Eutectic, eutectoid, peritectic: how to tell them apart</a><a class="i3" href="#i5">I5. Slide wording that disagrees</a><a class="i2" href="#j">J. Microstructure of plain carbon steels (slow cooling)</a><a class="i3" href="#j1">J1. Three kinds of steel</a><a class="i3" href="#j2">J2. Eutectoid steel (0.76 wt% C)</a><a class="i3" href="#j3">J3. What happens at 727 deg C</a><a class="i3" href="#j4">J4. Pearlite</a><a class="i3" href="#j5">J5. Hypo-eutectoid steel</a><a class="i3" href="#j6">J6. Hyper-eutectoid steel</a><a class="i3" href="#j7">J7. Why the cementite network is bad</a><a class="i3" href="#j8">J8. Side-by-side</a><a class="i3" href="#j9">J9. Slow cooling only</a><a class="i3" href="#j10">J10. Phase amounts below 727 deg C: the lever rule applied</a><a class="i2" href="#k">K. TTT diagram</a><a class="i3" href="#k1">K1. Why we need it</a><a class="i3" href="#k2">K2. How the diagram is made</a><a class="i3" href="#k3">K3. Axes and regions</a><a class="i3" href="#k4">K4. Pearlite: coarse and fine</a><a class="i3" href="#k5">K5. Bainite</a><a class="i3" href="#k6">K6. Spheroidite</a><a class="i3" href="#k7">K7. Martensite</a><a class="i3" href="#k8">K8. Summary table</a><a class="i3" href="#k9">K9. Where the course files differ</a><a class="i2" href="#l">L. Continuous cooling curves on the TTT diagram</a><a class="i3" href="#l1">L1. Why cooling curves</a><a class="i3" href="#l2">L2. The eight curves</a><a class="i3" href="#l3">L3. What each curve means</a><a class="i3" href="#l4">L4. Annealing, normalizing, quenching in one line</a><a class="i3" href="#l5">L5. Where the notes and slides differ</a><a class="i2" href="#m">M. Heat treatment and annealing</a><a class="i3" href="#m1">M1. What heat treatment is</a><a class="i3" href="#m2">M2. Objectives</a><a class="i3" href="#m3">M3. Three stages</a><a class="i3" href="#m4">M4. Critical temperatures</a><a class="i3" href="#m5">M5. Annealing</a><a class="i3" href="#m6">M6. The annealing types</a><a class="i3" href="#m7">M7. Everyday picture</a><a class="i3" href="#m8">M8. Where the course files disagree</a><a class="i3" href="#m9">M9. Normalizing</a><a class="i3" href="#m10">M10. Hardening (quenching)</a><a class="i3" href="#m11">M11. Hardenability and the Jominy test</a><a class="i3" href="#m12">M12. Where each treatment sits on the Fe-Fe3C diagram</a><a class="i3" href="#m13">M13. Tempering</a><a class="i2" href="#n">N. Martempering and austempering</a><a class="i3" href="#n1">. Why special quenches</a><a class="i3" href="#n2">. Martempering</a><a class="i3" href="#n3">. Austempering</a><a class="i3" href="#n4">. Martempering and austempering together</a><a class="i2" href="#o">O. Precipitation hardening</a><a class="i3" href="#o1">O1. What it is</a><a class="i3" href="#o2">O2. Three stages</a><a class="i3" href="#o3">O3. Why it hardens</a><a class="i3" href="#o4">O4. Summary</a><a class="i2" href="#p">P. Surface heat treatment</a><a class="i3" href="#s-p1-why-only-the-surface">P1. Why only the surface</a><a class="i3" href="#s-p2-case-hardening">P2. Case hardening</a><a class="i3" href="#s-p3-carburizing">P3. Carburizing</a><a class="i3" href="#s-p4-nitriding">P4. Nitriding</a><a class="i3" href="#s-p5-induction-hardening">P5. Induction hardening</a><a class="i3" href="#s-p6-flame-hardening">P6. Flame hardening</a><a class="i3" href="#s-p7-comparison">P7. Comparison</a></div></details></nav><aside class="idx"><b>On this page</b><a class="i2" href="#a">A. Solid solutions</a><a class="i3" href="#a1">A1. Why start here</a><a class="i3" href="#a2">A2. What is a solid solution</a><a class="i3" href="#a3">A3. Two types</a><a class="i3" href="#a4">A4. Substitutional: disordered and ordered</a><a class="i3" href="#a5">A5. Interstitial</a><a class="i3" href="#a6">A6. Substitutional or interstitial, side by side</a><a class="i3" href="#a7">A7. Limited and complete solubility (picture)</a><a class="i2" href="#b">B. Hume-Rothery rules</a><a class="i3" href="#b1">B1. What the rules decide</a><a class="i3" href="#b2">B2. The four rules</a><a class="i3" href="#b3">B3. Why each rule matters, in one line each</a><a class="i3" href="#b4">B4. The size-factor number</a><a class="i3" href="#b5">B5. Example: Cu and Ni</a><a class="i3" href="#b6">B6. How to use the rules</a><a class="i2" href="#c">C. Phase, equilibrium and phase diagrams</a><a class="i3" href="#c1">C1. Phase, solution, mixture</a><a class="i3" href="#c2">C2. Solubility limit</a><a class="i3" href="#c3">C3. Equilibrium</a><a class="i3" href="#c4">C4. Equilibrium phase diagram</a><a class="i3" href="#c5">C5. Unary diagram (one component)</a><a class="i3" href="#c6">C6. Binary diagram (two components)</a><a class="i2" href="#d">D. Cu-Ni isomorphous diagram and the Gibbs phase rule</a><a class="i3" href="#d1">D1. Isomorphous means complete solubility</a><a class="i3" href="#d2">D2. Three regions</a><a class="i3" href="#d3">D3. Liquidus and solidus</a><a class="i3" href="#d4">D4. Reading the diagram: three rules</a><a class="i3" href="#d5">D5. Rule 1 worked on the slide</a><a class="i3" href="#d6">D6. Effect of temperature and composition</a><a class="i3" href="#d7">D7. Gibbs phase rule</a><a class="i3" href="#d8">D8. Slide example and two more</a><a class="i2" href="#e">E. Tie line and lever rule</a><a class="i3" href="#e1">E1. Tie line</a><a class="i3" href="#e2">E2. Slide example: 35 wt% Ni at 1250 deg C</a><a class="i3" href="#e3">E3. Lever rule: the procedure</a><a class="i3" href="#e4">E4. The equations</a><a class="i3" href="#e5">E5. Why these equations are true (short derivation)</a><a class="i3" href="#e6">E6. Worked example</a><a class="i3" href="#e7">E7. A second pair of readings on the next slide</a><a class="i3" href="#e8">E8. Mass of each phase</a><a class="i2" href="#f">F. Solidification: nucleation and growth</a><a class="i3" href="#f1">F1. Why undercooling is needed</a><a class="i3" href="#f2">F2. Two stages</a><a class="i3" href="#f3">F3. Embryo and nucleus</a><a class="i3" href="#f4">F4. Critical radius</a><a class="i3" href="#f5">F5. Undercooling and nucleus size</a><a class="i3" href="#f6">F6. Homogeneous and heterogeneous nucleation</a><a class="i3" href="#f7">F7. Where controlled nucleation is used</a><a class="i2" href="#g">G. Cast structure, dendrites and grain refinement</a><a class="i3" href="#g1">G1. From crystals to grains</a><a class="i3" href="#g2">G2. Dendrites</a><a class="i3" href="#g3">G3. Three zones of a cast ingot</a><a class="i3" href="#g4">G4. Why each zone forms</a><a class="i3" href="#g5">G5. Equiaxed or columnar</a><a class="i3" href="#g6">G6. Grain refinement</a><a class="i3" href="#g7">G7. Summary of what controls the cast structure</a><a class="i2" href="#h">H. The iron-carbon (Fe-Fe3C) diagram</a><a class="i3" href="#h1">H1. Why this diagram matters</a><a class="i3" href="#h2">H2. Allotropy of pure iron</a><a class="i3" href="#h3">H3. Why the diagram stops at 6.67 wt% C</a><a class="i3" href="#h4">H4. The phases</a><a class="i3" href="#h5">H5. Why austenite dissolves more carbon than ferrite</a><a class="i3" href="#h6">H6. Microconstituents</a><a class="i3" href="#h7">H7. Classification by carbon content</a><a class="i2" href="#i">I. Invariant reactions</a><a class="i3" href="#i1">I1. What an invariant reaction is</a><a class="i3" href="#i2">I2. The three reactions</a><a class="i3" href="#i3">I3. Where they matter</a><a class="i3" href="#i4">I4. Eutectic, eutectoid, peritectic: how to tell them apart</a><a class="i3" href="#i5">I5. Slide wording that disagrees</a><a class="i2" href="#j">J. Microstructure of plain carbon steels (slow cooling)</a><a class="i3" href="#j1">J1. Three kinds of steel</a><a class="i3" href="#j2">J2. Eutectoid steel (0.76 wt% C)</a><a class="i3" href="#j3">J3. What happens at 727 deg C</a><a class="i3" href="#j4">J4. Pearlite</a><a class="i3" href="#j5">J5. Hypo-eutectoid steel</a><a class="i3" href="#j6">J6. Hyper-eutectoid steel</a><a class="i3" href="#j7">J7. Why the cementite network is bad</a><a class="i3" href="#j8">J8. Side-by-side</a><a class="i3" href="#j9">J9. Slow cooling only</a><a class="i3" href="#j10">J10. Phase amounts below 727 deg C: the lever rule applied</a><a class="i2" href="#k">K. TTT diagram</a><a class="i3" href="#k1">K1. Why we need it</a><a class="i3" href="#k2">K2. How the diagram is made</a><a class="i3" href="#k3">K3. Axes and regions</a><a class="i3" href="#k4">K4. Pearlite: coarse and fine</a><a class="i3" href="#k5">K5. Bainite</a><a class="i3" href="#k6">K6. Spheroidite</a><a class="i3" href="#k7">K7. Martensite</a><a class="i3" href="#k8">K8. Summary table</a><a class="i3" href="#k9">K9. Where the course files differ</a><a class="i2" href="#l">L. Continuous cooling curves on the TTT diagram</a><a class="i3" href="#l1">L1. Why cooling curves</a><a class="i3" href="#l2">L2. The eight curves</a><a class="i3" href="#l3">L3. What each curve means</a><a class="i3" href="#l4">L4. Annealing, normalizing, quenching in one line</a><a class="i3" href="#l5">L5. Where the notes and slides differ</a><a class="i2" href="#m">M. Heat treatment and annealing</a><a class="i3" href="#m1">M1. What heat treatment is</a><a class="i3" href="#m2">M2. Objectives</a><a class="i3" href="#m3">M3. Three stages</a><a class="i3" href="#m4">M4. Critical temperatures</a><a class="i3" href="#m5">M5. Annealing</a><a class="i3" href="#m6">M6. The annealing types</a><a class="i3" href="#m7">M7. Everyday picture</a><a class="i3" href="#m8">M8. Where the course files disagree</a><a class="i3" href="#m9">M9. Normalizing</a><a class="i3" href="#m10">M10. Hardening (quenching)</a><a class="i3" href="#m11">M11. Hardenability and the Jominy test</a><a class="i3" href="#m12">M12. Where each treatment sits on the Fe-Fe3C diagram</a><a class="i3" href="#m13">M13. Tempering</a><a class="i2" href="#n">N. Martempering and austempering</a><a class="i3" href="#n1">. Why special quenches</a><a class="i3" href="#n2">. Martempering</a><a class="i3" href="#n3">. Austempering</a><a class="i3" href="#n4">. Martempering and austempering together</a><a class="i2" href="#o">O. Precipitation hardening</a><a class="i3" href="#o1">O1. What it is</a><a class="i3" href="#o2">O2. Three stages</a><a class="i3" href="#o3">O3. Why it hardens</a><a class="i3" href="#o4">O4. Summary</a><a class="i2" href="#p">P. Surface heat treatment</a><a class="i3" href="#s-p1-why-only-the-surface">P1. Why only the surface</a><a class="i3" href="#s-p2-case-hardening">P2. Case hardening</a><a class="i3" href="#s-p3-carburizing">P3. Carburizing</a><a class="i3" href="#s-p4-nitriding">P4. Nitriding</a><a class="i3" href="#s-p5-induction-hardening">P5. Induction hardening</a><a class="i3" href="#s-p6-flame-hardening">P6. Flame hardening</a><a class="i3" href="#s-p7-comparison">P7. Comparison</a></aside><main><h1>Unit 3: Phase Diagrams, Heat Treatment and Structure-Property Correlation - Concepts</h1><p>Material Science and Metallurgy (UE25ME231A)</p><div class="jump"><a href="#a">A. Solid solutions</a><a href="#b">B. Hume-Rothery rules</a><a href="#c">C. Phase, equilibrium and phase diagrams</a><a href="#d">D. Cu-Ni isomorphous diagram and the Gibbs phase rule</a><a href="#e">E. Tie line and lever rule</a><a href="#f">F. Solidification: nucleation and growth</a><a href="#g">G. Cast structure, dendrites and grain refinement</a><a href="#h">H. The iron-carbon (Fe-Fe3C) diagram</a><a href="#i">I. Invariant reactions</a><a href="#j">J. Microstructure of plain carbon steels (slow cooling)</a><a href="#k">K. TTT diagram</a><a href="#l">L. Continuous cooling curves on the TTT diagram</a><a href="#m">M. Heat treatment and annealing</a><a href="#n">N. Martempering and austempering</a><a href="#o">O. Precipitation hardening</a><a href="#p">P. Surface heat treatment</a></div><p>This page is the learning-note side of Unit 3. Each topic goes in small steps, with an everyday example.</p>
+<p>Where a line says it points to the short notes; means the Class-1 slides, page 4 of that deck. Exam-format answers for the question-bank questions are on the Question Bank page.</p>
+<p><strong>Topics on this page so far:</strong> A solid solutions, B Hume-Rothery rules, C phase, equilibrium and phase diagrams.</p>
+<section class="sec"><h2 id="a">A. Solid solutions</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>An alloy is a solid solution of two or more metals, mixed uniformly in the solid state.</p>
+<ul>
+<li><strong>Solvent:</strong> the base metal, the host lattice.</li>
+<li><strong>Solute:</strong> the alloying element, dissolved in the host.</li>
+</ul>
+<h4>2. Types of solid solution</h4>
+<p><strong>A. Substitutional:</strong> the solute atom takes the place of a solvent atom on a normal lattice site.</p>
+<ul>
+<li>Disordered (random): no pattern, common at high temperature.</li>
+<li>Ordered: definite regular positions, seen at lower temperature or fixed atom ratios.</li>
+<li>Examples: Cu in Ni (Monel), brass.</li>
+</ul>
+<p><strong>B. Interstitial:</strong> the solute atom sits in the gaps between solvent atoms.</p>
+<ul>
+<li>The solute must be small: atomic radius below about 1 A.</li>
+<li>Examples: carbon and nitrogen in ferrite harden steel; hydrogen in steel during welding causes embrittlement.</li>
+</ul>
+<h4>3. Substitutional against interstitial</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Substitutional</th>
+<th>Interstitial</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Solute position</td><td data-l="Substitutional">on a lattice site</td><td data-l="Interstitial">in the gaps</td></tr>
+<tr><td data-l="">Solute size</td><td data-l="Substitutional">similar to solvent</td><td data-l="Interstitial">much smaller</td></tr>
+<tr><td data-l="">Sub-types</td><td data-l="Substitutional">disordered, ordered</td><td data-l="Interstitial">none</td></tr>
+<tr><td data-l="">Example</td><td data-l="Substitutional">Cu-Ni</td><td data-l="Interstitial">C in ferrite</td></tr>
+</tbody>
+</table></div>
+<p><strong>Exam-ready conclusion:</strong> a solid solution has one phase with uniformly distributed atoms; substitutional solutes replace solvent atoms, interstitial solutes occupy the gaps.</p>
+</div>
+<div class="sub"><h3 id="a1">A1. Why start here</h3>
+<p>Structure decides properties.</p>
+<p>Change the structure by changing the composition and the heat treatment, and the properties change.</p>
+<p>Example from the slides: a knee-joint replacement.</p>
+<p>The metal parts must resist corrosion and fatigue, so the alloy and its structure are chosen with care.</p>
+</div><div class="sub"><h3 id="a2">A2. What is a solid solution</h3>
+<p>An alloy is a solid solution of two or more metals, mixed uniformly in the solid state.</p>
+<p>Two words to know:</p>
+<ul>
+<li><strong>Solvent:</strong> the base metal, the host lattice.</li>
+<li><strong>Solute:</strong> the alloying element, dissolved in the host.</li>
+</ul>
+<p>Everyday example: sugar stirred into tea.</p>
+<p>Tea is the solvent, sugar is the solute, and you see only one liquid. A solid solution is the same idea with atoms in a crystal.</p>
+</div><div class="sub"><h3 id="a3">A3. Two types</h3>
+<p>Solid solutions are grouped by where the solute atoms sit.</p>
+<ol>
+<li><strong>Substitutional:</strong> the solute atom takes the place of a solvent atom on a normal lattice site.</li>
+<li><strong>Interstitial:</strong> the solute atom sits in the gaps (interstices) between solvent atoms.</li>
+</ol>
+<figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" width="640" role="img" aria-label="Substitutional disordered, substitutional ordered and interstitial solid solutions drawn as atom grids" font-family="sans-serif" font-size="12" fill="none" stroke="currentColor" stroke-width="1.5">
+<g transform="translate(20,10)"><text x="0" y="12" fill="currentColor" stroke="none" font-weight="bold">(a) Substitutional, disordered</text>
+<g stroke="none" fill="#5b7fa8"><circle cx="25" cy="50" r="14"/><circle cx="65" cy="50" r="14"/><circle cx="105" cy="50" r="14"/><circle cx="145" cy="50" r="14"/><circle cx="25" cy="90" r="14"/><circle cx="105" cy="90" r="14"/><circle cx="145" cy="90" r="14"/><circle cx="25" cy="130" r="14"/><circle cx="65" cy="130" r="14"/><circle cx="145" cy="130" r="14"/><circle cx="25" cy="170" r="14"/><circle cx="65" cy="170" r="14"/><circle cx="105" cy="170" r="14"/></g>
+<g stroke="none" fill="#c0392b"><circle cx="65" cy="90" r="12"/><circle cx="105" cy="130" r="12"/><circle cx="145" cy="170" r="12"/></g>
+<text x="0" y="205" fill="currentColor" stroke="none">solute atoms sit at random lattice sites</text></g>
+<g transform="translate(225,10)"><text x="0" y="12" fill="currentColor" stroke="none" font-weight="bold">(b) Substitutional, ordered</text>
+<g stroke="none" fill="#5b7fa8"><circle cx="25" cy="50" r="14"/><circle cx="105" cy="50" r="14"/><circle cx="25" cy="90" r="14"/><circle cx="65" cy="90" r="14"/><circle cx="145" cy="90" r="14"/><circle cx="25" cy="130" r="14"/><circle cx="105" cy="130" r="14"/><circle cx="65" cy="170" r="14"/><circle cx="145" cy="170" r="14"/><circle cx="145" cy="130" r="14"/><circle cx="105" cy="90" r="14"/><circle cx="25" cy="170" r="14"/><circle cx="105" cy="170" r="14"/></g>
+<g stroke="none" fill="#c0392b"><circle cx="65" cy="50" r="12"/><circle cx="145" cy="50" r="12"/><circle cx="65" cy="130" r="12"/></g>
+<text x="0" y="205" fill="currentColor" stroke="none">solute atoms take regular positions</text></g>
+<g transform="translate(430,10)"><text x="0" y="12" fill="currentColor" stroke="none" font-weight="bold">(c) Interstitial</text>
+<g stroke="none" fill="#5b7fa8"><circle cx="25" cy="50" r="20"/><circle cx="105" cy="50" r="20"/><circle cx="25" cy="130" r="20"/><circle cx="105" cy="130" r="20"/></g>
+<g stroke="none" fill="#c0392b"><circle cx="65" cy="90" r="7"/></g>
+<text x="0" y="205" fill="currentColor" stroke="none">small solute fits in the gaps</text></g>
+<g font-size="11" stroke="none" fill="currentColor"><circle cx="455" cy="222" r="5" fill="#5b7fa8"/><text x="465" y="226">solvent (base metal)</text><circle cx="555" cy="222" r="5" fill="#c0392b"/><text x="565" y="226">solute</text></g>
+</svg><figcaption>Substitutional (disordered and ordered) and interstitial solid solutions, drawn as atom grids.</figcaption></figure>
+
+</div><div class="sub"><h3 id="a4">A4. Substitutional: disordered and ordered</h3>
+<p>Substitutional solid solutions have two sub-types.</p>
+<ul>
+<li><strong>Disordered (random):</strong> solute atoms replace solvent atoms with no pattern. Common at high temperature, where thermal motion mixes the atoms.</li>
+<li><strong>Ordered:</strong> solute atoms take definite, regular positions. Seen at lower temperature or at fixed atom ratios.</li>
+</ul>
+<p>Examples quoted in the notes: Monel (copper dissolved in nickel) and brass.</p>
+</div><div class="sub"><h3 id="a5">A5. Interstitial</h3>
+<p>Here the solute atoms do not replace anything.</p>
+<p>They enter the empty spaces of the lattice.</p>
+<p>Those spaces are small, so the solute atom must be small.</p>
+<p>The slides give the rule: atomic radius below about 1 A.</p>
+<p>Transition elements (Fe, Ti, V, Zr) dissolve interstitially very easily.</p>
+<p>Examples from the notes:</p>
+<ul>
+<li>Carbon and nitrogen in ferrite. They harden and strengthen steel.</li>
+<li>Hydrogen in steel during welding. It strains the lattice and causes hydrogen embrittlement.</li>
+</ul>
+</div><div class="sub"><h3 id="a6">A6. Substitutional or interstitial, side by side</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Substitutional</th>
+<th>Interstitial</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Where the solute sits</td><td data-l="Substitutional">on a lattice site, replacing a solvent atom</td><td data-l="Interstitial">in the gaps between solvent atoms</td></tr>
+<tr><td data-l="">Size of solute</td><td data-l="Substitutional">similar to the solvent</td><td data-l="Interstitial">much smaller (radius below about 1 A)</td></tr>
+<tr><td data-l="">Sub-types</td><td data-l="Substitutional">disordered, ordered</td><td data-l="Interstitial">none</td></tr>
+<tr><td data-l="">Example</td><td data-l="Substitutional">Cu in Ni (Monel), brass</td><td data-l="Interstitial">C or N in ferrite</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="a7">A7. Limited and complete solubility (picture)</h3>
+<p>The slides show three cases (Callister figure):</p>
+<ul>
+<li>Liquid copper and liquid nickel mix completely.</li>
+<li>Solid Cu-Ni shows complete solid solubility, atoms on random sites.</li>
+<li>In Cu-Zn alloys with more than 30 % Zn, a second phase appears, because zinc has limited solubility in copper.</li>
+</ul>
+</div></section><section class="sec"><h2 id="b">B. Hume-Rothery rules</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>The Hume-Rothery rules are four rules that decide when one metal can dissolve substitutionally in another. If all four are met, solubility can be large, even complete.</p>
+<h4>2. The four rules</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Rule</th>
+<th>Condition</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Rule">Size factor</td><td data-l="Condition">radii differ by no more than about 15 %</td><td data-l="Reason">a big gap strains the lattice</td></tr>
+<tr><td data-l="Rule">Crystal structure</td><td data-l="Condition">same structure (both FCC, BCC or HCP)</td><td data-l="Reason">with different structures solubility must stop somewhere</td></tr>
+<tr><td data-l="Rule">Valence</td><td data-l="Condition">same valence</td><td data-l="Reason">a different valence favours compounds</td></tr>
+<tr><td data-l="Rule">Electronegativity</td><td data-l="Condition">nearly equal</td><td data-l="Reason">a large difference favours compounds, for example NaCl</td></tr>
+</tbody>
+</table></div>
+<h4>3. Size-factor formula</h4>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> size difference</mtext><mo>=</mo><mfrac><mrow><msub><mi>r</mi><mrow><mi>s</mi><mi>o</mi><mi>l</mi><mi>u</mi><mi>t</mi><mi>e</mi></mrow></msub><mo>−</mo><msub><mi>r</mi><mrow><mi>s</mi><mi>o</mi><mi>l</mi><mi>v</mi><mi>e</mi><mi>n</mi><mi>t</mi></mrow></msub></mrow><msub><mi>r</mi><mrow><mi>s</mi><mi>o</mi><mi>l</mi><mi>v</mi><mi>e</mi><mi>n</mi><mi>t</mi></mrow></msub></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\%\ \text{size difference}=\dfrac{r_{solute}-r_{solvent}}{r_{solvent}}\times100</annotation></semantics></math></span></p>
+<p>The rule asks for a value within 15 %.</p>
+<h4>4. Example</h4>
+<p>Cu and Ni have similar atomic size and both are FCC, so they dissolve completely in the liquid and the solid.</p>
+<p><strong>Exam-ready conclusion:</strong> maximum substitutional solubility is favoured by similar atomic size, the same crystal structure, the same valence and similar electronegativity.</p>
+</div>
+<div class="sub"><h3 id="b1">B1. What the rules decide</h3>
+<p>The four rules say when one metal can dissolve substitutionally in another.</p>
+<p>If all four are met, solubility can be large, even complete.</p>
+<p>If one is badly broken, solubility is limited or a compound forms.</p>
+</div><div class="sub"><h3 id="b2">B2. The four rules</h3>
+<ol>
+<li><strong>Size factor:</strong> the atomic radii must differ by no more than about 15 %.</li>
+<li><strong>Crystal structure:</strong> the two metals must have the same crystal structure (both FCC, both BCC or both HCP).</li>
+<li><strong>Valence:</strong> the two must have the same valence.</li>
+<li><strong>Electronegativity:</strong> the electronegativity values must be nearly equal.</li>
+</ol>
+</div><div class="sub"><h3 id="b3">B3. Why each rule matters, in one line each</h3>
+<ul>
+<li><strong>Size:</strong> a big size gap strains the lattice, and the strain energy becomes too high.</li>
+<li><strong>Crystal structure:</strong> with different structures the solubility must stop at some point, where the structure changes.</li>
+<li><strong>Valence:</strong> different valence favours compounds over solutions.</li>
+<li><strong>Electronegativity:</strong> a large difference makes electrons transfer, which forms compounds. Na and Cl forming NaCl is the notes' example.</li>
+</ul>
+</div><div class="sub"><h3 id="b4">B4. The size-factor number</h3>
+<p>The percentage size difference is</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> size difference</mtext><mo>=</mo><mfrac><mrow><msub><mi>r</mi><mrow><mi>s</mi><mi>o</mi><mi>l</mi><mi>u</mi><mi>t</mi><mi>e</mi></mrow></msub><mo>−</mo><msub><mi>r</mi><mrow><mi>s</mi><mi>o</mi><mi>l</mi><mi>v</mi><mi>e</mi><mi>n</mi><mi>t</mi></mrow></msub></mrow><msub><mi>r</mi><mrow><mi>s</mi><mi>o</mi><mi>l</mi><mi>v</mi><mi>e</mi><mi>n</mi><mi>t</mi></mrow></msub></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\%\ \text{size difference}=\dfrac{r_{solute}-r_{solvent}}{r_{solvent}}\times100</annotation></semantics></math></span></p>
+<p>and the rule asks for a value within 15 %.</p>
+<p>(This formula is written out in the Q&amp;A model answer; the notes and slides state the 15 % limit.)</p>
+</div><div class="sub"><h3 id="b5">B5. Example: Cu and Ni</h3>
+<p>Copper and nickel have similar atomic sizes (Q&amp;A answer 1) and the same crystal structure, FCC.</p>
+<p>They dissolve in each other completely, in the liquid and in the solid state.</p>
+<p>This is why Cu-Ni is the standard isomorphous example (topic D).</p>
+</div><div class="sub"><h3 id="b6">B6. How to use the rules</h3>
+<p>For two candidate metals, check the rules in this order, and stop at the first clear failure:</p>
+<ol>
+<li>Size: compute the percentage difference.</li>
+<li>Crystal structure: same or different.</li>
+<li>Valence: same or different.</li>
+<li>Electronegativity: close or far apart.</li>
+</ol>
+<p>All four satisfied: expect extensive substitutional solid solution.</p>
+</div></section><section class="sec"><h2 id="c">C. Phase, equilibrium and phase diagrams</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definitions</h4>
+<ul>
+<li><strong>Phase:</strong> a homogeneous portion of a system with uniform physical and chemical properties. Ice, water and steam are three phases.</li>
+<li><strong>Solution:</strong> a single phase. <strong>Mixture:</strong> more than one phase.</li>
+<li><strong>Solubility limit:</strong> the largest solute concentration that still gives a single-phase solution at a given temperature. Beyond it a second phase appears.</li>
+<li><strong>Equilibrium:</strong> the free energy of the system is at a minimum for the given temperature, pressure and composition.</li>
+<li><strong>Equilibrium phase diagram:</strong> shows which phases exist for given temperature and composition under slow cooling; also called a constitutional diagram.</li>
+</ul>
+<h4>2. Example</h4>
+<p>Sugar in water at 20 deg C: solubility limit 64 wt% sugar. Below it, one phase (syrup). Above it, two phases (saturated syrup and solid sugar).</p>
+<h4>3. What a phase diagram gives</h4>
+<ol>
+<li>Phases present at each temperature and composition.</li>
+<li>Solid solubility of one element in another.</li>
+<li>Start and end of solidification (liquidus and solidus).</li>
+<li>Amount of each phase by the lever rule.</li>
+</ol>
+<p>Limitation: it gives equilibrium only, not the rate of transformation. TTT diagrams cover the rate.</p>
+<h4>4. Unary and binary diagrams</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Unary</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Components</td><td data-l="Unary">one (water)</td><td data-l="Binary">two (Cu-Ni)</td></tr>
+<tr><td data-l="">Variables</td><td data-l="Unary">temperature and pressure</td><td data-l="Binary">temperature and composition (pressure fixed at 1 atm)</td></tr>
+</tbody>
+</table></div>
+<p><strong>Exam-ready conclusion:</strong> a phase diagram is a map of the stable phases for temperature and composition at equilibrium; it gives phases, solubility limits, solidification range and phase amounts, but not transformation rates.</p>
+</div>
+<div class="sub"><h3 id="c1">C1. Phase, solution, mixture</h3>
+<ul>
+<li><strong>Phase:</strong> a homogeneous portion of a system with uniform physical and chemical properties. Ice, liquid water and steam are three phases of the same substance.</li>
+<li><strong>Solution:</strong> a single phase (solid, liquid or gas).</li>
+<li><strong>Mixture:</strong> more than one phase.</li>
+</ul>
+</div><div class="sub"><h3 id="c2">C2. Solubility limit</h3>
+<p>The solubility limit is the largest solute concentration that still gives a single-phase solution at a given temperature.</p>
+<p>Go beyond it and a second phase appears.</p>
+<p>Examples from the slides:</p>
+<ul>
+<li>Water and alcohol: unlimited solubility.</li>
+<li>Salt and water: limited solubility.</li>
+<li>Oil and water: almost none.</li>
+</ul>
+<p>Worked example from the slides, sugar and water at 20 deg C:</p>
+<p>the solubility limit is 64 wt% sugar.</p>
+<p>Below 64 wt% sugar you have one phase, a syrup (liquid solution).</p>
+<p>Above 64 wt% you have two phases: the saturated syrup and solid sugar.</p>
+</div><div class="sub"><h3 id="c3">C3. Equilibrium</h3>
+<p>A system is at equilibrium when its free energy is at a minimum for the given temperature, pressure and composition.</p>
+<p>Change T, P or composition, and the free energy rises.</p>
+<p>The system then moves to a new state with lower free energy.</p>
+</div><div class="sub"><h3 id="c4">C4. Equilibrium phase diagram</h3>
+<p>An equilibrium (or constitutional) phase diagram shows which phases exist, for given temperature and composition, under slow cooling.</p>
+<p>It is a collection of solubility-limit curves.</p>
+<p>What it tells you:</p>
+<ol>
+<li>The phases present at each composition and temperature.</li>
+<li>The solid solubility of one element in another.</li>
+<li>The temperature where solidification starts (liquidus) and where it ends (solidus).</li>
+<li>The amount of each phase, by the lever rule (topic E).</li>
+</ol>
+<p>What it does not tell you: how fast a transformation happens.</p>
+<p>It gives equilibrium only, not the rate.</p>
+<p>That gap is filled by the TTT diagrams in topic K.</p>
+</div><div class="sub"><h3 id="c5">C5. Unary diagram (one component)</h3>
+<p>A system with one component, such as water, has a unary phase diagram.</p>
+<p>The variables are temperature and pressure.</p>
+<figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" role="img" aria-label="Schematic pressure-temperature phase diagram of water: solid, liquid and vapour regions" font-family="sans-serif" font-size="12" fill="none" stroke="currentColor" stroke-width="1.8">
+<line x1="60" y1="260" x2="500" y2="260"/><line x1="60" y1="260" x2="60" y2="20"/>
+<text x="260" y="292" fill="currentColor" stroke="none">Temperature (deg C)</text>
+<text x="2" y="16" fill="currentColor" stroke="none">Pressure (atm, log scale)</text>
+<path d="M200 260 L200 150" stroke="#3b6fd4" stroke-width="2.4"/>
+<path d="M200 150 Q330 130 470 40" stroke="#2f855a" stroke-width="2.4"/>
+<path d="M200 150 Q140 190 100 260" stroke="#b5652a" stroke-width="2.4" stroke-dasharray="0"/>
+<text x="95" y="120" fill="currentColor" stroke="none" font-weight="bold">Solid (ice)</text>
+<text x="250" y="90" fill="currentColor" stroke="none" font-weight="bold">Liquid (water)</text>
+<text x="330" y="215" fill="currentColor" stroke="none" font-weight="bold">Vapour (steam)</text>
+<circle cx="200" cy="150" r="4" fill="currentColor" stroke="none"/>
+<text x="206" y="168" fill="currentColor" stroke="none" font-size="11">triple point</text>
+<text x="196" y="276" fill="currentColor" stroke="none" font-size="11">0</text>
+<text x="395" y="276" fill="currentColor" stroke="none" font-size="11">100</text>
+<line x1="400" y1="256" x2="400" y2="264"/>
+<text x="64" y="250" fill="currentColor" stroke="none" font-size="11">schematic, not to scale</text>
+</svg><figcaption>Pressure-temperature diagram of water (schematic): solid, liquid and vapour regions meet at the triple point.</figcaption></figure>
+
+</div><div class="sub"><h3 id="c6">C6. Binary diagram (two components)</h3>
+<p>A binary diagram has two components.</p>
+<p>The variables are temperature and composition.</p>
+<p>Pressure is fixed at 1 atm, almost always.</p>
+<p>Next topic: the Cu-Ni isomorphous diagram, the Gibbs phase rule and the lever rule.</p>
+</div></section><section class="sec"><h2 id="d">D. Cu-Ni isomorphous diagram and the Gibbs phase rule</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definitions</h4>
+<ul>
+<li><strong>Isomorphous system:</strong> the two components dissolve in each other completely, in the liquid and in the solid. Cu-Ni is the classic example.</li>
+<li><strong>Liquidus:</strong> the line below which solidification begins; above it the alloy is fully liquid.</li>
+<li><strong>Solidus:</strong> the line at and below which the alloy is completely solid.</li>
+</ul>
+<h4>2. Regions of the Cu-Ni diagram</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Region</th>
+<th>Phases</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Region">L</td><td data-l="Phases">liquid</td><td data-l="Where">high temperature</td></tr>
+<tr><td data-l="Region">alpha + L</td><td data-l="Phases">liquid and solid</td><td data-l="Where">between liquidus and solidus</td></tr>
+<tr><td data-l="Region">alpha</td><td data-l="Phases">solid solution</td><td data-l="Where">low temperature</td></tr>
+</tbody>
+</table></div>
+<p>A pure metal freezes at one temperature (Cu 1085 deg C, Ni 1453 deg C on the slide); an alloy freezes over a range.</p>
+<h4>3. Reading the diagram</h4>
+<ol>
+<li>Temperature and composition C0 give the phases present.</li>
+<li>They also give the composition of each phase (tie line).</li>
+<li>They also give the amount of each phase (lever rule).</li>
+</ol>
+<h4>4. Gibbs phase rule</h4>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>+</mo><mi>F</mi><mo>=</mo><mi>C</mi><mo>+</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">P+F=C+N</annotation></semantics></math></span></p>
+<p>P phases present, F degrees of freedom, C components, N non-compositional variables (temperature and pressure). At constant pressure N = 1:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>+</mo><mi>F</mi><mo>=</mo><mi>C</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">P+F=C+1</annotation></semantics></math></span></p>
+<p>Example: Cu-Ag single phase, C = 2, P = 1, so F = 2 + 1 - 1 = 2.</p>
+<p><strong>Exam-ready conclusion:</strong> the Cu-Ni diagram has liquid, alpha + L and alpha regions; the phase rule at constant pressure is P + F = C + 1.</p>
+</div>
+<div class="sub"><h3 id="d1">D1. Isomorphous means complete solubility</h3>
+<p>In a binary isomorphous system the two components dissolve in each other completely, in the liquid and in the solid.</p>
+<p>Copper-nickel (Cu-Ni) is the classic example.</p>
+</div><div class="sub"><h3 id="d2">D2. Three regions</h3>
+<p>The Cu-Ni diagram has three regions:</p>
+<ol>
+<li><strong>Liquid (L):</strong> high temperature.</li>
+<li><strong>alpha + L:</strong> the two-phase "mushy" zone between the liquidus and the solidus.</li>
+<li><strong>alpha:</strong> a single-phase solid solution at low temperature.</li>
+</ol>
+</div><div class="sub"><h3 id="d3">D3. Liquidus and solidus</h3>
+<ul>
+<li><strong>Liquidus:</strong> below this line solidification begins. Above it the alloy is fully liquid.</li>
+<li><strong>Solidus:</strong> at and below this line the alloy is completely solid. Above it, melting has begun.</li>
+</ul>
+<p>So the freezing of an alloy covers a range of temperature, from the liquidus down to the solidus.</p>
+<p>(A pure metal freezes at one temperature. The melting points on the slide: Cu 1085 deg C, Ni 1453 deg C.)</p>
+</div><div class="sub"><h3 id="d4">D4. Reading the diagram: three rules</h3>
+<p>The slides give three rules ( to).</p>
+<p>Rule 1 says: if you know the temperature and the composition C0, you know which phases are present.</p>
+<p>Rule 2 says: you also know the composition of each phase.</p>
+<p>Rule 3 says: you also know the amount of each phase.</p>
+<p>Rule 1 is explained here. Rules 2 and 3 are in topic E.</p>
+</div><div class="sub"><h3 id="d5">D5. Rule 1 worked on the slide</h3>
+<p>Slide example: two points of the Cu-Ni diagram.</p>
+<ul>
+<li>Point A: 1100 deg C, 60 wt% Ni. It lies in the alpha region, so only alpha is present.</li>
+<li>Point B: 1250 deg C, 35 wt% Ni. It lies in the alpha + L region, so both alpha and L are present.</li>
+</ul>
+<p>(The slide marks which region each point is in; this note repeats those readings.)</p>
+</div><div class="sub"><h3 id="d6">D6. Effect of temperature and composition</h3>
+<p>A change of temperature at fixed composition can move the alloy from one region to another (path A to B on the slide).</p>
+<p>A change of composition at fixed temperature can do the same (path B to C).</p>
+</div><div class="sub"><h3 id="d7">D7. Gibbs phase rule</h3>
+<p>The rule is</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>+</mo><mi>F</mi><mo>=</mo><mi>C</mi><mo>+</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">P+F=C+N</annotation></semantics></math></span></p>
+<p>and the terms mean:</p>
+<ul>
+<li><strong>P:</strong> number of phases present.</li>
+<li><strong>F:</strong> degrees of freedom, the variables (temperature, pressure, composition) you can change without changing the phases present.</li>
+<li><strong>C:</strong> number of components.</li>
+<li><strong>N:</strong> number of non-compositional variables, here temperature and pressure.</li>
+</ul>
+<p>At constant pressure (1 atm), N = 1 and the rule becomes</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>+</mo><mi>F</mi><mo>=</mo><mi>C</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">P+F=C+1</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="d8">D8. Slide example and two more</h3>
+<p>Slide example: a Cu-Ag alloy, single phase, N = 1 (temperature only), C = 2, P = 1.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo>=</mo><mi>C</mi><mo>+</mo><mi>N</mi><mo>−</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">F=C+N-P</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo>=</mo><mn>2</mn><mo>+</mo><mn>1</mn><mo>−</mo><mn>1</mn><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">F=2+1-1=2</annotation></semantics></math></span></p>
+<p>The same rule applied to the two-phase region of a binary diagram (C = 2, N = 1, P = 2):</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo>=</mo><mn>2</mn><mo>+</mo><mn>1</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">F=2+1-2=1</annotation></semantics></math></span></p>
+<p>Meaning: at a chosen temperature inside the two-phase region the phase compositions are fixed. This is why a tie line exists at each temperature.</p>
+<p>(The two-phase case applies the rule the slide gives; the slide itself works only the single-phase case.)</p>
+</div></section><section class="sec"><h2 id="e">E. Tie line and lever rule</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Tie line</h4>
+<p>In a two-phase region:</p>
+<ol>
+<li>Draw a horizontal line at the alloy temperature across the region.</li>
+<li>Read the composition where it meets the left boundary and the right boundary.</li>
+<li>The two ends give the phase compositions.</li>
+</ol>
+<p>Slide example: 35 wt% Ni at 1250 deg C gives <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>L</mi></msub><mo>=</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">C_L=32</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>=</mo><mn>43</mn></mrow><annotation encoding="application/x-tex">C_\alpha=43</annotation></semantics></math></span> wt% Ni.</p>
+<h4>2. Lever rule</h4>
+<p>The fraction of a phase is the lever arm on the opposite side divided by the whole tie line.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mn>0</mn></msub></mrow><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow></mfrac><mspace width="2em"/><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow></mfrac><mspace width="2em"/><msub><mi>W</mi><mi>L</mi></msub><mo>+</mo><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">W_L=\dfrac{C_\alpha-C_0}{C_\alpha-C_L}\qquad W_\alpha=\dfrac{C_0-C_L}{C_\alpha-C_L}\qquad W_L+W_\alpha=1</annotation></semantics></math></span></p>
+<p>Mass of a phase = fraction x total mass.</p>
+<h4>3. Derivation (mass balance; a step the slides skip)</h4>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><msub><mi>W</mi><mi>L</mi></msub><msub><mi>C</mi><mi>L</mi></msub><mo>+</mo><msub><mi>W</mi><mi>α</mi></msub><msub><mi>C</mi><mi>α</mi></msub><mo separator="true">,</mo><mspace width="1em"/><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mn>1</mn><mo>−</mo><msub><mi>W</mi><mi>L</mi></msub><mtext> </mtext><mo>⇒</mo><mtext> </mtext><msub><mi>W</mi><mi>L</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mn>0</mn></msub></mrow><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">C_0=W_LC_L+W_\alpha C_\alpha,\quad W_\alpha=1-W_L\ \Rightarrow\ W_L=\dfrac{C_\alpha-C_0}{C_\alpha-C_L}</annotation></semantics></math></span></p>
+<h4>4. Worked example</h4>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>=</mo><mfrac><mrow><mn>43</mn><mo>−</mo><mn>35</mn></mrow><mrow><mn>43</mn><mo>−</mo><mn>32</mn></mrow></mfrac><mo>=</mo><mn>0.727</mn><mspace width="2em"/><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><mn>35</mn><mo>−</mo><mn>32</mn></mrow><mrow><mn>43</mn><mo>−</mo><mn>32</mn></mrow></mfrac><mo>=</mo><mn>0.273</mn></mrow><annotation encoding="application/x-tex">W_L=\dfrac{43-35}{43-32}=0.727\qquad W_\alpha=\dfrac{35-32}{43-32}=0.273</annotation></semantics></math></span></p>
+<p>So 72.7 % liquid and 27.3 % alpha. reads the same tie line as 31.5 and 42.5, giving 68 % and 32 %; state which reading you use.</p>
+<p><strong>Exam-ready conclusion:</strong> the tie line gives the compositions of the two phases and the lever rule gives their amounts.</p>
+</div>
+<div class="sub"><h3 id="e1">E1. Tie line</h3>
+<p>In a two-phase region, the compositions of the two phases are read with a tie line.</p>
+<ol>
+<li>Draw a horizontal line (constant temperature) across the two-phase region at the alloy's temperature.</li>
+<li>Where it meets the phase boundary on the left, read that composition.</li>
+<li>Where it meets the boundary on the right, read that composition.</li>
+</ol>
+<p>The two ends give the composition of each phase.</p>
+</div><div class="sub"><h3 id="e2">E2. Slide example: 35 wt% Ni at 1250 deg C</h3>
+<figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" width="560" role="img" aria-label="Part of the copper-nickel diagram with a tie line at 1250 deg C for a 35 wt% Ni alloy" font-family="sans-serif" font-size="12" fill="none" stroke="currentColor" stroke-width="1.6">
+<line x1="60" y1="270" x2="520" y2="270"/><line x1="60" y1="270" x2="60" y2="30"/>
+<polyline points="60,184 244,126 520,59" stroke="#c0392b" stroke-width="2.4"/>
+<polyline points="60,212 413,126 520,102" stroke="#b5652a" stroke-width="2.4"/>
+<text x="120" y="75" fill="#c0392b" stroke="none" font-weight="bold" font-size="16">L</text>
+<text x="450" y="200" fill="#b5652a" stroke="none" font-weight="bold" font-size="16">alpha</text>
+<text x="215" y="190" fill="currentColor" stroke="none" font-weight="bold">alpha + L</text>
+<text x="400" y="60" fill="#c0392b" stroke="none" font-size="11">liquidus</text>
+<text x="440" y="150" fill="#b5652a" stroke="none" font-size="11">solidus</text>
+<line x1="60" y1="126" x2="413" y2="126" stroke-dasharray="4 4" stroke-opacity=".5"/>
+<line x1="244" y1="126" x2="413" y2="126" stroke-width="4" stroke="#7a5bc7"/>
+<circle cx="244" cy="126" r="4" fill="#c0392b" stroke="none"/><circle cx="413" cy="126" r="4" fill="#b5652a" stroke="none"/><circle cx="290" cy="126" r="4" fill="currentColor" stroke="none"/>
+<line x1="244" y1="126" x2="244" y2="270" stroke-dasharray="3 3" stroke-opacity=".6"/><line x1="290" y1="59" x2="290" y2="270" stroke-dasharray="3 3" stroke-opacity=".6"/><line x1="413" y1="126" x2="413" y2="270" stroke-dasharray="3 3" stroke-opacity=".6"/>
+<circle cx="290" cy="59" r="4" fill="currentColor" stroke="none"/><text x="298" y="63" fill="currentColor" stroke="none">A (1320 deg C): liquid only</text>
+<circle cx="290" cy="184" r="4" fill="currentColor" stroke="none"/><text x="298" y="188" fill="currentColor" stroke="none">B (1190 deg C): alpha only</text>
+<text x="282" y="117" fill="currentColor" stroke="none">C0</text>
+<text x="210" y="288" fill="currentColor" stroke="none">C_L = 32</text><text x="284" y="302" fill="currentColor" stroke="none">35</text><text x="383" y="288" fill="currentColor" stroke="none">C_alpha = 43</text>
+<text x="215" y="322" fill="currentColor" stroke="none">Composition (wt% Ni)</text>
+<text x="2" y="130" fill="currentColor" stroke="none" font-size="11">1250 C</text>
+<text x="52" y="288" fill="currentColor" stroke="none">20</text><text x="508" y="288" fill="currentColor" stroke="none">50</text>
+<text x="62" y="16" fill="currentColor" stroke="none" font-size="11">Cu-Ni, window 20 to 50 wt% Ni (schematic; 32, 35, 43 and points A, B from the slides)</text>
+</svg><figcaption>Cu-Ni window with the tie line at 1250 deg C for a 35 wt% Ni alloy (values).</figcaption></figure>
+
+<p>At 1250 deg C (point C on the slide) both alpha and liquid are present.</p>
+<p>The tie line gives:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>C</mi><mi>L</mi></msub><mo>=</mo><mn>32</mn><mtext> wt% Ni</mtext></mrow><annotation encoding="application/x-tex">C_L=32\ \text{wt\% Ni}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>=</mo><mn>43</mn><mtext> wt% Ni</mtext></mrow><annotation encoding="application/x-tex">C_\alpha=43\ \text{wt\% Ni}</annotation></semantics></math></span></p>
+<p>At 1320 deg C (point A) only liquid is present, so C_L = C0 = 35 wt% Ni.</p>
+<p>At 1190 deg C (point B) only alpha is present, so C_alpha = C0 = 35 wt% Ni.</p>
+</div><div class="sub"><h3 id="e3">E3. Lever rule: the procedure</h3>
+<p>The slides give the steps:</p>
+<ol>
+<li>Construct the tie line across the two-phase region at the alloy's temperature.</li>
+<li>Locate the overall alloy composition C0 on the tie line.</li>
+<li>The fraction of one phase is the length of the tie line from C0 to the boundary of the other phase, divided by the length of the whole tie line.</li>
+<li>Find the other phase the same way.</li>
+<li>For percentages, multiply by 100.</li>
+</ol>
+<p>On a weight-percent axis the fractions are mass fractions.</p>
+<p>Mass of a phase = phase fraction multiplied by total alloy mass.</p>
+<p>Memory aid: the amount of a phase is the lever arm on the opposite side.</p>
+</div><div class="sub"><h3 id="e4">E4. The equations</h3>
+<p>For a liquid L and a solid alpha:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mn>0</mn></msub></mrow><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_L=\dfrac{C_\alpha-C_0}{C_\alpha-C_L}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_\alpha=\dfrac{C_0-C_L}{C_\alpha-C_L}</annotation></semantics></math></span></p>
+<p>and the two fractions add to 1:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>+</mo><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">W_L+W_\alpha=1</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="e5">E5. Why these equations are true (short derivation)</h3>
+<p>The slides state the rule without a derivation, so this step is filled in from mass balance (a step the slides skip).</p>
+<p>Total mass balance:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>+</mo><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">W_L+W_\alpha=1</annotation></semantics></math></span></p>
+<p>Balance of the component (here nickel):</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><msub><mi>W</mi><mi>L</mi></msub><msub><mi>C</mi><mi>L</mi></msub><mo>+</mo><msub><mi>W</mi><mi>α</mi></msub><msub><mi>C</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">C_0=W_LC_L+W_\alpha C_\alpha</annotation></semantics></math></span></p>
+<p>Replace W_alpha by 1 minus W_L:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>=</mo><msub><mi>W</mi><mi>L</mi></msub><msub><mi>C</mi><mi>L</mi></msub><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msub><mi>W</mi><mi>L</mi></msub><mo stretchy="false">)</mo><msub><mi>C</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">C_0=W_LC_L+(1-W_L)C_\alpha</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mn>0</mn></msub></mrow><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_L=\dfrac{C_\alpha-C_0}{C_\alpha-C_L}</annotation></semantics></math></span></p>
+<p>and then W_alpha follows from W_L + W_alpha = 1.</p>
+</div><div class="sub"><h3 id="e6">E6. Worked example</h3>
+<p>Given: C0 = 35 wt% Ni, 1250 deg C, C_L = 32, C_alpha = 43.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>=</mo><mfrac><mrow><mn>43</mn><mo>−</mo><mn>35</mn></mrow><mrow><mn>43</mn><mo>−</mo><mn>32</mn></mrow></mfrac><mo>=</mo><mfrac><mn>8</mn><mn>11</mn></mfrac><mo>=</mo><mn>0.727</mn></mrow><annotation encoding="application/x-tex">W_L=\dfrac{43-35}{43-32}=\dfrac{8}{11}=0.727</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><mn>35</mn><mo>−</mo><mn>32</mn></mrow><mrow><mn>43</mn><mo>−</mo><mn>32</mn></mrow></mfrac><mo>=</mo><mfrac><mn>3</mn><mn>11</mn></mfrac><mo>=</mo><mn>0.273</mn></mrow><annotation encoding="application/x-tex">W_\alpha=\dfrac{35-32}{43-32}=\dfrac{3}{11}=0.273</annotation></semantics></math></span></p>
+<p>So 73 wt% liquid and 27 wt% alpha (the slide's result, recomputed).</p>
+<p>Check: 0.727 + 0.273 = 1.</p>
+</div><div class="sub"><h3 id="e7">E7. A second pair of readings on the next slide</h3>
+<p>repeats the example with C_alpha = 42.5 and C_L = 31.5 wt% Ni (the Callister reading at 1250 deg C):</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>=</mo><mfrac><mrow><mn>42.5</mn><mo>−</mo><mn>35</mn></mrow><mrow><mn>42.5</mn><mo>−</mo><mn>31.5</mn></mrow></mfrac><mo>=</mo><mfrac><mn>7.5</mn><mn>11</mn></mfrac><mo>=</mo><mn>0.68</mn></mrow><annotation encoding="application/x-tex">W_L=\dfrac{42.5-35}{42.5-31.5}=\dfrac{7.5}{11}=0.68</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><mn>35</mn><mo>−</mo><mn>31.5</mn></mrow><mrow><mn>42.5</mn><mo>−</mo><mn>31.5</mn></mrow></mfrac><mo>=</mo><mfrac><mn>3.5</mn><mn>11</mn></mfrac><mo>=</mo><mn>0.32</mn></mrow><annotation encoding="application/x-tex">W_\alpha=\dfrac{35-31.5}{42.5-31.5}=\dfrac{3.5}{11}=0.32</annotation></semantics></math></span></p>
+<p>So 68 wt% liquid and 32 wt% alpha.</p>
+<p>The two slides read the same tie line to slightly different values, 32 and 43, 31.5 and 42.5.</p>
+<p>This is a reading difference, not a different method. It is logged under Flagged in progress.md; in exam answers state which reading you use.</p>
+</div><div class="sub"><h3 id="e8">E8. Mass of each phase</h3>
+<p>If the total alloy mass is M, then</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>M</mi><mi>L</mi></msub><mo>=</mo><msub><mi>W</mi><mi>L</mi></msub><mtext> </mtext><mi>M</mi></mrow><annotation encoding="application/x-tex">M_L=W_L\,M</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>M</mi><mi>α</mi></msub><mo>=</mo><msub><mi>W</mi><mi>α</mi></msub><mtext> </mtext><mi>M</mi></mrow><annotation encoding="application/x-tex">M_\alpha=W_\alpha\,M</annotation></semantics></math></span></p>
+<p>Example: M = 10 kg of the 35 wt% Ni alloy at 1250 deg C (readings 32 and 43):</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>M</mi><mi>L</mi></msub><mo>=</mo><mn>0.727</mn><mo>×</mo><mn>10</mn><mo>=</mo><mn>7.27</mn><mtext> kg</mtext></mrow><annotation encoding="application/x-tex">M_L=0.727\times10=7.27\ \text{kg}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>M</mi><mi>α</mi></msub><mo>=</mo><mn>0.273</mn><mo>×</mo><mn>10</mn><mo>=</mo><mn>2.73</mn><mtext> kg</mtext></mrow><annotation encoding="application/x-tex">M_\alpha=0.273\times10=2.73\ \text{kg}</annotation></semantics></math></span></p>
+</div></section><section class="sec"><h2 id="f">F. Solidification: nucleation and growth</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>Solidification is the change from liquid to solid by nucleation and growth.</p>
+<ol>
+<li><strong>Nucleation:</strong> tiny stable solid nuclei form in the liquid.</li>
+<li><strong>Growth:</strong> each nucleus grows by adding atoms until neighbouring crystals meet.</li>
+</ol>
+<h4>2. Undercooling</h4>
+<p>At the melting point liquid and solid have equal free energy, so nothing freezes. The liquid must cool below it:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><msub><mi>T</mi><mi>m</mi></msub><mo>−</mo><msub><mi>T</mi><mrow><mi>a</mi><mi>c</mi><mi>t</mi><mi>u</mi><mi>a</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta T=T_m-T_{actual}</annotation></semantics></math></span></p>
+<h4>3. Embryo and nucleus</h4>
+<ul>
+<li><strong>Embryo:</strong> a cluster smaller than the critical size, unstable.</li>
+<li><strong>Nucleus:</strong> a cluster larger than the critical size, stable and growing.</li>
+</ul>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>G</mi><mo>=</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>π</mi><msup><mi>r</mi><mn>3</mn></msup><mi mathvariant="normal">Δ</mi><msub><mi>G</mi><mi>v</mi></msub><mo>+</mo><mn>4</mn><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup><msub><mi>γ</mi><mrow><mi>s</mi><mi>l</mi></mrow></msub><mspace width="2em"/><msup><mi>r</mi><mo>∗</mo></msup><mo>=</mo><mfrac><mrow><mn>2</mn><msub><mi>γ</mi><mrow><mi>s</mi><mi>l</mi></mrow></msub><msub><mi>T</mi><mi>m</mi></msub></mrow><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mi>f</mi></msub><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\Delta G=\dfrac43\pi r^3\Delta G_v+4\pi r^2\gamma_{sl}\qquad r^*=\dfrac{2\gamma_{sl}T_m}{\Delta H_f\,\Delta T}</annotation></semantics></math></span></p>
+<p>More undercooling gives a smaller critical radius, so nucleation is easier.</p>
+<h4>4. Homogeneous and heterogeneous nucleation</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Homogeneous</th>
+<th>Heterogeneous</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Where</td><td data-l="Homogeneous">inside the bulk liquid</td><td data-l="Heterogeneous">on impurities, mould walls, inoculants</td></tr>
+<tr><td data-l="">Undercooling</td><td data-l="Homogeneous">very high</td><td data-l="Heterogeneous">very small</td></tr>
+<tr><td data-l="">Reason</td><td data-l="Homogeneous">large surface-energy barrier</td><td data-l="Heterogeneous">foreign surface lowers the barrier</td></tr>
+</tbody>
+</table></div>
+<p><strong>Exam-ready conclusion:</strong> a nucleus must exceed the critical radius; heterogeneous nucleation needs far less undercooling than homogeneous.</p>
+</div>
+<div class="sub"><h3 id="f1">F1. Why undercooling is needed</h3>
+<p>At the melting point the liquid and the solid have the same free energy, so both are equally stable.</p>
+<p>Nothing freezes at exactly that temperature.</p>
+<p>Some undercooling is needed: the liquid must cool below the melting point first.</p>
+<p>The undercooling is</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><msub><mi>T</mi><mi>m</mi></msub><mo>−</mo><msub><mi>T</mi><mrow><mi>a</mi><mi>c</mi><mi>t</mi><mi>u</mi><mi>a</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta T=T_m-T_{actual}</annotation></semantics></math></span></p>
+<p>and it gives the driving force for solidification.</p>
+</div><div class="sub"><h3 id="f2">F2. Two stages</h3>
+<p>Solidification goes by nucleation and growth.</p>
+<ol>
+<li><strong>Nucleation:</strong> tiny stable solid particles (nuclei) form in the liquid.</li>
+<li><strong>Growth:</strong> each nucleus grows by adding atoms, until neighbouring crystals meet.</li>
+</ol>
+<p>Many nuclei give many small crystals.</p>
+<p>Few nuclei give a few large crystals.</p>
+</div><div class="sub"><h3 id="f3">F3. Embryo and nucleus</h3>
+<ul>
+<li><strong>Embryo:</strong> a tiny solid cluster that is too small, so it is unstable. It may grow or dissolve again.</li>
+<li><strong>Nucleus:</strong> a cluster larger than the critical size, so it is stable and grows.</li>
+</ul>
+</div><div class="sub"><h3 id="f4">F4. Critical radius</h3>
+<p>The free-energy change for a solid sphere of radius r in the liquid:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>G</mi><mo>=</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>π</mi><msup><mi>r</mi><mn>3</mn></msup><mtext> </mtext><mi mathvariant="normal">Δ</mi><msub><mi>G</mi><mi>v</mi></msub><mo>+</mo><mn>4</mn><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup><mtext> </mtext><msub><mi>γ</mi><mrow><mi>s</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta G=\dfrac43\pi r^3\,\Delta G_v+4\pi r^2\,\gamma_{sl}</annotation></semantics></math></span></p>
+<p>Here Delta G_v is the free-energy change per unit volume (negative on freezing) and gamma_sl is the solid-liquid surface energy.</p>
+<p>Setting the slope to zero gives the critical radius:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>r</mi><mo>∗</mo></msup><mo>=</mo><mfrac><mrow><mn>2</mn><msub><mi>γ</mi><mrow><mi>s</mi><mi>l</mi></mrow></msub><msub><mi>T</mi><mi>m</mi></msub></mrow><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mi>f</mi></msub><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">r^*=\dfrac{2\gamma_{sl}T_m}{\Delta H_f\,\Delta T}</annotation></semantics></math></span></p>
+<p>A cluster smaller than r<em> is an embryo. A cluster larger than r</em> is a nucleus.</p>
+</div><div class="sub"><h3 id="f5">F5. Undercooling and nucleus size</h3>
+<p>The formula has the undercooling in the denominator.</p>
+<p>More undercooling, so smaller critical radius.</p>
+<p>A smaller critical nucleus forms more easily.</p>
+</div><div class="sub"><h3 id="f6">F6. Homogeneous and heterogeneous nucleation</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Homogeneous</th>
+<th>Heterogeneous</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Where</td><td data-l="Homogeneous">inside the bulk liquid, no foreign surface</td><td data-l="Heterogeneous">on impurity particles, mould walls or added inoculants</td></tr>
+<tr><td data-l="">Undercooling needed</td><td data-l="Homogeneous">very high</td><td data-l="Heterogeneous">very small (a fraction of a degree)</td></tr>
+<tr><td data-l="">Why</td><td data-l="Homogeneous">the surface-energy barrier is large</td><td data-l="Heterogeneous">a foreign surface lowers the barrier</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="f7">F7. Where controlled nucleation is used</h3>
+<p>lists:</p>
+<ul>
+<li><strong>Grain refinement:</strong> adding nuclei in a controlled way to get more grains in a casting.</li>
+<li><strong>Dispersion strengthening.</strong></li>
+<li><strong>Solid-state phase transformations.</strong></li>
+<li><strong>Rapid solidification processing.</strong></li>
+</ul>
+</div></section><section class="sec"><h2 id="g">G. Cast structure, dendrites and grain refinement</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definitions</h4>
+<ul>
+<li><strong>Grains:</strong> crystals formed from many nuclei in a solidified metal; the surfaces between them are grain boundaries.</li>
+<li><strong>Dendrite:</strong> a branched, tree-like crystal that grows along fixed lattice directions into undercooled liquid.</li>
+</ul>
+<h4>2. Three zones of a cast ingot</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Zone</th>
+<th>Grains</th>
+<th>Why it forms</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Zone">Chill zone (at the wall)</td><td data-l="Grains">small, randomly oriented equiaxed</td><td data-l="Why it forms">cold wall gives large undercooling and many nuclei</td></tr>
+<tr><td data-l="Zone">Columnar zone</td><td data-l="Grains">long, parallel, perpendicular to the wall</td><td data-l="Why it forms">only grains with an easy growth direction across the mould keep growing</td></tr>
+<tr><td data-l="Zone">Equiaxed zone (centre)</td><td data-l="Grains">random equiaxed</td><td data-l="Why it forms">free-floating nuclei or broken dendrites</td></tr>
+</tbody>
+</table></div>
+<h4>3. Grain refinement</h4>
+<p>Adding heterogeneous nuclei (inoculants) in a controlled way to increase the number of grains. They give nucleation sites at very small undercooling.</p>
+<h4>4. What controls the cast structure</h4>
+<ul>
+<li>More nuclei: finer grains.</li>
+<li>Large undercooling at the wall: high nucleation rate.</li>
+<li>Steep gradient with slow cooling: columnar grains.</li>
+<li>Inoculants: refinement.</li>
+</ul>
+<p><strong>Exam-ready conclusion:</strong> a casting freezes inward in chill, columnar and equiaxed zones; grain refinement by inoculation gives finer grains.</p>
+</div>
+<div class="sub"><h3 id="g1">G1. From crystals to grains</h3>
+<p>Many nuclei form in the liquid, and each grows into a crystal.</p>
+<p>A solidified metal with many crystals is polycrystalline.</p>
+<p>The crystals are called grains.</p>
+<p>The surfaces between grains are grain boundaries.</p>
+<p>The final grain size depends on the number of nucleation points.</p>
+</div><div class="sub"><h3 id="g2">G2. Dendrites</h3>
+<p>During alloy freezing, thermal and constitutional undercooling make parts of the solid-liquid surface push out into the liquid.</p>
+<p>Each protuberance grows as a branched, tree-like crystal called a dendrite.</p>
+<p>A dendrite has a main branch with many side branches. It looks like a pine tree.</p>
+<p>Dendrites form because crystals grow along fixed lattice directions.</p>
+<p>Latent heat of fusion is released as the solid grows. It warms the liquid ahead back to the freezing temperature.</p>
+</div><div class="sub"><h3 id="g3">G3. Three zones of a cast ingot</h3>
+<p>Liquid metal poured into a mould freezes from the cold wall inward.</p>
+<p>This gives three zones, from the wall to the centre:</p>
+<ol>
+<li><strong>Chill zone:</strong> next to the wall, a thin layer of small, randomly oriented equiaxed grains.</li>
+<li><strong>Columnar zone:</strong> long, parallel grains growing inward, at right angles to the mould wall.</li>
+<li><strong>Equiaxed zone:</strong> in the centre, randomly oriented equiaxed grains.</li>
+</ol>
+</div><div class="sub"><h3 id="g4">G4. Why each zone forms</h3>
+<ul>
+<li><strong>Chill zone:</strong> the wall is cold, so undercooling is very large and the nucleation rate is high. Many nuclei, so small grains.</li>
+<li><strong>Columnar zone:</strong> the grains of the chill zone compete. Only grains with an easy growth direction pointing across the mould (perpendicular to the wall) keep growing, and they grow inward as long columns.</li>
+<li><strong>Equiaxed zone:</strong> the centre contains free-floating nuclei or broken dendrite pieces. They freeze in random orientations.</li>
+</ul>
+</div><div class="sub"><h3 id="g5">G5. Equiaxed or columnar</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Equiaxed grains</th>
+<th>Columnar grains</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Shape</td><td data-l="Equiaxed grains">grow about equally in all directions</td><td data-l="Columnar grains">long, thin, coarse</td></tr>
+<tr><td data-l="">Where</td><td data-l="Equiaxed grains">next to a cold mould wall (slide) and in the centre (notes)</td><td data-l="Columnar grains">grow perpendicular to the mould surface</td></tr>
+<tr><td data-l="">Conditions</td><td data-l="Equiaxed grains">many nuclei</td><td data-l="Columnar grains">slow cooling with a steep temperature gradient</td></tr>
+</tbody>
+</table></div>
+<p>(. The slide places equiaxed grains next to the cold wall; the notes place them in the chill zone and in the central core. Both statements are consistent with the three-zone picture above.)</p>
+</div><div class="sub"><h3 id="g6">G6. Grain refinement</h3>
+<p>Grain refinement is the addition of heterogeneous nuclei, in a controlled way, to increase the number of grains in a casting.</p>
+<p>More grains mean smaller grains.</p>
+<p>How: add inoculants (grain refiners). They give nucleation sites at very small undercooling.</p>
+<p>Everyday picture: sprinkle seeds into a freezing pond, and ice starts at many points instead of a few.</p>
+<p>The slides list grain refinement as one application of controlled nucleation, together with dispersion strengthening, solid-state transformation and rapid solidification processing.</p>
+<p>(The notes and slides do not give numbers on how grain size changes the properties of the casting, so none are stated here.)</p>
+</div><div class="sub"><h3 id="g7">G7. Summary of what controls the cast structure</h3>
+<ul>
+<li><strong>Nucleation density:</strong> more nuclei, finer grains.</li>
+<li><strong>Cooling rate near the wall:</strong> more undercooling, higher nucleation rate.</li>
+<li><strong>Temperature gradient:</strong> a steep gradient with slow cooling gives columnar grains.</li>
+<li><strong>Inoculants:</strong> extra nuclei, so refinement.</li>
+</ul>
+<p>(This list restates points as a revision aid.)</p>
+</div></section><section class="sec"><h2 id="h">H. The iron-carbon (Fe-Fe3C) diagram</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>The Fe-Fe3C diagram is the map of the phases of iron and carbon under very slow cooling. It stops at 6.67 wt% C, where cementite (Fe3C) forms.</p>
+<h4>2. Allotropy of pure iron</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Temperature</th>
+<th>Form</th>
+<th>Structure</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Temperature">room to 912 deg C</td><td data-l="Form">alpha iron (ferrite)</td><td data-l="Structure">BCC</td></tr>
+<tr><td data-l="Temperature">912 to 1394 deg C</td><td data-l="Form">gamma iron (austenite)</td><td data-l="Structure">FCC</td></tr>
+<tr><td data-l="Temperature">1394 to 1538 deg C</td><td data-l="Form">delta ferrite</td><td data-l="Structure">BCC</td></tr>
+</tbody>
+</table></div>
+<p>Melting is at 1538 deg C.</p>
+<h4>3. Phases</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Phase</th>
+<th>Structure</th>
+<th>Carbon solubility</th>
+<th>Key facts</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Phase">Ferrite (alpha)</td><td data-l="Structure">BCC</td><td data-l="Carbon solubility">0.022 wt% at 727 deg C; 0.008 at room temperature</td><td data-l="Key facts">softest, ductile, magnetic</td></tr>
+<tr><td data-l="Phase">Austenite (gamma)</td><td data-l="Structure">FCC</td><td data-l="Carbon solubility">up to 2.14 wt% at 1147 deg C</td><td data-l="Key facts">soft, formable, non-magnetic; not stable below 727 deg C</td></tr>
+<tr><td data-l="Phase">Delta ferrite</td><td data-l="Structure">BCC</td><td data-l="Carbon solubility">about 0.1 wt% at high temperature</td><td data-l="Key facts">no technological importance</td></tr>
+<tr><td data-l="Phase">Cementite (Fe3C)</td><td data-l="Structure">orthorhombic</td><td data-l="Carbon solubility">exactly 6.67 wt% C</td><td data-l="Key facts">very hard and brittle; intermetallic compound</td></tr>
+</tbody>
+</table></div>
+<p>Austenite dissolves more carbon because FCC has larger interstitial voids than BCC.</p>
+<h4>4. Microconstituents</h4>
+<ul>
+<li><strong>Pearlite:</strong> lamellar mixture of ferrite and cementite, 0.76 wt% C, formed at 727 deg C from austenite.</li>
+<li><strong>Ledeburite:</strong> eutectic mixture of austenite and cementite, 4.3 wt% C, formed at 1147 deg C in cast irons.</li>
+</ul>
+<h4>5. Classification by carbon</h4>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Carbon (wt%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Iron</td>
+<td>below 0.008</td>
+</tr>
+<tr>
+<td>Steels</td>
+<td>0.008 to 2.14</td>
+</tr>
+<tr>
+<td>Cast irons</td>
+<td>2.14 to 6.7</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Exam-ready conclusion:</strong> iron changes BCC, FCC, BCC on heating; the diagram gives ferrite, austenite, cementite, pearlite and ledeburite, and divides iron-carbon alloys into steels and cast irons at 2.14 wt% C.</p>
+</div>
+<div class="sub"><h3 id="h1">H1. Why this diagram matters</h3>
+<p>It is a map of the phases of iron and carbon under very slow cooling.</p>
+<p>Steels and cast irons are iron-carbon alloys.</p>
+<p>The diagram shows which alloys form, which heat-treatment temperatures to use, and how properties can change.</p>
+<figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330" width="560" role="img" aria-label="Iron-iron carbide (Fe-Fe3C) diagram, simplified, with temperatures and compositions from the slides" font-family="sans-serif" font-size="11" fill="none" stroke="currentColor" stroke-width="1.5">
+<line x1="70" y1="300" x2="530" y2="300"/><line x1="70" y1="300" x2="70" y2="30"/>
+<polyline points="70,44 106,54 362,132" stroke="#c0392b" stroke-width="2.2"/>
+<polyline points="362,132 526,109" stroke="#c0392b" stroke-width="2.2" stroke-dasharray="5 4"/>
+<polyline points="70,44 76,54 82,54 216,132" stroke="#b5652a" stroke-width="2.2"/>
+<polyline points="70,76 76,54" stroke="#7a5bc7" stroke-width="2"/>
+<polyline points="70,76 82,54" stroke="#7a5bc7" stroke-width="2"/>
+<polyline points="70,185 122,226" stroke="#2f855a" stroke-width="2.2"/>
+<polyline points="122,226 216,132" stroke="#2f855a" stroke-width="2.2"/>
+<polyline points="70,185 71,226 70,300" stroke="#2f855a" stroke-width="2.2"/>
+<line x1="76" y1="54" x2="106" y2="54" stroke-width="2.4"/>
+<line x1="216" y1="132" x2="526" y2="132" stroke-width="2.4"/>
+<line x1="71" y1="226" x2="526" y2="226" stroke-width="2.4"/>
+<line x1="530" y1="300" x2="530" y2="30" stroke-opacity=".25"/>
+<text x="260" y="110" fill="currentColor" stroke="none" font-weight="bold">L</text>
+<text x="180" y="130" fill="currentColor" stroke="none">gamma + L</text>
+<text x="130" y="190" fill="currentColor" stroke="none" font-weight="bold">gamma (austenite)</text>
+<text x="330" y="185" fill="currentColor" stroke="none">gamma + Fe3C</text>
+<text x="330" y="262" fill="currentColor" stroke="none">alpha + Fe3C</text>
+<text x="76" y="270" fill="currentColor" stroke="none">alpha</text>
+<text x="96" y="235" fill="currentColor" stroke="none" font-size="10">alpha+gamma</text>
+<text x="40" y="48" fill="currentColor" stroke="none" font-size="10">1538</text>
+<text x="40" y="80" fill="currentColor" stroke="none" font-size="10">1394</text>
+<text x="40" y="189" fill="currentColor" stroke="none" font-size="10">912</text>
+<text x="112" y="50" fill="currentColor" stroke="none" font-size="10">1493 C peritectic</text>
+<text x="224" y="127" fill="currentColor" stroke="none" font-size="10">1147 C eutectic</text>
+<text x="224" y="221" fill="currentColor" stroke="none" font-size="10">727 C eutectoid</text>
+<text x="114" y="240" fill="currentColor" stroke="none" font-size="10">0.76</text>
+<text x="208" y="146" fill="currentColor" stroke="none" font-size="10">2.14</text>
+<text x="354" y="146" fill="currentColor" stroke="none" font-size="10">4.30</text>
+<text x="508" y="314" fill="currentColor" stroke="none" font-size="10">6.70</text>
+<text x="70" y="314" fill="currentColor" stroke="none" font-size="10">0</text>
+<text x="230" y="326" fill="currentColor" stroke="none">Composition (wt% C)</text>
+<text x="4" y="22" fill="currentColor" stroke="none" font-size="10">Temperature (deg C). Simplified; only the temperatures and compositions marked are.</text>
+</svg><figcaption>Simplified Fe-Fe3C diagram. Temperatures and compositions are the ones marked (1538, 1493, 1394, 1147, 912, 727 deg C; 0.022, 0.76, 2.14, 4.30, 6.70 wt% C).</figcaption></figure>
+
+</div><div class="sub"><h3 id="h2">H2. Allotropy of pure iron</h3>
+<p>Pure iron changes its crystal structure twice before it melts:</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Temperature range</th>
+<th>Form</th>
+<th>Structure</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Temperature range">room temperature to 912 deg C</td><td data-l="Form">alpha iron (ferrite)</td><td data-l="Structure">BCC</td></tr>
+<tr><td data-l="Temperature range">912 to 1394 deg C</td><td data-l="Form">gamma iron (austenite)</td><td data-l="Structure">FCC</td></tr>
+<tr><td data-l="Temperature range">1394 to 1538 deg C</td><td data-l="Form">delta ferrite</td><td data-l="Structure">BCC</td></tr>
+</tbody>
+</table></div>
+<p>Melting is at 1538 deg C.</p>
+<p>These changes are seen on the left vertical axis of the diagram.</p>
+<p>Alloying moves these temperatures.</p>
+</div><div class="sub"><h3 id="h3">H3. Why the diagram stops at 6.67 wt% C</h3>
+<p>The right-hand axis is not 100 % carbon.</p>
+<p>It is 6.67 wt% C, where the compound iron carbide (Fe3C, cementite) forms.</p>
+<p>Carbon beyond this limit would not dissolve in iron.</p>
+<p>All real steels and cast irons have less than 6.67 wt% C.</p>
+<p>So only the Fe-Fe3C part of the diagram is used.</p>
+</div><div class="sub"><h3 id="h4">H4. The phases</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Phase</th>
+<th>Structure</th>
+<th>Carbon solubility</th>
+<th>Key facts</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Phase">Ferrite (alpha)</td><td data-l="Structure">BCC</td><td data-l="Carbon solubility">0.022 wt% at 727 deg C; 0.008 wt% at room temperature</td><td data-l="Key facts">softest, ductile, magnetic; an interstitial solid solution</td></tr>
+<tr><td data-l="Phase">Austenite (gamma)</td><td data-l="Structure">FCC</td><td data-l="Carbon solubility">up to 2.14 wt% at 1147 deg C</td><td data-l="Key facts">soft, formable, non-magnetic; most heat treatments start here; not stable below 727 deg C</td></tr>
+<tr><td data-l="Phase">Delta ferrite</td><td data-l="Structure">BCC</td><td data-l="Carbon solubility">about 0.1 wt% at 1495 deg C</td><td data-l="Key facts">stable only at high temperature, no technological importance</td></tr>
+<tr><td data-l="Phase">Cementite (Fe3C)</td><td data-l="Structure">orthorhombic</td><td data-l="Carbon solubility">contains exactly 6.67 wt% C</td><td data-l="Key facts">very hard and brittle, the hardest structure on the diagram; an intermetallic compound</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="h5">H5. Why austenite dissolves more carbon than ferrite</h3>
+<p>Austenite is FCC and has larger interstitial (octahedral) voids.</p>
+<p>Ferrite is BCC, with smaller voids.</p>
+<p>So austenite holds up to 2.14 wt% C, and ferrite only 0.022 wt% C at most.</p>
+</div><div class="sub"><h3 id="h6">H6. Microconstituents</h3>
+<ul>
+<li><strong>Pearlite:</strong> a lamellar (plate-like) mixture of ferrite and cementite, with 0.76 wt% C. It forms at 727 deg C by the eutectoid decomposition of austenite.</li>
+<li><strong>Ledeburite:</strong> the eutectic mixture of austenite and cementite, with 4.3 wt% C, formed at 1147 deg C in cast irons. Its austenite is unstable below 727 deg C and changes to ferrite and cementite.</li>
+</ul>
+</div><div class="sub"><h3 id="h7">H7. Classification by carbon content</h3>
+<p>From the slides:</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Group</th>
+<th>Carbon (wt%)</th>
+<th>Structure at room temperature</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Group">Iron</td><td data-l="Carbon (wt%)">below 0.008</td><td data-l="Structure at room temperature">alpha ferrite</td></tr>
+<tr><td data-l="Group">Steels</td><td data-l="Carbon (wt%)">0.008 to 2.14 (usually below 1)</td><td data-l="Structure at room temperature">alpha ferrite + Fe3C</td></tr>
+<tr><td data-l="Group">Cast irons</td><td data-l="Carbon (wt%)">2.14 to 6.7 (usually below 4.5)</td><td data-l="Structure at room temperature">(see the eutectic reaction, topic I)</td></tr>
+</tbody>
+</table></div>
+<p>(The slide gives the structure column for iron and steels only; the cast-iron cell is left as the slide leaves it.)</p>
+</div></section><section class="sec"><h2 id="i">I. Invariant reactions</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>An invariant reaction takes place at one fixed temperature and fixed compositions; it appears as a horizontal line on the diagram. The Fe-Fe3C diagram has three.</p>
+<h4>2. The three reactions</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Reaction</th>
+<th>Temperature</th>
+<th>Carbon</th>
+<th>On cooling</th>
+<th>Product</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Reaction">Peritectic</td><td data-l="Temperature">1493 deg C</td><td data-l="Carbon">0.09 wt%</td><td data-l="On cooling">liquid (0.53) + delta ferrite (0.09) gives austenite (0.17)</td><td data-l="Product">austenite</td></tr>
+<tr><td data-l="Reaction">Eutectic</td><td data-l="Temperature">1147 deg C</td><td data-l="Carbon">4.3 wt%</td><td data-l="On cooling">liquid (4.3) gives austenite (2.14) + cementite (6.67)</td><td data-l="Product">ledeburite (cast irons)</td></tr>
+<tr><td data-l="Reaction">Eutectoid</td><td data-l="Temperature">727 deg C</td><td data-l="Carbon">0.76 wt%</td><td data-l="On cooling">austenite (0.76) gives ferrite (0.022) + cementite (6.67)</td><td data-l="Product">pearlite (steels)</td></tr>
+</tbody>
+</table></div>
+<h4>3. How to tell them apart</h4>
+<ul>
+<li><strong>Eutectic:</strong> a liquid gives two solids.</li>
+<li><strong>Eutectoid:</strong> a solid gives two other solids.</li>
+<li><strong>Peritectic:</strong> a liquid and a solid give a new solid.</li>
+</ul>
+<h4>4. Importance</h4>
+<p>The peritectic is at low carbon and has almost no engineering importance. The eutectic gives cast irons. The eutectoid gives steels.</p>
+<p><strong>Exam-ready conclusion:</strong> peritectic 1493 deg C, eutectic 1147 deg C and eutectoid 727 deg C are the three invariant reactions; the eutectoid at 0.76 wt% C gives pearlite.</p>
+</div>
+<div class="sub"><h3 id="i1">I1. What an invariant reaction is</h3>
+<p>An invariant reaction happens at one fixed temperature and fixed compositions.</p>
+<p>On the diagram it is a horizontal line.</p>
+<p>The Fe-Fe3C diagram has three.</p>
+</div><div class="sub"><h3 id="i2">I2. The three reactions</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Reaction</th>
+<th>Temperature</th>
+<th>Carbon</th>
+<th>Equation (on cooling)</th>
+<th>Product</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Reaction">Peritectic</td><td data-l="Temperature">1493 deg C</td><td data-l="Carbon">0.09 wt%</td><td data-l="Equation (on cooling)">liquid (0.53 wt% C) + delta ferrite (0.09 wt% C) gives austenite (0.17 wt% C)</td><td data-l="Product">austenite</td></tr>
+<tr><td data-l="Reaction">Eutectic</td><td data-l="Temperature">1147 deg C</td><td data-l="Carbon">4.3 wt%</td><td data-l="Equation (on cooling)">liquid (4.3 wt% C) gives austenite (2.14 wt% C) + cementite (6.67 wt% C)</td><td data-l="Product">ledeburite (in cast irons)</td></tr>
+<tr><td data-l="Reaction">Eutectoid</td><td data-l="Temperature">727 deg C</td><td data-l="Carbon">0.76 wt%</td><td data-l="Equation (on cooling)">austenite (0.76 wt% C) gives alpha ferrite (0.022 wt% C) + cementite (6.67 wt% C)</td><td data-l="Product">pearlite (in steels)</td></tr>
+</tbody>
+</table></div>
+<p>(Compositions and temperatures and the diagram.)</p>
+</div><div class="sub"><h3 id="i3">I3. Where they matter</h3>
+<ul>
+<li><strong>Peritectic:</strong> only at low carbon. Almost no engineering importance.</li>
+<li><strong>Eutectic:</strong> at 4.3 wt% C. The alloys are the cast irons.</li>
+<li><strong>Eutectoid:</strong> at the eutectoid composition. The two-phase mixture of ferrite and cementite. These are the steels.</li>
+</ul>
+</div><div class="sub"><h3 id="i4">I4. Eutectic, eutectoid, peritectic: how to tell them apart</h3>
+<ul>
+<li><strong>Eutectic:</strong> a liquid gives two solids on cooling.</li>
+<li><strong>Eutectoid:</strong> a solid gives two other solids on cooling.</li>
+<li><strong>Peritectic:</strong> a liquid and a solid give a new solid on cooling.</li>
+</ul>
+<p>(The wording summarises the three equations in the table; the notes list them without a general definition.)</p>
+</div><div class="sub"><h3 id="i5">I5. Slide wording that disagrees</h3>
+<p>Two small differences appear in the course files (both logged in progress.md):</p>
+<ul>
+<li>The eutectoid composition is 0.76 wt% C in the notes and, but "0.8 wt% C".</li>
+<li>The delta ferrite carbon limit is written as 0.1 wt% C at 1495 deg C, but the notes and the diagram give the peritectic at 1493 deg C and 0.09 wt% C.</li>
+</ul>
+<p>These pages use 0.76 wt% C and 1493 deg C (the notes and the diagram).</p>
+</div></section><section class="sec"><h2 id="j">J. Microstructure of plain carbon steels (slow cooling)</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>Plain carbon steels are classified by carbon compared with the eutectoid composition, 0.76 wt% C, for slow equilibrium cooling.</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Steel</th>
+<th>Carbon</th>
+<th>Pro-eutectoid phase</th>
+<th>Final structure</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Steel">Hypo-eutectoid</td><td data-l="Carbon">below 0.76 wt%</td><td data-l="Pro-eutectoid phase">ferrite</td><td data-l="Final structure">ferrite + pearlite</td></tr>
+<tr><td data-l="Steel">Eutectoid</td><td data-l="Carbon">0.76 wt%</td><td data-l="Pro-eutectoid phase">none</td><td data-l="Final structure">100 % pearlite</td></tr>
+<tr><td data-l="Steel">Hyper-eutectoid</td><td data-l="Carbon">0.76 to 2.14 wt%</td><td data-l="Pro-eutectoid phase">cementite</td><td data-l="Final structure">pearlite + cementite network</td></tr>
+</tbody>
+</table></div>
+<h4>2. Eutectoid steel</h4>
+<ol>
+<li>Above 727 deg C all austenite (0.76 wt% C).</li>
+<li>At 727 deg C austenite changes to pearlite:</li>
+</ol>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>γ</mi><mtext> </mtext><mo stretchy="false">(</mo><mn>0.76</mn><mo stretchy="false">)</mo><mtext> </mtext><mo>⟶</mo><mtext> </mtext><mi>α</mi><mtext> </mtext><mo stretchy="false">(</mo><mn>0.022</mn><mo stretchy="false">)</mo><mo>+</mo><mrow><mi mathvariant="normal">F</mi><msub><mi mathvariant="normal">e</mi><mn>3</mn></msub><mi mathvariant="normal">C</mi></mrow><mtext> </mtext><mo stretchy="false">(</mo><mn>6.67</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\gamma\ (0.76)\ \longrightarrow\ \alpha\ (0.022)+\mathrm{Fe_3C}\ (6.67)</annotation></semantics></math></span></p>
+<ol start="3">
+<li>The product is layered because carbon has to diffuse only a short distance between ferrite and cementite plates.</li>
+</ol>
+<h4>3. Hypo-eutectoid steel</h4>
+<ol>
+<li>All austenite at the start.</li>
+<li>On cooling into the ferrite + austenite region, low-carbon ferrite forms first along austenite grain boundaries.</li>
+<li>The remaining austenite gets richer in carbon.</li>
+<li>At 727 deg C it has 0.76 wt% C and changes to pearlite.</li>
+</ol>
+<h4>4. Hyper-eutectoid steel</h4>
+<p>Same path, but cementite forms first along the grain boundaries; the austenite falls to 0.76 wt% C and then changes to pearlite. A continuous cementite network makes the steel extremely brittle.</p>
+<h4>5. Slow cooling only</h4>
+<p>All of this assumes equilibrium cooling; rapid cooling gives different results and the diagram is no longer valid. TTT diagrams are used instead.</p>
+<p><strong>Exam-ready conclusion:</strong> below 0.76 wt% C the structure is ferrite + pearlite, at 0.76 it is pearlite, above it pearlite with a brittle cementite network.</p>
+</div>
+<div class="sub"><h3 id="j1">J1. Three kinds of steel</h3>
+<p>Plain carbon steels are named by their carbon content compared with the eutectoid composition, 0.76 wt% C.</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Steel</th>
+<th>Carbon</th>
+<th>Pro-eutectoid phase</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Steel">Hypo-eutectoid</td><td data-l="Carbon">less than 0.76 wt%</td><td data-l="Pro-eutectoid phase">ferrite</td></tr>
+<tr><td data-l="Steel">Eutectoid</td><td data-l="Carbon">exactly 0.76 wt%</td><td data-l="Pro-eutectoid phase">none</td></tr>
+<tr><td data-l="Steel">Hyper-eutectoid</td><td data-l="Carbon">0.76 to 2.14 wt%</td><td data-l="Pro-eutectoid phase">cementite</td></tr>
+</tbody>
+</table></div>
+<p>"Hypo" means less than. "Hyper" means greater than.</p>
+<p>All of this is for slow, equilibrium cooling.</p>
+</div><div class="sub"><h3 id="j2">J2. Eutectoid steel (0.76 wt% C)</h3>
+<p>Cool slowly along the vertical line at 0.76 wt% C.</p>
+<ol>
+<li>At high temperature the steel is all austenite (FCC), with 0.76 wt% C in solid solution.</li>
+<li>At 727 deg C the austenite changes to pearlite.</li>
+<li>All the austenite becomes pearlite, uniformly.</li>
+</ol>
+</div><div class="sub"><h3 id="j3">J3. What happens at 727 deg C</h3>
+<p>Iron wants to change from FCC austenite to BCC ferrite.</p>
+<p>BCC ferrite can hold only about 0.02 wt% C (0.022).</p>
+<p>The extra carbon is pushed out and forms cementite, Fe3C, with 6.7 wt% C.</p>
+<p>This needs carbon to diffuse.</p>
+<p>Carbon moves away from the 0.022 wt% ferrite regions to the 6.7 wt% cementite layers.</p>
+<p>That is why the product is layered: with thin layers, carbon only has to diffuse a very short distance.</p>
+<p>The pearlite grows from the grain boundary into the unreacted austenite grain.</p>
+<p>The reaction is</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>γ</mi><mtext> </mtext><mo stretchy="false">(</mo><mn>0.76</mn><mo stretchy="false">)</mo><mtext> </mtext><mo>⟶</mo><mtext> </mtext><mi>α</mi><mtext> </mtext><mo stretchy="false">(</mo><mn>0.022</mn><mo stretchy="false">)</mo><mo>+</mo><mrow><mi mathvariant="normal">F</mi><msub><mi mathvariant="normal">e</mi><mn>3</mn></msub><mi mathvariant="normal">C</mi></mrow><mtext> </mtext><mo stretchy="false">(</mo><mn>6.67</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\gamma\ (0.76)\ \longrightarrow\ \alpha\ (0.022)+\mathrm{Fe_3C}\ (6.67)</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="j4">J4. Pearlite</h3>
+<p>Pearlite is a fine mixture of ferrite and cementite in alternate plates.</p>
+<p>Under a microscope it looks like mother-of-pearl, so it is called pearlite.</p>
+</div><div class="sub"><h3 id="j5">J5. Hypo-eutectoid steel</h3>
+<p>Cool slowly along a line in the region below 0.76 wt% C. The slide uses points C (875 deg C) and D (775 deg C).</p>
+<ol>
+<li>At point C (875 deg C): all austenite.</li>
+<li>On cooling to point D (775 deg C): the steel enters the ferrite + austenite region.</li>
+<li>Low-carbon ferrite forms first. It nucleates and grows along the austenite grain boundaries.</li>
+<li>The remaining austenite is richer in carbon.</li>
+<li>Cooling further, just above 727 deg C: more ferrite, and the austenite keeps getting richer in carbon.</li>
+<li>At 727 deg C the remaining austenite has exactly 0.76 wt% C. It changes to pearlite.</li>
+</ol>
+<p>Final structure: pro-eutectoid ferrite (formed before the eutectoid reaction) plus pearlite.</p>
+<p>In the micrograph: bright ferrite grains inside dark pearlite colonies.</p>
+</div><div class="sub"><h3 id="j6">J6. Hyper-eutectoid steel</h3>
+<p>The path is the same, except that the first phase to form is cementite instead of ferrite.</p>
+<ol>
+<li>At point G: all austenite.</li>
+<li>At point H: austenite + Fe3C. Cementite starts to form along the austenite grain boundaries. This is pro-eutectoid cementite.</li>
+<li>As cementite forms, the remaining austenite loses carbon and falls to 0.76 wt% C at 727 deg C.</li>
+<li>That austenite changes to pearlite.</li>
+</ol>
+<p>Final structure: pearlite surrounded by a network of pro-eutectoid cementite.</p>
+</div><div class="sub"><h3 id="j7">J7. Why the cementite network is bad</h3>
+<p>Cementite is hard and brittle.</p>
+<p>When pro-eutectoid cementite forms a continuous network around the grains, the steel becomes extremely brittle.</p>
+<p>The brittle network gives a path along which cracks can run.</p>
+</div><div class="sub"><h3 id="j8">J8. Side-by-side</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Hypo-eutectoid</th>
+<th>Eutectoid</th>
+<th>Hyper-eutectoid</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Carbon (wt%)</td><td data-l="Hypo-eutectoid">below 0.76</td><td data-l="Eutectoid">0.76</td><td data-l="Hyper-eutectoid">0.76 to 2.14</td></tr>
+<tr><td data-l="">First phase to form on cooling</td><td data-l="Hypo-eutectoid">ferrite (pro-eutectoid)</td><td data-l="Eutectoid">none</td><td data-l="Hyper-eutectoid">cementite (pro-eutectoid)</td></tr>
+<tr><td data-l="">Final microstructure</td><td data-l="Hypo-eutectoid">ferrite + pearlite</td><td data-l="Eutectoid">100 % pearlite</td><td data-l="Hyper-eutectoid">pearlite + cementite network</td></tr>
+<tr><td data-l="">Character</td><td data-l="Hypo-eutectoid">bright ferrite grains in dark pearlite</td><td data-l="Eutectoid">fine lamellae throughout</td><td data-l="Hyper-eutectoid">brittle</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="j9">J9. Slow cooling only</h3>
+<p>All of J2 to J8 assumes equilibrium (very slow) cooling.</p>
+<p>On slow heating the changes happen in reverse.</p>
+<p>With rapid cooling the results are entirely different, because there is not enough time for the normal reactions.</p>
+<p>Then the equilibrium diagram is no longer a valid tool.</p>
+<p>This leads to the TTT diagram in the next topic.</p>
+</div><div class="sub"><h3 id="j10">J10. Phase amounts below 727 deg C: the lever rule applied</h3>
+<p>The notes and slides do not work a numerical example for steels.</p>
+<p>This example is an illustration, using the lever rule of topic E with the compositions marked on the Fe-Fe3C diagram (0.022, 0.76 and 6.67 wt% C). It is not a slide example.</p>
+<p><strong>Example 1: hypo-eutectoid steel of 0.4 wt% C, just below 727 deg C.</strong></p>
+<p>The ferrite that formed before the eutectoid reaction (pro-eutectoid ferrite) has 0.022 wt% C. The austenite just above 727 deg C has 0.76 wt% C.</p>
+<p>Fraction of pro-eutectoid ferrite (the lever arm is on the austenite side):</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><msup><mi>α</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></msub><mo>=</mo><mfrac><mrow><mn>0.76</mn><mo>−</mo><mn>0.40</mn></mrow><mrow><mn>0.76</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac><mo>=</mo><mn>0.488</mn></mrow><annotation encoding="application/x-tex">W_{\alpha&#x27;}=\dfrac{0.76-0.40}{0.76-0.022}=0.488</annotation></semantics></math></span></p>
+<p>Fraction of pearlite (the austenite that was left):</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>P</mi></msub><mo>=</mo><mfrac><mrow><mn>0.40</mn><mo>−</mo><mn>0.022</mn></mrow><mrow><mn>0.76</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac><mo>=</mo><mn>0.512</mn></mrow><annotation encoding="application/x-tex">W_P=\dfrac{0.40-0.022}{0.76-0.022}=0.512</annotation></semantics></math></span></p>
+<p>So 48.8 % pro-eutectoid ferrite and 51.2 % pearlite.</p>
+<p><strong>Example 2: hyper-eutectoid steel of 1.2 wt% C, just below 727 deg C.</strong></p>
+<p>Pro-eutectoid cementite has 6.67 wt% C. The austenite has 0.76 wt% C.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mrow><mi>F</mi><msub><mi>e</mi><mn>3</mn></msub><msup><mi>C</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow></msub><mo>=</mo><mfrac><mrow><mn>1.2</mn><mo>−</mo><mn>0.76</mn></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.76</mn></mrow></mfrac><mo>=</mo><mn>0.0745</mn></mrow><annotation encoding="application/x-tex">W_{Fe_3C&#x27;}=\dfrac{1.2-0.76}{6.67-0.76}=0.0745</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>P</mi></msub><mo>=</mo><mfrac><mrow><mn>6.67</mn><mo>−</mo><mn>1.2</mn></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.76</mn></mrow></mfrac><mo>=</mo><mn>0.926</mn></mrow><annotation encoding="application/x-tex">W_P=\dfrac{6.67-1.2}{6.67-0.76}=0.926</annotation></semantics></math></span></p>
+<p>So 7.4 % pro-eutectoid cementite and 92.6 % pearlite.</p>
+<p>(0.0745 + 0.9255 = 1, so the two fractions are consistent.)</p>
+<p><strong>Example 3: total ferrite and cementite in eutectoid steel.</strong></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><mn>6.67</mn><mo>−</mo><mn>0.76</mn></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac><mo>=</mo><mn>0.889</mn></mrow><annotation encoding="application/x-tex">W_\alpha=\dfrac{6.67-0.76}{6.67-0.022}=0.889</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mrow><mi>F</mi><msub><mi>e</mi><mn>3</mn></msub><mi>C</mi></mrow></msub><mo>=</mo><mfrac><mrow><mn>0.76</mn><mo>−</mo><mn>0.022</mn></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac><mo>=</mo><mn>0.111</mn></mrow><annotation encoding="application/x-tex">W_{Fe_3C}=\dfrac{0.76-0.022}{6.67-0.022}=0.111</annotation></semantics></math></span></p>
+<p>So pearlite has about 88.9 % ferrite and 11.1 % cementite by mass.</p>
+</div></section><section class="sec"><h2 id="k">K. TTT diagram</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>The TTT (time-temperature-transformation) diagram shows the non-equilibrium products formed when austenite is held at a constant temperature below 727 deg C. It is for one composition only and is also called the isothermal transformation diagram, Bain's curve or C-curve.</p>
+<p>Why needed: the Fe-Fe3C diagram holds only for very slow cooling.</p>
+<h4>2. Construction</h4>
+<ol>
+<li>Cut many small identical samples.</li>
+<li>Heat them to fully austenite.</li>
+<li>Move a set into a salt bath at one constant temperature below 727 deg C.</li>
+<li>Hold each for a different time, then quench.</li>
+<li>Check hardness and microstructure.</li>
+<li>Repeat at other temperatures; join the start points and the finish points to get two C-shaped curves.</li>
+</ol>
+<p>Axes: temperature (vertical), time on a log scale (horizontal).</p>
+<h4>3. Products</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Product</th>
+<th>Formed</th>
+<th>Structure</th>
+<th>Hardness</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Product">Coarse pearlite</td><td data-l="Formed">about 650 to 727 deg C</td><td data-l="Structure">thick lamellae</td><td data-l="Hardness">low</td></tr>
+<tr><td data-l="Product">Fine pearlite</td><td data-l="Formed">about 540 to 650 deg C (near nose)</td><td data-l="Structure">thin lamellae</td><td data-l="Hardness">higher</td></tr>
+<tr><td data-l="Product">Upper bainite</td><td data-l="Formed">about 300 to 540 deg C</td><td data-l="Structure">feathery, not lamellar</td><td data-l="Hardness">higher still</td></tr>
+<tr><td data-l="Product">Lower bainite</td><td data-l="Formed">about 200 to 300 deg C</td><td data-l="Structure">needle-like</td><td data-l="Hardness">high</td></tr>
+<tr><td data-l="Product">Spheroidite</td><td data-l="Formed">long hold just below 727 deg C</td><td data-l="Structure">cementite spheres in ferrite</td><td data-l="Hardness">lowest</td></tr>
+<tr><td data-l="Product">Martensite</td><td data-l="Formed">quench past the critical rate</td><td data-l="Structure">BCT needles</td><td data-l="Hardness">highest, brittle</td></tr>
+</tbody>
+</table></div>
+<h4>4. Martensite</h4>
+<ul>
+<li>Forms by shear, without diffusion, almost instantly (athermal).</li>
+<li>Ms and Mf are about 240 and 25 deg C on the slide.</li>
+<li>Structure body-centred tetragonal; metastable; hardness rises with carbon.</li>
+</ul>
+<p><strong>Exam-ready conclusion:</strong> the TTT diagram predicts pearlite, bainite, spheroidite or martensite from the hold temperature and time; martensite needs a quench that misses the nose.</p>
+</div>
+<div class="sub"><h3 id="k1">K1. Why we need it</h3>
+<p>The Fe-Fe3C diagram is for very slow cooling only.</p>
+<p>With faster cooling, other phases appear that are not on that diagram. That is its major drawback.</p>
+<p>The TTT (time-temperature-transformation) diagram shows these non-equilibrium products.</p>
+<p>One diagram is for one composition only.</p>
+<p>Other names: isothermal transformation diagram, Bain's curve, C-curve.</p>
+</div><div class="sub"><h3 id="k2">K2. How the diagram is made</h3>
+<p>give the method:</p>
+<ol>
+<li>Cut many identical small samples from one bar. Small pieces react quickly to a temperature change.</li>
+<li>Heat all of them in a furnace until they are fully austenite.</li>
+<li>Move a set of samples into a molten salt bath held at one constant temperature below 727 deg C (the slide example is 675 deg C).</li>
+<li>Hold each sample for a different time, then quench it.</li>
+<li>Check hardness and look at the microstructure.</li>
+<li>Repeat at other temperatures until there are enough points.</li>
+</ol>
+<p>Each temperature gives an S-shaped curve of percent transformed against time (: begins, 50 %, ends).</p>
+<p>Joining the "begins" points and the "ends" points of all temperatures gives two parallel C-shaped curves.</p>
+</div><div class="sub"><h3 id="k3">K3. Axes and regions</h3>
+<p>Temperature is on the vertical axis. Time, on a log scale, is on the horizontal axis.</p>
+<figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" width="560" role="img" aria-label="Schematic TTT diagram of eutectoid steel" font-family="sans-serif" font-size="12" fill="none" stroke="currentColor" stroke-width="1.6">
+<line x1="60" y1="300" x2="530" y2="300"/><line x1="60" y1="300" x2="60" y2="30"/>
+<line x1="60" y1="70" x2="530" y2="70" stroke-dasharray="6 3 2 3"/><text x="380" y="62" fill="currentColor" stroke="none" font-size="11">Eutectoid temperature 727 C</text>
+<path d="M 520,86 C 300,92 210,110 178,170 C 165,205 200,240 235,270" stroke="#c0392b" stroke-width="2.4"/>
+<path d="M 520,102 C 380,108 300,130 262,175 C 250,210 330,250 520,285" stroke="#c0392b" stroke-width="2.4"/>
+<text x="160" y="150" fill="#c0392b" stroke="none" font-size="11">start</text>
+<text x="300" y="150" fill="#c0392b" stroke="none" font-size="11">finish</text>
+<line x1="60" y1="185" x2="530" y2="185" stroke-dasharray="3 3" stroke-opacity=".6"/><text x="64" y="180" fill="currentColor" stroke="none" font-size="11">nose, about 540 C</text>
+<line x1="60" y1="255" x2="400" y2="255" stroke="#7a5bc7" stroke-width="2.4"/><text x="64" y="250" fill="#7a5bc7" stroke="none" font-size="11">Ms, about 240 C</text>
+<line x1="60" y1="290" x2="400" y2="290" stroke="#7a5bc7" stroke-width="2.4"/><text x="64" y="285" fill="#7a5bc7" stroke="none" font-size="11">Mf, about 25 C</text>
+<text x="400" y="85" fill="currentColor" stroke="none" font-size="11">coarse pearlite</text>
+<text x="420" y="150" fill="currentColor" stroke="none" font-size="11">fine pearlite</text>
+<text x="400" y="235" fill="currentColor" stroke="none" font-size="11">bainite</text>
+<text x="86" y="40" fill="currentColor" stroke="none" font-size="11">austenite (above the start curve)</text>
+<text x="150" y="278" fill="currentColor" stroke="none" font-size="11">austenite, then martensite</text>
+<text x="215" y="326" fill="currentColor" stroke="none">Time (log scale)</text>
+<text x="2" y="170" fill="currentColor" stroke="none" font-size="11">Temp</text>
+<text x="62" y="346" fill="currentColor" stroke="none" font-size="10">Schematic, not to scale. Temperatures are the values stated in the notes and slides.</text>
+</svg><figcaption>Schematic TTT diagram for eutectoid steel (0.76 wt% C). Not to scale. The values shown (727, about 540, about 240, about 25 deg C) are the ones stated and.</figcaption></figure>
+
+<ul>
+<li>Above 727 deg C: austenite is stable.</li>
+<li>Left of the start curve: austenite, but unstable below 727 deg C (it has not had time to change).</li>
+<li>Between the two curves: austenite changing into product.</li>
+<li>Right of the finish curve: transformation complete.</li>
+<li>Two horizontal lines, Ms and Mf: start and finish of martensite.</li>
+</ul>
+<p>The diagram is for isothermal transformation: the steel is cooled quickly to a temperature and then held there.</p>
+</div><div class="sub"><h3 id="k4">K4. Pearlite: coarse and fine</h3>
+<p>Just below 727 deg C, diffusion is fast. Carbon can travel far, so the layers of ferrite and cementite are thick: coarse pearlite, about 650 to 727 deg C.</p>
+<p>Lower down, diffusion is slow. Layers are thin: fine pearlite, about 540 to 650 deg C, near the nose.</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Coarse pearlite</th>
+<th>Fine pearlite</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Temperature</td><td data-l="Coarse pearlite">about 650 to 727 deg C</td><td data-l="Fine pearlite">about 540 to 650 deg C</td></tr>
+<tr><td data-l="">Layers</td><td data-l="Coarse pearlite">thick, widely spaced</td><td data-l="Fine pearlite">thin, close</td></tr>
+<tr><td data-l="">Properties</td><td data-l="Coarse pearlite">softer, very ductile</td><td data-l="Fine pearlite">harder, stronger</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="k5">K5. Bainite</h3>
+<p>At a low enough temperature (the slide says 540 deg C) bainite forms instead of fine pearlite.</p>
+<p>It is also ferrite plus cementite, but not in layers.</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Upper bainite</th>
+<th>Lower bainite</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Temperature</td><td data-l="Upper bainite">about 300 to 540 deg C</td><td data-l="Lower bainite">about 200 to 300 deg C</td></tr>
+<tr><td data-l="">Look</td><td data-l="Upper bainite">feathery; elongated cementite particles in ferrite</td><td data-l="Lower bainite">needle-like (acicular); very fine carbide in ferrite needles, like tempered martensite</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="k6">K6. Spheroidite</h3>
+<p>Hold a pearlitic or bainitic steel just below the eutectoid temperature for a long time, for example 24 hours at 700 deg C.</p>
+<p>The cementite layers coalesce into spheres in a ferrite matrix.</p>
+<p>Only the shape of cementite changes. The amounts of ferrite and cementite do not.</p>
+<p>Result: the softest condition, with the best formability and machinability.</p>
+</div><div class="sub"><h3 id="k7">K7. Martensite</h3>
+<p>Cool austenite very fast (quench) to room temperature, past the critical cooling rate, so the nose is missed.</p>
+<ul>
+<li>It forms by shear, without diffusion, almost instantly. This is called an athermal transformation.</li>
+<li>Ms is where martensite starts and Mf where it finishes. The slide gives them as around 240 and 25 deg C.</li>
+<li>Structure: body-centred tetragonal (BCT), needle-like (acicular).</li>
+<li>It is metastable: it stays at room temperature but changes to equilibrium phases if heated.</li>
+<li>It is the hardest phase of iron and carbon, and its hardness rises with carbon content.</li>
+<li>It is very brittle, because of high internal strain.</li>
+</ul>
+</div><div class="sub"><h3 id="k8">K8. Summary table</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Product</th>
+<th>How it forms</th>
+<th>Structure</th>
+<th>Hardness</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Product">Coarse pearlite</td><td data-l="How it forms">hold just below 727 deg C</td><td data-l="Structure">thick lamellae</td><td data-l="Hardness">low</td></tr>
+<tr><td data-l="Product">Fine pearlite</td><td data-l="How it forms">hold near the nose (about 540 deg C)</td><td data-l="Structure">thin lamellae</td><td data-l="Hardness">higher</td></tr>
+<tr><td data-l="Product">Upper bainite</td><td data-l="How it forms">hold about 300 to 540 deg C</td><td data-l="Structure">feathery, not lamellar</td><td data-l="Hardness">higher still</td></tr>
+<tr><td data-l="Product">Lower bainite</td><td data-l="How it forms">hold about 200 to 300 deg C</td><td data-l="Structure">acicular</td><td data-l="Hardness">high</td></tr>
+<tr><td data-l="Product">Spheroidite</td><td data-l="How it forms">long hold just below 727 deg C</td><td data-l="Structure">cementite spheres in ferrite</td><td data-l="Hardness">lowest</td></tr>
+<tr><td data-l="Product">Martensite</td><td data-l="How it forms">quench past the critical rate</td><td data-l="Structure">BCT, needles</td><td data-l="Hardness">highest, brittle</td></tr>
+</tbody>
+</table></div>
+<p>(Hardness order follows the arrow, hardness rising from pearlite to martensite; spheroidite is the softest.)</p>
+</div><div class="sub"><h3 id="k9">K9. Where the course files differ</h3>
+<ul>
+<li>The slide diagram draws Ms near the 220 deg C level and marks M50 and M90 lines, while states Ms and Mf as "around 240 and 25 deg C". These pages use the stated values. Logged under Flagged.</li>
+<li>The notes put the nose at about 540 deg C and the says bainite forms "low enough (540 deg C)". These agree; the diagram draws the nose a little below 540.</li>
+</ul>
+</div></section><section class="sec"><h2 id="l">L. Continuous cooling curves on the TTT diagram</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>In real heat treatment a part is cooled continuously. Drawing a cooling curve over the TTT diagram shows the product that forms (0.76 wt% C steel).</p>
+<h4>2. The eight curves</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Curve</th>
+<th>Cooling</th>
+<th>Structure obtained</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Curve">1</td><td data-l="Cooling">very slow</td><td data-l="Structure obtained">coarse pearlite</td></tr>
+<tr><td data-l="Curve">2</td><td data-l="Cooling">faster</td><td data-l="Structure obtained">medium pearlite</td></tr>
+<tr><td data-l="Curve">3</td><td data-l="Cooling">faster again</td><td data-l="Structure obtained">medium + fine pearlite</td></tr>
+<tr><td data-l="Curve">4</td><td data-l="Cooling">faster</td><td data-l="Structure obtained">fine pearlite + upper bainite</td></tr>
+<tr><td data-l="Curve">5</td><td data-l="Cooling">fast</td><td data-l="Structure obtained">pearlite + austenite + martensite</td></tr>
+<tr><td data-l="Curve">6</td><td data-l="Cooling">drastic quench, nose avoided</td><td data-l="Structure obtained">fully martensite</td></tr>
+<tr><td data-l="Curve">7</td><td data-l="Cooling">tangent to the nose</td><td data-l="Structure obtained">austenite + martensite (critical cooling rate)</td></tr>
+<tr><td data-l="Curve">8</td><td data-l="Cooling">quench to bainite range, then hold</td><td data-l="Structure obtained">lower bainite</td></tr>
+</tbody>
+</table></div>
+<h4>3. Critical cooling rate (CCR)</h4>
+<p>The curve that just touches the nose. Faster than CCR gives fully martensite; slower gives at least some pearlite.</p>
+<h4>4. Link to treatments</h4>
+<ul>
+<li>Annealing: slow cooling, coarse pearlite.</li>
+<li>Normalizing: moderate cooling, fine pearlite.</li>
+<li>Quenching faster than CCR: martensite.</li>
+</ul>
+<p><strong>Exam-ready conclusion:</strong> the cooling rate decides the structure: slow gives coarse pearlite, faster gives finer pearlite and bainite, faster than the critical rate gives martensite.</p>
+</div>
+<div class="sub"><h3 id="l1">L1. Why cooling curves</h3>
+<p>In real heat treatment a part is cooled continuously, not held at one temperature.</p>
+<p>Drawing a cooling curve over the TTT diagram shows which product forms (0.76 wt% C steel).</p>
+<p>The slide diagram marks 727 deg C (eutectoid), a line near 550 deg C at the nose, Ms at 240 deg C and Mf at 25 deg C. This agrees with the Ms and Mf values of topic K.</p>
+<p>Note: says its TTT curve is for "0.8 % carbon"; the other slides use 0.76 wt% C. Logged under Flagged.</p>
+</div><div class="sub"><h3 id="l2">L2. The eight curves</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Curve</th>
+<th>Cooling</th>
+<th>Structure obtained</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Curve">1</td><td data-l="Cooling">very slow</td><td data-l="Structure obtained">coarse pearlite</td></tr>
+<tr><td data-l="Curve">2</td><td data-l="Cooling">faster</td><td data-l="Structure obtained">medium pearlite</td></tr>
+<tr><td data-l="Curve">3</td><td data-l="Cooling">faster again</td><td data-l="Structure obtained">medium + fine pearlite</td></tr>
+<tr><td data-l="Curve">4</td><td data-l="Cooling">faster</td><td data-l="Structure obtained">fine pearlite + upper bainite</td></tr>
+<tr><td data-l="Curve">5</td><td data-l="Cooling">fast</td><td data-l="Structure obtained">pearlite + austenite + martensite</td></tr>
+<tr><td data-l="Curve">6</td><td data-l="Cooling">drastic quench, nose avoided</td><td data-l="Structure obtained">fully martensite</td></tr>
+<tr><td data-l="Curve">7</td><td data-l="Cooling">tangent to the nose</td><td data-l="Structure obtained">austenite + martensite (critical cooling rate)</td></tr>
+<tr><td data-l="Curve">8</td><td data-l="Cooling">quench to bainite range, then hold</td><td data-l="Structure obtained">lower bainite</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="l3">L3. What each curve means</h3>
+<ol>
+<li><strong>Coarse pearlite.</strong> Very slow cooling: about 4 hours to fall from 730 to 700 deg C. This is conventional annealing. After transformation is complete the structure stays the same down to room temperature.</li>
+<li><strong>Medium pearlite.</strong> Faster cooling than curve 1. It may be used for normalizing ( says normalizing gives fine pearlite).</li>
+<li><strong>Medium + fine pearlite.</strong> The curve meets the start line at point p, a place that gives medium pearlite, and finishes in the fine-pearlite range.</li>
+<li><strong>Fine pearlite + upper bainite</strong>.</li>
+<li><strong>Pearlite + austenite + martensite.</strong> Transformation to pearlite starts at point r. The curve leaves at point s with austenite still untransformed. Part of that austenite becomes martensite, so at 50 deg C the structure is pearlite + austenite + martensite.</li>
+<li><strong>Fully martensite.</strong> Quench so fast that the nose is avoided. The steel stays austenite until Ms, then turns to martensite. It is fully martensite if Mf is crossed.</li>
+<li><strong>Critical cooling rate (CCR).</strong> This curve just touches the nose. A rate faster than CCR gives fully martensite. A rate slower than CCR gives at least some pearlite.</li>
+<li><strong>Lower bainite.</strong> 100 % bainite is hard to get by continuous cooling. Cool to the bainite range and hold there at constant temperature for a long time. The curve becomes horizontal and crosses the start and finish curves. This is austempering.</li>
+</ol>
+</div><div class="sub"><h3 id="l4">L4. Annealing, normalizing, quenching in one line</h3>
+<ul>
+<li>Annealing: slow cooling, coarse pearlite (and ferrite in hypo-eutectoid steel).</li>
+<li>Normalizing: moderate cooling, fine pearlite.</li>
+<li>Quenching faster than CCR: martensite.</li>
+</ul>
+</div><div class="sub"><h3 id="l5">L5. Where the notes and slides differ</h3>
+<ul>
+<li>Curve 2 (medium pearlite) is linked to normalizing, while says normalizing gives fine pearlite. Pages quote both.</li>
+<li>says 0.8 wt% C; elsewhere 0.76 wt% C.</li>
+</ul>
+</div></section><section class="sec"><h2 id="m">M. Heat treatment and annealing</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>Heat treatment is a combination of heating and cooling operations on a solid metal or alloy to produce a particular microstructure and so the wanted properties.</p>
+<h4>2. Stages and objectives</h4>
+<p>Heat, soak, cool at the rate needed. Objectives: improve strength, impact resistance and ductility; relieve internal stress; refine grain; soften for machining and forming; improve wear and corrosion resistance; remove the effect of strain hardening.</p>
+<p>Critical temperatures: <strong>A1</strong> (below it no austenite), <strong>A3</strong> (above it all austenite), <strong>Acm</strong> (cementite line for hyper-eutectoid steel).</p>
+<h4>3. Annealing, normalizing, hardening, tempering</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Treatment</th>
+<th>How</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Treatment">Full annealing</td><td data-l="How">hypo-eutectoid steel above A3, soak, cool slowly in the furnace</td><td data-l="Result">coarse pearlite, soft, stress relieved</td></tr>
+<tr><td data-l="Treatment">Process annealing</td><td data-l="How">cold-worked low-carbon steel below A1, air cool; no phase change</td><td data-l="Result">removes strain hardening, restores ductility</td></tr>
+<tr><td data-l="Treatment">Spheroidise annealing</td><td data-l="How">about A1 or just below</td><td data-l="Result">cementite spheres; maximum softness and machinability</td></tr>
+<tr><td data-l="Treatment">Normalizing</td><td data-l="How">30 to 80 deg C above A3, cool in still air</td><td data-l="Result">fine, uniform pearlite; higher strength and toughness than annealing</td></tr>
+<tr><td data-l="Treatment">Hardening</td><td data-l="How">austenitize, quench in water, oil or brine faster than the critical rate</td><td data-l="Result">martensite, very hard</td></tr>
+<tr><td data-l="Treatment">Tempering</td><td data-l="How">reheat below A1 (150 to 700 deg C)</td><td data-l="Result">relieves stress, raises toughness, lowers hardness</td></tr>
+</tbody>
+</table></div>
+<p>Hardening temperature: 30 to 50 deg C above A3 (hypo-eutectoid) or above A1 (hyper-eutectoid).</p>
+<h4>4. Hardenability and Jominy test</h4>
+<p>Hardenability is the depth to which a steel hardens on quenching. It is compared by the Jominy end-quench test: a 25 mm by 100 mm bar, water jet on one end, hardness (HRC) measured along the bar; hardness is highest at the quenched end and falls along it.</p>
+<h4>5. Tempering ranges</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Range</th>
+<th>Temperature</th>
+<th>What happens</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Range">Low</td><td data-l="Temperature">150 to 200 deg C</td><td data-l="What happens">stress relieved, high hardness kept</td><td data-l="Use"></td></tr>
+<tr><td data-l="Range">Medium</td><td data-l="Temperature">200 to 450 deg C</td><td data-l="What happens">retained austenite decomposes, tempered martensite</td><td data-l="Use">springs, dies</td></tr>
+<tr><td data-l="Range">High</td><td data-l="Temperature">450 to 700 deg C</td><td data-l="What happens">coarse cementite, most ductile</td><td data-l="Use">shafts, axles</td></tr>
+</tbody>
+</table></div>
+<p><strong>Exam-ready conclusion:</strong> annealing softens, normalizing refines, hardening gives martensite and tempering trades some hardness for toughness.</p>
+</div>
+<div class="sub"><h3 id="m1">M1. What heat treatment is</h3>
+<p>Heat treatment is a combination of heating and cooling operations on a solid metal or alloy, to produce a particular microstructure and so the wanted properties.</p>
+<p>If the composition is fixed and the part has already solidified, only heat treatment can change its properties.</p>
+</div><div class="sub"><h3 id="m2">M2. Objectives</h3>
+<p>From:</p>
+<ul>
+<li>improve strength, impact resistance, ductility</li>
+<li>relieve internal stresses left by casting, welding, forging or machining</li>
+<li>refine grains</li>
+<li>soften the metal for machinability and formability</li>
+<li>improve wear, abrasion and corrosion resistance</li>
+<li>change magnetic and electrical properties</li>
+<li>make a hard surface with a softer interior</li>
+<li>remove the effect of strain hardening and restore ductility of cold-worked metal</li>
+</ul>
+</div><div class="sub"><h3 id="m3">M3. Three stages</h3>
+<ol>
+<li>Heat to the prescribed temperature.</li>
+<li>Hold (soak) there for a known time.</li>
+<li>Cool at the rate needed for the wanted microstructure.</li>
+</ol>
+<p>Processes are grouped as full heat treatment and surface heat treatment.</p>
+</div><div class="sub"><h3 id="m4">M4. Critical temperatures</h3>
+<ul>
+<li><strong>A1 (lower critical):</strong> below it no austenite is present.</li>
+<li><strong>A3 (upper critical):</strong> above it the steel is all austenite.</li>
+<li><strong>Acm:</strong> the cementite line for hyper-eutectoid steel.</li>
+<li>Between A1 and A3 (or Acm) the steel is ferrite + austenite (or cementite + austenite).</li>
+<li>Different carbon contents have different A3 and Acm but the same A1.</li>
+</ul>
+</div><div class="sub"><h3 id="m5">M5. Annealing</h3>
+<p>Annealing heats a metal and cools it slowly so that its structure settles into an ordered arrangement. It is used most for iron and steel.</p>
+<p>Stages: heat, soak, cool, usually to room temperature.</p>
+<p>Purposes: relieve stresses, make the metal soft, change ductility and toughness, refine grain, produce a definite microstructure.</p>
+<p>It is used on castings, forgings, rolled stock and press work.</p>
+<p>Types: full, process, stress-relief, recrystallization and spheroidise annealing.</p>
+</div><div class="sub"><h3 id="m6">M6. The annealing types</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Type</th>
+<th>How</th>
+<th>Result and use</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Type">Full annealing</td><td data-l="How">Heat hypo-eutectoid steel above A3 to single-phase austenite, soak, cool slowly in the furnace. Hyper-eutectoid steel is heated above A1</td><td data-l="Result and use">coarse pearlite with excess ferrite; soft, ductile; the softest condition</td></tr>
+<tr><td data-l="Type">Process annealing</td><td data-l="How">Heat cold-worked low-carbon steel below A1, cool in air. No phase change</td><td data-l="Result and use">removes strain hardening, restores ductility for more forming; used for wire and sheet</td></tr>
+<tr><td data-l="Type">Spheroidise annealing</td><td data-l="How">Heat to about A1 (727 deg C) or just below; cementite balls up</td><td data-l="Result and use">spheroidite; maximum softness, ductility and machinability</td></tr>
+</tbody>
+</table></div>
+<p>Objectives of spheroidising: soften steel, raise ductility and toughness, improve machinability and formability, reduce hardness, strength and wear resistance.</p>
+</div><div class="sub"><h3 id="m7">M7. Everyday picture</h3>
+<p>A bent paper clip is hard to bend again (strain hardened). Warm it gently and let it cool, and it is soft again. That is process annealing.</p>
+</div><div class="sub"><h3 id="m8">M8. Where the course files disagree</h3>
+<p>These are logged under Flagged in progress.md. The pages give both values and do not choose.</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Item</th>
+<th></th>
+<th>Slides C7</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Item">Full-annealing temperature</td><td data-l="">30 to 50 deg C above A3</td><td data-l="Slides C7">723 to 910 deg C, "above A3"</td></tr>
+<tr><td data-l="Item">Eutectoid carbon for the hypo/hyper split</td><td data-l="">0.76 wt%</td><td data-l="Slides C7">0.77 %, 0.83 %</td></tr>
+<tr><td data-l="Item">Process-annealing temperature</td><td data-l="">550 to 650 deg C, below A1</td><td data-l="Slides C7">260 to 760 deg C depending on alloy; about 100 deg C below A1</td></tr>
+<tr><td data-l="Item">Spheroidising carbon</td><td data-l="">"high-carbon steels"</td><td data-l="Slides C7">steels above 0.5 % C</td></tr>
+<tr><td data-l="Item">Furnace or room cooling in full annealing</td><td data-l="">"inside the furnace"</td><td data-l="Slides C7">"in the furnace" and "slowly in room temperature" in the same slide</td></tr>
+</tbody>
+</table></div>
+<p>also gives a cooling rate of "30-40 C" with no time unit shown in the extracted text, so no rate is stated on these pages.</p>
+</div><div class="sub"><h3 id="m9">M9. Normalizing</h3>
+<p>Austenitize at 30 to 80 deg C above A3, then cool slowly, usually in still air.</p>
+<p>Aim: fine-grained, uniform, fine pearlite.</p>
+<p>Used mainly for unalloyed and low-alloy hypo-eutectoid steels. For hyper-eutectoid steels the temperature is 30 to 80 deg C above A1 or Acm.</p>
+<p>Air cooling is faster than annealing, so it is also called air quenching. Industry often uses normalizing instead of annealing, because annealing needs longer and costlier cycles.</p>
+<p>Result against annealing: finer, more uniform grains, higher strength and toughness, lower cost.</p>
+<p>( also gives a cooling rate "60-70 C" with no time unit shown, so no rate is stated here.)</p>
+</div><div class="sub"><h3 id="m10">M10. Hardening (quenching)</h3>
+<p>Heat into the austenite region, hold, then quench in water, oil or brine.</p>
+<p>If the cooling rate is faster than the critical cooling rate (topic L) the nose is bypassed and martensite forms. Martensite gives the hardness.</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Steel</th>
+<th>Heating temperature</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Steel">Hypo-eutectoid</td><td data-l="Heating temperature">30 to 50 deg C above A3</td><td data-l="Why">completely austenite</td></tr>
+<tr><td data-l="Steel">Hyper-eutectoid</td><td data-l="Heating temperature">30 to 50 deg C above A1</td><td data-l="Why">pearlite turns to austenite, cementite is kept before quenching</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="m11">M11. Hardenability and the Jominy test</h3>
+<p>Hardenability is the ability of a steel to harden by the hardening treatment. It measures the depth to which an alloy can be hardened on quenching.</p>
+<p>It is compared by the Jominy end-quench test.</p>
+<p>Set-up read from the rendered:</p>
+<ul>
+<li>a round bar 25 mm in diameter and 100 mm long hangs from a mounting fixture</li>
+<li>a water jet at 24 deg C, from a 12.5 mm opening, hits the bottom end only, 12.5 mm below it</li>
+<li>hardness (HRC) is measured along the bar from the quenched end</li>
+</ul>
+<p>The slide plots HRC (marked from 20 to 60) against distance from the quenched end (0 to 50 mm) for steels labelled 0.2, 0.3, 0.4 and 0.6 % C. Hardness is highest at the quenched end and falls along the bar, where there is less martensite. The curve for the higher-carbon steel lies higher. (Read from the picture as a trend; no single value is quoted.)</p>
+</div><div class="sub"><h3 id="m12">M12. Where each treatment sits on the Fe-Fe3C diagram</h3>
+<p>draws the temperature ranges against carbon content (0 to 2.0 wt% C):</p>
+<ul>
+<li>the normalizing range is a band above the A3 and Acm lines, for both hypo- and hyper-eutectoid steels</li>
+<li>the hardening or annealing range is a band just above 727 deg C for hyper-eutectoid steel</li>
+<li>process annealing is a band just below 727 deg C</li>
+<li>the spheroidising range is a band just below 727 deg C, in the middle of the diagram</li>
+</ul>
+<p>The slide marks the eutectoid composition at 0.8 on its axis (see the flag about 0.76 and 0.8).</p>
+</div><div class="sub"><h3 id="m13">M13. Tempering</h3>
+<p>Hardened steel is very hard but brittle, so it is reheated to a subcritical temperature (below A1, 150 to 700 deg C) and cooled at any rate.</p>
+<p>Objectives: relieve residual stress, raise ductility, toughness and impact strength, lower hardness, convert retained austenite.</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Range</th>
+<th>Temperature</th>
+<th>What happens</th>
+<th>Use (notes)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Range">Low</td><td data-l="Temperature">150 to 200 deg C</td><td data-l="What happens">internal stress relieved; carbon starts to come out of martensite (epsilon-carbide)</td><td data-l="Use (notes)">high hardness kept</td></tr>
+<tr><td data-l="Range">Medium</td><td data-l="Temperature">200 to 450 deg C</td><td data-l="What happens">retained austenite decomposes; tempered martensite; fine cementite in ferrite, called secondary troostite</td><td data-l="Use (notes)">springs and dies</td></tr>
+<tr><td data-l="Range">High</td><td data-l="Temperature">450 to 700 deg C</td><td data-l="What happens">cementite coalesces into coarse spheroids; sorbite; most ductile</td><td data-l="Use (notes)">shafts and axles</td></tr>
+</tbody>
+</table></div>
+</div></section><section class="sec"><h2 id="n">N. Martempering and austempering</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Why special quenches</h4>
+<p>In a thick section the surface cools faster than the core, so the core may form bainite or pearlite instead of martensite.</p>
+<h4>2. Martempering</h4>
+<ol>
+<li>Quench austenitized steel in a salt bath just above Ms (slide: 20 to 30 deg C above Ms, about 180 to 250 deg C).</li>
+<li>Hold briefly so the temperature evens out.</li>
+<li>Cool in air; the whole section turns to martensite together.</li>
+</ol>
+<p>Result: martensite with minimum distortion and small thermal and structural stress.</p>
+<h4>3. Austempering</h4>
+<ol>
+<li>Quench in a salt bath above Ms (slide: 300 to 400 deg C).</li>
+<li>Hold until isothermal transformation to lower bainite is complete.</li>
+<li>Cool at any rate; no tempering needed.</li>
+</ol>
+<p>Advantages: better ductility at the same hardness, no distortion or cracks, better impact strength, high endurance limit.</p>
+<h4>4. Comparison</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Martempering</th>
+<th>Austempering</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Bath temperature</td><td data-l="Martempering">just above Ms, about 180 to 250 deg C</td><td data-l="Austempering">300 to 400 deg C</td></tr>
+<tr><td data-l="">Hold</td><td data-l="Martempering">short</td><td data-l="Austempering">long</td></tr>
+<tr><td data-l="">Final cooling</td><td data-l="Martempering">air through the martensite range</td><td data-l="Austempering">any rate</td></tr>
+<tr><td data-l="">Product</td><td data-l="Martempering">martensite (tempered afterwards)</td><td data-l="Austempering">lower bainite, no tempering</td></tr>
+</tbody>
+</table></div>
+<p><strong>Exam-ready conclusion:</strong> both avoid distortion and cracking by holding in a bath; martempering gives martensite, austempering gives lower bainite.</p>
+</div>
+<div class="sub"><h3 id="n1">. Why special quenches</h3>
+<p>In a thick section the surface cools faster than the core. The core may form bainite or pearlite instead of martensite.</p>
+</div><div class="sub"><h3 id="n2">. Martempering</h3>
+<ol>
+<li>Quench austenitized steel in a salt bath held just above Ms (slide: 20 to 30 deg C above Ms, about 180 to 250 deg C).</li>
+<li>Hold briefly so the temperature evens out across the section. A long hold would let bainite form.</li>
+<li>Cool in air. The whole section turns to martensite together.</li>
+</ol>
+<p>Result (notes: 100 % martensite): fully martensite, minimum distortion, small thermal and structural stress.</p>
+</div><div class="sub"><h3 id="n3">. Austempering</h3>
+<ol>
+<li>Quench austenitized steel in a molten salt bath above Ms (slide: 300 to 400 deg C).</li>
+<li>Hold long enough for isothermal transformation to lower bainite.</li>
+<li>Cool to room temperature at any rate. No tempering is needed.</li>
+</ol>
+<p>It is the horizontal curve 8 of topic L.</p>
+<p>Used to avoid stress, distortion and cracks in high-carbon steels. Alloying elements lower Ms in ordinary hardening, which raises stress and distortion.</p>
+<p>Advantages: better ductility at the same hardness, no distortion or cracks, no tempering, better impact strength, uniform properties, high endurance limit.</p>
+<p>Bainite is less hard than martensite but has better impact resistance.</p>
+</div><div class="sub"><h3 id="n4">. Martempering and austempering together</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Martempering</th>
+<th>Austempering</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Bath temperature</td><td data-l="Martempering">just above Ms, about 180 to 250 deg C</td><td data-l="Austempering">above Ms, 300 to 400 deg C</td></tr>
+<tr><td data-l="">Hold</td><td data-l="Martempering">short</td><td data-l="Austempering">long, until bainite is complete</td></tr>
+<tr><td data-l="">Final cooling</td><td data-l="Martempering">air, through the martensite range</td><td data-l="Austempering">any rate</td></tr>
+<tr><td data-l="">Product</td><td data-l="Martempering">martensite (tempered afterwards)</td><td data-l="Austempering">lower bainite, no tempering</td></tr>
+</tbody>
+</table></div>
+<p>( agree with the slides on austempering at 300 to 400 deg C. For martempering, says 20 to 30 deg C above Ms, i.e. 180 to 250 deg C, and the notes say just above Ms, about 180 to 250 deg C.)</p>
+</div></section><section class="sec"><h2 id="o">O. Precipitation hardening</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>Precipitation hardening (age hardening) raises strength and hardness by forming very fine precipitate particles in a softer matrix. It is used on non-ferrous alloys such as Al-Cu, Al-Mg-Si, Al-Zn-Mg, Cu-Be.</p>
+<h4>2. Three stages (Al-Cu)</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Stage</th>
+<th>What is done</th>
+<th>State of the alloy</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Stage">Solution treatment</td><td data-l="What is done">heat until the solute (Cu) dissolves completely</td><td data-l="State of the alloy">single-phase solid solution</td></tr>
+<tr><td data-l="Stage">Quenching</td><td data-l="What is done">cool rapidly to room temperature</td><td data-l="State of the alloy">supersaturated solid solution (solute trapped)</td></tr>
+<tr><td data-l="Stage">Aging</td><td data-l="What is done">moderate heat (artificial) or room temperature (natural)</td><td data-l="State of the alloy">fine precipitates; hard and strong</td></tr>
+</tbody>
+</table></div>
+<p>Aging order: supersaturated solid solution, solute clustering, nucleation, growth, coarsening.</p>
+<h4>3. Why it hardens</h4>
+<p>The fine precipitates obstruct the movement of dislocations, which raises yield strength and hardness.</p>
+<p><strong>Exam-ready conclusion:</strong> solution treat, quench and age; the precipitates block dislocations and harden the alloy.</p>
+</div>
+<div class="sub"><h3 id="o1">O1. What it is</h3>
+<p>Precipitation hardening (age hardening) raises strength and hardness by forming very fine precipitate particles inside a softer matrix.</p>
+<p>It is used on non-ferrous alloys such as Al-Cu, Al-Mg-Si, Al-Zn-Mg, Cu-Be and some nickel-based alloys.</p>
+</div><div class="sub"><h3 id="o2">O2. Three stages</h3>
+<p>The slides use an Al-Cu alloy.</p>
+<ol>
+<li><strong>Solution treatment.</strong> Heat to a temperature where the solute (Cu) dissolves completely in the matrix (Al), giving a single-phase solid solution.</li>
+<li><strong>Quenching.</strong> Cool rapidly to room temperature. The solute atoms have no time to form equilibrium precipitates, so they are trapped. The result is a supersaturated solid solution (SSSS).</li>
+<li><strong>Aging.</strong> Reheat to a moderate temperature (artificial aging) or hold at room temperature (natural aging). Solute atoms gather into clusters and then fine precipitates.</li>
+</ol>
+</div><div class="sub"><h3 id="o3">O3. Why it hardens</h3>
+<p>The precipitates are fine and spread through the metal. They obstruct the movement of dislocations. This raises yield strength and hardness.</p>
+<p>Aging is the most important stage: the unstable supersaturated solution releases its excess atoms as small particles called precipitates.</p>
+<p>lists the order of events during aging: supersaturated solid solution, solute clustering, nucleation, growth, coarsening.</p>
+<p>Everyday picture: sand stirred into thick syrup makes the syrup harder to move. The precipitates are the sand grains, and a dislocation is the thing trying to move.</p>
+</div><div class="sub"><h3 id="o4">O4. Summary</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Stage</th>
+<th>What is done</th>
+<th>State of the alloy</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Stage">Solution treatment</td><td data-l="What is done">heat until the solute dissolves</td><td data-l="State of the alloy">single-phase solid solution</td></tr>
+<tr><td data-l="Stage">Quenching</td><td data-l="What is done">cool fast</td><td data-l="State of the alloy">supersaturated solid solution</td></tr>
+<tr><td data-l="Stage">Aging</td><td data-l="What is done">moderate heat, or room temperature</td><td data-l="State of the alloy">fine coherent precipitates; hard and strong</td></tr>
+</tbody>
+</table></div>
+<p>(The also shows a temperature-versus-time plot of solution and precipitation treatment; no values from it are used here.)</p>
+</div></section><section class="sec"><h2 id="p">P. Surface heat treatment</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition and purpose</h4>
+<p>Surface heat treatment hardens only the outer layer, leaving a tough core, for gears, cams, crankshafts and dies that need wear resistance and fatigue life.</p>
+<ul>
+<li><strong>Case hardening:</strong> surface composition changed (carburizing, nitriding).</li>
+<li><strong>Surface hardening:</strong> no change of composition (induction, flame).</li>
+</ul>
+<h4>2. Carburizing (about 900 deg C, then quench)</h4>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Medium</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pack</td>
+<td>part packed in charcoal with an energiser (barium carbonate 15 to 20 %)</td>
+</tr>
+<tr>
+<td>Liquid (salt bath)</td>
+<td>sodium carbonate 70 to 80 %, sodium chloride 10 to 15 %, silicon carbide 6 to 10 %; or sodium cyanide bath at 870 to 950 deg C</td>
+</tr>
+<tr>
+<td>Gas</td>
+<td>hydrocarbon (methane, propane, butane) and a carrier gas; case depth 0.25 to 1 mm</td>
+</tr>
+</tbody>
+</table></div>
+<h4>3. Nitriding</h4>
+<p>Atomic nitrogen from ammonia diffuses into alloy steel at about 500 deg C for about 100 hours, forming hard nitrides. No quench is needed.</p>
+<h4>4. Induction and flame hardening</h4>
+<ul>
+<li><strong>Induction:</strong> high-frequency current in a coil heats the surface by eddy currents; water jets quench. Depth is controlled by frequency.</li>
+<li><strong>Flame:</strong> oxy-acetylene flame heats the surface above the upper critical temperature; water jets quench. Depth depends on travel speed, torch distance and steel composition.</li>
+</ul>
+<h4>5. Comparison</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Carburizing</th>
+<th>Nitriding</th>
+<th>Induction</th>
+<th>Flame</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Changes composition</td><td data-l="Carburizing">yes (carbon)</td><td data-l="Nitriding">yes (nitrogen)</td><td data-l="Induction">no</td><td data-l="Flame">no</td></tr>
+<tr><td data-l="">Heat source</td><td data-l="Carburizing">furnace, bath or gas, about 900 deg C</td><td data-l="Nitriding">ammonia, about 500 deg C</td><td data-l="Induction">induction coil</td><td data-l="Flame">gas torch</td></tr>
+<tr><td data-l="">Quench after</td><td data-l="Carburizing">yes</td><td data-l="Nitriding">no</td><td data-l="Induction">yes</td><td data-l="Flame">yes</td></tr>
+</tbody>
+</table></div>
+<p><strong>Exam-ready conclusion:</strong> carburizing and nitriding change the surface composition; induction and flame hardening harden by heating and quenching the surface only.</p>
+</div>
+<div class="sub"><h3 id="s-p1-why-only-the-surface" id="">P1. Why only the surface</h3>
+<p>Gears, pistons, crankshafts, cams and dies need a hard outer surface for wear resistance and fatigue life, with a tough core.</p>
+<p>So only the surface is hardened. There are two groups:</p>
+<ul>
+<li><strong>Case hardening:</strong> the surface composition is changed (carburizing, nitriding).</li>
+<li><strong>Surface hardening:</strong> no change of composition (induction, flame).</li>
+</ul>
+</div><div class="sub"><h3 id="s-p2-case-hardening" id="">P2. Case hardening</h3>
+<p>Low-carbon steel cannot be hardened by heating alone because it has too little carbon. Case hardening gives a hard skin over a softer core.</p>
+</div><div class="sub"><h3 id="s-p3-carburizing" id="">P3. Carburizing</h3>
+<p>Adding carbon to the outer skin is carburizing. The temperature is about 900 deg C. The longer the time, the deeper the hard layer. Quenching follows.</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Method</th>
+<th>Medium</th>
+<th>Temperature</th>
+<th>Reactions as printed on the slides</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Method">Pack</td><td data-l="Medium">part packed in wood or charcoal with an energiser, barium carbonate 15 to 20 %</td><td data-l="Temperature">900 deg C</td><td data-l="Reactions as printed on the slides">2CO gives CO2 + C</td></tr>
+<tr><td data-l="Method">Liquid (salt bath)</td><td data-l="Medium">molten bath, 70 to 80 % sodium carbonate, 10 to 15 % sodium chloride, 6 to 10 % silicon carbide; part held for an hour</td><td data-l="Temperature">900 deg C</td><td data-l="Reactions as printed on the slides">SiC + 2Na2CO3 gives Na2SiO3 + Na2O + 2CO + C</td></tr>
+<tr><td data-l="Method">Liquid (cyanide)</td><td data-l="Medium">sodium cyanide with sodium chloride as activator</td><td data-l="Temperature">870 to 950 deg C</td><td data-l="Reactions as printed on the slides">2NaCN + 2O2 gives Na2CO3 + 2N + CO, then 2CO gives CO2 + C</td></tr>
+<tr><td data-l="Method">Gas</td><td data-l="Medium">gas-tight container with a hydrocarbon (methane, propane or butane) and a carrier gas</td><td data-l="Temperature">about 900 deg C</td><td data-l="Reactions as printed on the slides">CH4 gives 2H2 + C</td></tr>
+</tbody>
+</table></div>
+<p>In the salt bath, the sodium silicate and sodium oxide rise to the surface as a slag layer.</p>
+<p>Gas carburizing case depth is 0.25 to 1 mm. It is varied by time, temperature and gas composition.</p>
+<p>says grain refining is needed to prevent cracking.</p>
+<p>(The slides print the reactions without balancing them. They are copied as printed.)</p>
+</div><div class="sub"><h3 id="s-p4-nitriding" id="">P4. Nitriding</h3>
+<p>Atomic nitrogen from ammonia is diffused into alloy steel at about 500 deg C for about 100 hours. It forms very hard nitrides on the surface. It is used for finished components, and no quench is needed.</p>
+<p>Reaction as printed: 2NH3 gives 2N + 3H2.</p>
+</div><div class="sub"><h3 id="s-p5-induction-hardening" id="">P5. Induction hardening</h3>
+<p>High-frequency current in a coil induces eddy currents that heat the surface very quickly. Water jets quench it at once.</p>
+<p>The depth of the hard layer is controlled by the frequency. The result is a hard outer layer on a soft core. Example on the slide: lathe slideways.</p>
+</div><div class="sub"><h3 id="s-p6-flame-hardening" id="">P6. Flame hardening</h3>
+<p>Oxy-acetylene flames heat the surface above the upper critical temperature. The core heats by conduction. Water jets quench it.</p>
+<p>The steel needs enough carbon and alloying for hardenability.</p>
+<p>Case depth depends on the speed of travel, the distance from torch tip to surface, and the steel composition.</p>
+</div><div class="sub"><h3 id="s-p7-comparison" id="">P7. Comparison</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Carburizing</th>
+<th>Nitriding</th>
+<th>Induction</th>
+<th>Flame</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Changes composition</td><td data-l="Carburizing">yes (carbon)</td><td data-l="Nitriding">yes (nitrogen)</td><td data-l="Induction">no</td><td data-l="Flame">no</td></tr>
+<tr><td data-l="">Heat source</td><td data-l="Carburizing">furnace, bath or gas, about 900 deg C</td><td data-l="Nitriding">ammonia, about 500 deg C</td><td data-l="Induction">induction coil</td><td data-l="Flame">gas torch</td></tr>
+<tr><td data-l="">Quench after</td><td data-l="Carburizing">yes</td><td data-l="Nitriding">no</td><td data-l="Induction">yes (water jet)</td><td data-l="Flame">yes (water jet)</td></tr>
+<tr><td data-l="">Steel</td><td data-l="Carburizing">low carbon</td><td data-l="Nitriding">alloy steel</td><td data-l="Induction">medium to high carbon (needs hardenability)</td><td data-l="Flame">needs hardenability</td></tr>
+</tbody>
+</table></div>
+<p>(The last row follows for low-carbon steel, for alloy steel, and for the hardenability need; the slides do not state a carbon range for induction hardening, so none is given.)</p></div></section></main><a class="fab" href="#top">Top &uarr;</a></body></html>

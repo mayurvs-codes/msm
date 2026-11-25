@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Unit 3: Phase Diagrams, Heat Treatment and Structure-Property Correlation - Formulas and Methods</title><style>
+:root{--u:#3b6fd4;--bg:#f6f6f3;--fg:#1d2125;--mut:#5d646d;--card:#ffffff;--soft:#f3f4f6;--line:#e2e4e8;--box:#f5f8fc;--boxl:#dce5f2;--ok:#eef6f0;--okl:#b9d9c3}
+@media (prefers-color-scheme:dark){:root{--bg:#17191d;--fg:#e3e5e8;--mut:#a2a9b2;--card:#1f2227;--soft:#262a30;--line:#33383f;--box:#1d2330;--boxl:#2f3b50;--ok:#1b2a21;--okl:#2f4a39}}
+*{box-sizing:border-box}
+html{scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+[id]{scroll-margin-top:64px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16.5px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ut:color-mix(in srgb,var(--u) 80%,#000000)}
+@media (prefers-color-scheme:dark){body{--ut:color-mix(in srgb,var(--u) 45%,#ffffff)}}
+main{max-width:880px;margin:0 auto;padding:16px 20px 96px}
+.top{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:3px solid var(--u);display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:8px 12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.top a,.top .off{white-space:nowrap;color:var(--fg);text-decoration:none;padding:6px 12px;border-radius:7px;font-size:14px;line-height:1.2;border:1px solid var(--line);background:var(--card)}
+.top a:hover{background:var(--soft)}
+.top a.on{background:var(--u);border-color:var(--u);color:#fff;font-weight:600}
+.top .off{color:var(--mut);opacity:.6;cursor:not-allowed}
+.top .sep{width:1px;align-self:stretch;background:var(--line);margin:2px 4px}
+h1{font-size:1.55em;line-height:1.3;margin:.6em 0 .15em;font-weight:700}
+h1+p{color:var(--mut);margin:0 0 10px}
+h2{font-size:1.28em;line-height:1.35;border-bottom:2px solid var(--u);padding-bottom:5px;margin:2.4em 0 .8em;font-weight:700}
+h3{font-size:1.08em;margin:1.8em 0 .55em;font-weight:700;color:var(--fg);padding-left:10px;border-left:4px solid var(--u)}
+a{color:var(--ut)}
+p{margin:.6em 0}
+ul,ol{padding-left:1.5em;margin:.55em 0}
+li{margin:.35em 0}
+strong,b{font-weight:650}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:.9em}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 24px;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.jump a{border:1px solid var(--line);color:var(--fg);background:var(--soft);border-radius:999px;padding:5px 12px;font-size:14px;line-height:1.3;text-decoration:none}
+.jump a:hover{border-color:var(--u)}
+table{border-collapse:collapse;margin:14px 0;width:100%;font-size:15px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:8px 11px;vertical-align:top;text-align:left;overflow-wrap:break-word}
+th{background:var(--soft);font-weight:650}
+.box{background:var(--box);border:1px solid var(--boxl);border-radius:10px;margin:14px 0 16px;overflow:hidden}
+.frow{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4px 18px;padding:10px 16px;border-top:1px solid var(--boxl);align-items:baseline}
+.frow:first-child{border-top:0}
+.frow.wide{grid-template-columns:minmax(0,1fr)}
+.flab{font-weight:650;font-size:14.5px;color:var(--fg)}
+.fml{min-width:0}
+.fml>p{margin:.2em 0}
+.fml math{font-size:1.12em}
+.fml math[display=block]{width:fit-content;max-width:100%;margin:2px 0}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:20px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--mut);margin-bottom:8px;line-height:1.4}
+.qhead .id{background:var(--soft);border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:1px 8px;font-weight:700}
+.qhead .mk{border:1px solid var(--line);color:var(--fg);border-radius:999px;padding:0 8px;font-weight:600}
+.qtext>p:first-child{margin-top:0}
+.opts{list-style:none;padding:0;margin:10px 0 6px;display:grid;gap:6px}
+.opts.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts li{margin:0;padding:6px 11px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}
+.opts .ok{color:var(--mut);margin-right:2px}
+details{margin-top:10px}
+details>summary{cursor:pointer;font-weight:650;color:var(--fg);list-style:none;padding:4px 0;display:inline-flex;align-items:center;gap:8px}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";width:7px;height:7px;border-right:2px solid var(--u);border-bottom:2px solid var(--u);transform:rotate(-45deg)}
+details[open]>summary::before{transform:rotate(45deg)}
+.ans{border-top:1px solid var(--line);margin-top:6px;padding-top:8px}
+.ans li{margin:.45em 0}
+math{font-size:1.07em}
+math:not([display=block]),mstyle[displaystyle=false]{math-style:normal}
+math:not([display=block]) munder,math:not([display=block]) munderover{math-style:compact}
+math[display=block]{overflow-x:auto;overflow-y:hidden;padding:6px 0;margin:4px 0}
+.mw{display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding:2px 0}
+.texerr{color:#cf222e}
+.mw,math[display=block]{scrollbar-width:thin}
+menclose[notation~=box]{border:1.5px solid var(--okl);padding:4px 10px;border-radius:6px;background:var(--ok)}
+.home{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:18px}
+.card{border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:16px 18px;background:var(--card)}
+.card h2{margin:0 0 2px;font-size:1.2em;border:0;padding:0}
+.card p{color:var(--mut);margin:0 0 12px}
+.card a{display:block;margin:8px 0;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--soft);color:var(--fg);text-decoration:none;font-weight:600}
+.card a:hover{border-color:var(--c)}
+.fab{position:fixed;right:14px;bottom:14px;z-index:6;background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.dm-w{display:block}.dm-n{display:none}
+.tsc{overflow-x:auto;scrollbar-width:thin;margin:14px 0}.tsc table{margin:0}
+table.t-alt{display:none;width:auto;min-width:60%}
+@media (max-width:1000px){table.t-wide.t10{display:none}table.t-alt.t10{display:table}}
+@media (max-width:700px){table.t-wide{display:none}table.t-alt{display:table}}
+@media (max-width:700px){.dm-w{display:none}.dm-n{display:block}table.stk,table.stk tbody,table.stk tr,table.stk td{display:block;width:100%}table.stk thead{display:none}table.stk tr{border:1px solid var(--line);border-radius:8px;margin:0 0 10px;overflow:hidden;background:var(--card)}table.stk td{border:0;border-top:1px solid var(--line);padding:6px 10px}table.stk td:first-child{border-top:0;background:var(--soft);font-weight:600}table.stk td[data-l]:not(:first-child)::before{content:attr(data-l);display:block;font-size:12px;font-weight:700;color:var(--mut)}}
+@media (max-width:640px){body{font-size:16px}main{padding:10px 12px 88px}.q{padding:12px 13px}h1{font-size:1.32em}h2{font-size:1.16em}.opts.two{grid-template-columns:1fr}table{font-size:14px}th,td{padding:6px 7px}.frow{grid-template-columns:minmax(0,1fr);padding:9px 12px}.flab{font-size:13.5px;color:var(--mut)}.top{gap:5px;padding:6px 8px}.top a,.top .off{padding:5px 9px;font-size:13.5px}.fab{right:10px;bottom:10px;padding:7px 13px;font-size:13px}}
+:root{--navh:52px;--h2h:46px}
+.lg{display:inline}.sh{display:none}
+.sec>h2{position:sticky;top:var(--navh);z-index:3;background:var(--bg);height:var(--h2h);margin:2.2em 0 .6em;padding:12px 0 6px;font-size:1.15em;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box}
+.sub>h3{position:sticky;top:calc(var(--navh) + var(--h2h));z-index:2;background:var(--bg);margin:1.4em 0 .5em;padding:7px 10px;line-height:1.35;font-size:1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 6px 6px -6px rgba(0,0,0,.12)}
+[id]{scroll-margin-top:calc(var(--navh) + var(--h2h) + 44px)}
+.sec>h2[id],.sub>h3[id]{scroll-margin-top:var(--navh)}
+.idx{display:none}
+.idx b,.idxp b{display:block;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);margin:4px 8px 8px}
+.idx a,.idxp a{display:flex;justify-content:space-between;gap:8px;text-decoration:none;color:var(--fg);border-radius:6px;padding:5px 8px;font-size:13.5px;line-height:1.35}
+.idx a:hover,.idxp a:hover{background:var(--soft)}
+.idx a.i2,.idxp a.i2{font-weight:700;margin-top:10px;border-top:1px solid var(--line);border-radius:0 0 6px 6px;padding-top:9px}
+.idx a.i3,.idxp a.i3{padding-left:18px;color:var(--fg)}
+.idx .n,.idxp .n{flex:0 0 auto;color:var(--mut);font-size:12px;font-weight:600;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:0 7px;height:fit-content}
+.idxm{position:static;margin-left:auto}
+.idxm>summary{list-style:none;cursor:pointer;white-space:nowrap;padding:6px 12px;border-radius:7px;font-size:14px;line-height:1.2;border:1px solid var(--u);background:var(--u);color:#fff;font-weight:600}
+.idxm>summary::-webkit-details-marker{display:none}
+.idxm>summary::before{content:"³0  Index"}
+.idxm[open]>summary::before{content:"¹5  Close"}
+.top .idxp a{border:0;background:none;white-space:normal;color:var(--fg);font-size:14px;padding:7px 8px}
+.top .idxp a:hover{background:var(--soft)}
+.top .idxp a.i2{border-top:1px solid var(--line);border-radius:0}
+.idxm[open]>summary{background:var(--card);color:var(--fg)}
+details.idxm>summary::before,details.idxm[open]>summary::before{width:auto;height:auto;border:0;transform:none;display:inline}
+.idxp{position:absolute;left:8px;right:8px;top:100%;margin-top:6px;max-height:62vh;overflow-y:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:9}
+@media (min-width:1180px){
+ body.has-idx{padding-left:290px}
+ body.has-idx .idx{display:block;position:fixed;left:0;top:var(--navh);bottom:0;width:280px;overflow-y:auto;padding:12px 10px 40px;border-right:1px solid var(--line);background:var(--card);z-index:4}
+ body.has-idx .idxm{display:none}
+}
+@media (min-width:701px) and (max-width:1179px){:root{--navh:60px}}
+@media (max-width:700px){:root{--navh:86px;--h2h:42px}.lg{display:none}.sh{display:inline}.top{height:var(--navh);align-content:flex-start}.sec>h2{font-size:1.02em;padding:11px 0 6px}.sub>h3{font-size:.95em}}
+@media print{.idx,.idxm{display:none}body.has-idx{padding-left:0}.sec>h2,.sub>h3{position:static}}
+.exam{border:1px solid var(--u);border-left:5px solid var(--u);border-radius:10px;padding:10px 16px;margin:12px 0 18px;background:color-mix(in srgb,var(--u) 7%,transparent)}.exam>p:first-child{margin-top:0;color:var(--u);font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.04em}.exam h4{margin:12px 0 4px}.fig{margin:14px auto;text-align:center}.fig svg{max-width:100%;height:auto}.fig figcaption{font-size:14px;color:var(--mut)}
+.fig svg text{fill:var(--fg)}
+/* reading layout modelled on a clean chat-style page: 16px/26px text, one idea per line, centred equations */
+body{font-size:16px;line-height:1.5}
+main{max-width:760px}
+p{margin:5px 0}
+ul,ol{margin:4px 0 8px;padding-left:1.6em}
+li{margin:2px 0;line-height:1.5}
+li>p{margin:2px 0}
+li>ul,li>ol{margin:2px 0}
+.ans{padding-top:8px}
+.ans>p,.qtext>p{margin:5px 0}
+.ans>p>strong:first-child{display:block;margin-bottom:2px}
+math{line-height:1.4;font-size:1.1em}
+math[display=block]{margin:8px 0;padding:2px 0;white-space:nowrap}
+.q{padding:14px 18px;margin:20px 0}
+.qhead{margin-bottom:8px}
+.box{margin:14px 0}
+table{margin:10px 0;line-height:1.45}
+th,td{padding:6px 10px}
+.fig{margin:14px auto}
+h2{margin:1.8em 0 .6em}
+h3{margin:1.2em 0 .4em}
+.exam h4{margin:8px 0 2px}
+@media (max-width:640px){body{font-size:16px}.q{padding:14px 12px}}
+@media print{.top,.jump,.fab{display:none}body{font-size:12pt;background:#fff;color:#000}.q,.box{break-inside:avoid;box-shadow:none}details>summary{display:none}}
+:root{--u:#2f855a}</style></head><body id="top" class="has-idx"><nav class="top"><a href="index.html">Home</a><span class="off" title="Not built yet"><span class="lg">Unit </span><span class="sh">U</span>1</span><span class="off" title="Not built yet"><span class="lg">Unit </span><span class="sh">U</span>2</span><a href="Unit-3_Concepts.html" class="on"><span class="lg">Unit </span><span class="sh">U</span>3</a><a href="Unit-4_Concepts.html"><span class="lg">Unit </span><span class="sh">U</span>4</a><span class="sep"></span><a href="Unit-3_Concepts.html"><span class="lg">Concepts</span><span class="sh">Concepts</span></a><a href="Unit-3_Formulas-and-Methods.html" class="on"><span class="lg">Formulas</span><span class="sh">Formulas</span></a><a href="Unit-3_Question-Bank-Solved.html"><span class="lg">Question Bank</span><span class="sh">QB</span></a><details class="idxm"><summary></summary><div class="idxp"><b>On this page</b><a class="i2" href="#sheet">1. Formula and rule sheet</a><a class="i3" href="#hr">1.1 Hume-Rothery rules for complete solid solubility</a><a class="i3" href="#gibbs">1.2 Gibbs phase rule</a><a class="i3" href="#lever">1.3 Lever rule (two-phase region)</a><a class="i3" href="#solid">1.4 Solidification</a><a class="i3" href="#fefec-numbers">1.5 Fe-Fe3C numbers</a><a class="i3" href="#steelfrac">1.5a Phase fractions in slowly cooled steel (lever rule with Fe-Fe3C values)</a><a class="i3" href="#classes">1.6 Classification and microstructure</a><a class="i3" href="#ttt-sheet">1.7 TTT products</a><a class="i3" href="#ht-sheet">1.8 Heat-treatment table</a><a class="i3" href="#surface-sheet">1.9 Surface treatment table</a><a class="i2" href="#methods">2. Methods with one solved example each</a><a class="i3" href="#m1">Method 1. Gibbs phase rule: degrees of freedom</a><a class="i3" href="#m2">Method 2. Tie line and lever rule</a><a class="i3" href="#m3">Method 3. Phase fractions in slowly cooled steel</a><a class="i3" href="#m4">Method 4. Hume-Rothery size check</a><a class="i3" href="#m5">Method 5. Classify an iron-carbon alloy by carbon</a><a class="i3" href="#m6">Method 6. Read the product from a cooling path on the TTT diagram</a><a class="i2" href="#tables">3. Reactions and microconstituents table</a><a class="i2" href="#which">4. Which method to pick</a></div></details></nav><aside class="idx"><b>On this page</b><a class="i2" href="#sheet">1. Formula and rule sheet</a><a class="i3" href="#hr">1.1 Hume-Rothery rules for complete solid solubility</a><a class="i3" href="#gibbs">1.2 Gibbs phase rule</a><a class="i3" href="#lever">1.3 Lever rule (two-phase region)</a><a class="i3" href="#solid">1.4 Solidification</a><a class="i3" href="#fefec-numbers">1.5 Fe-Fe3C numbers</a><a class="i3" href="#steelfrac">1.5a Phase fractions in slowly cooled steel (lever rule with Fe-Fe3C values)</a><a class="i3" href="#classes">1.6 Classification and microstructure</a><a class="i3" href="#ttt-sheet">1.7 TTT products</a><a class="i3" href="#ht-sheet">1.8 Heat-treatment table</a><a class="i3" href="#surface-sheet">1.9 Surface treatment table</a><a class="i2" href="#methods">2. Methods with one solved example each</a><a class="i3" href="#m1">Method 1. Gibbs phase rule: degrees of freedom</a><a class="i3" href="#m2">Method 2. Tie line and lever rule</a><a class="i3" href="#m3">Method 3. Phase fractions in slowly cooled steel</a><a class="i3" href="#m4">Method 4. Hume-Rothery size check</a><a class="i3" href="#m5">Method 5. Classify an iron-carbon alloy by carbon</a><a class="i3" href="#m6">Method 6. Read the product from a cooling path on the TTT diagram</a><a class="i2" href="#tables">3. Reactions and microconstituents table</a><a class="i2" href="#which">4. Which method to pick</a></aside><main><h1>Unit 3: Phase Diagrams, Heat Treatment and Structure-Property Correlation - Formulas and Methods</h1><p>Material Science and Metallurgy (UE25ME231A)</p><div class="jump"><a href="#sheet">1. Formula and rule sheet</a><a href="#methods">2. Methods with one solved example each</a><a href="#tables">3. Reactions and microconstituents table</a><a href="#which">4. Which method to pick</a></div><section class="sec"><h2 id="sheet">1. Formula and rule sheet</h2>
+<p>Every line cites where it comes from. N = notes section, C = class slides page, Q&amp;A = model answer.</p>
+<div class="sub"><h3 id="hr">1.1 Hume-Rothery rules for complete solid solubility</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Size factor</td>
+<td>atomic radii differ by no more than about 15 %</td>
+</tr>
+<tr>
+<td>Crystal structure</td>
+<td>same crystal structure</td>
+</tr>
+<tr>
+<td>Valence</td>
+<td>similar valence</td>
+</tr>
+<tr>
+<td>Electronegativity</td>
+<td>similar electronegativity</td>
+</tr>
+</tbody>
+</table></div>
+<p>Percentage size difference (written in the Q&amp;A model answer):</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> size difference</mtext><mo>=</mo><mfrac><mrow><msub><mi>r</mi><mrow><mi>s</mi><mi>o</mi><mi>l</mi><mi>u</mi><mi>t</mi><mi>e</mi></mrow></msub><mo>−</mo><msub><mi>r</mi><mrow><mi>s</mi><mi>o</mi><mi>l</mi><mi>v</mi><mi>e</mi><mi>n</mi><mi>t</mi></mrow></msub></mrow><msub><mi>r</mi><mrow><mi>s</mi><mi>o</mi><mi>l</mi><mi>v</mi><mi>e</mi><mi>n</mi><mi>t</mi></mrow></msub></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\%\ \text{size difference}=\dfrac{r_{solute}-r_{solvent}}{r_{solvent}}\times100</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="gibbs">1.2 Gibbs phase rule</h3>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>+</mo><mi>F</mi><mo>=</mo><mi>C</mi><mo>+</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">P+F=C+N</annotation></semantics></math></span></p>
+<p>At constant pressure N = 1:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo>=</mo><mi>C</mi><mo>+</mo><mn>1</mn><mo>−</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">F=C+1-P</annotation></semantics></math></span></p>
+<ul>
+<li>Single phase, binary: F = 2 + 1 - 1 = 2.</li>
+<li>Two phases, binary: F = 2 + 1 - 2 = 1.</li>
+</ul>
+</div><div class="sub"><h3 id="lever">1.3 Lever rule (two-phase region)</h3>
+<p>Tie line at the alloy temperature. C0 is the alloy composition.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mn>0</mn></msub></mrow><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_L=\dfrac{C_\alpha-C_0}{C_\alpha-C_L}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_\alpha=\dfrac{C_0-C_L}{C_\alpha-C_L}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>+</mo><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">W_L+W_\alpha=1</annotation></semantics></math></span></p>
+<p>Mass of a phase = fraction times total mass:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>M</mi><mi>L</mi></msub><mo>=</mo><msub><mi>W</mi><mi>L</mi></msub><mtext> </mtext><mi>M</mi></mrow><annotation encoding="application/x-tex">M_L=W_L\,M</annotation></semantics></math></span></p>
+<p>Rule of thumb: the amount of a phase is the lever arm on the opposite side of C0.</p>
+<p>Slide readings: C_L = 32, C_alpha = 43 and 31.5, 42.5. State which you use.</p>
+</div><div class="sub"><h3 id="solid">1.4 Solidification</h3>
+<p>Undercooling:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><msub><mi>T</mi><mi>m</mi></msub><mo>−</mo><msub><mi>T</mi><mrow><mi>a</mi><mi>c</mi><mi>t</mi><mi>u</mi><mi>a</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta T=T_m-T_{actual}</annotation></semantics></math></span></p>
+<p>Free-energy change of a spherical nucleus:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>G</mi><mo>=</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>π</mi><msup><mi>r</mi><mn>3</mn></msup><mtext> </mtext><mi mathvariant="normal">Δ</mi><msub><mi>G</mi><mi>v</mi></msub><mo>+</mo><mn>4</mn><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup><mtext> </mtext><msub><mi>γ</mi><mrow><mi>s</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta G=\dfrac43\pi r^3\,\Delta G_v+4\pi r^2\,\gamma_{sl}</annotation></semantics></math></span></p>
+<p>Critical radius:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>r</mi><mo>∗</mo></msup><mo>=</mo><mfrac><mrow><mn>2</mn><msub><mi>γ</mi><mrow><mi>s</mi><mi>l</mi></mrow></msub><msub><mi>T</mi><mi>m</mi></msub></mrow><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mi>f</mi></msub><mtext> </mtext><mi mathvariant="normal">Δ</mi><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">r^*=\dfrac{2\gamma_{sl}T_m}{\Delta H_f\,\Delta T}</annotation></semantics></math></span></p>
+<p>More undercooling gives a smaller r<em>. Smaller than r</em>: embryo. Larger: nucleus.</p>
+</div><div class="sub"><h3 id="fefec-numbers">1.5 Fe-Fe3C numbers</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Value (source)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Melting point of iron</td>
+<td>1538 deg C</td>
+</tr>
+<tr>
+<td>alpha to gamma</td>
+<td>912 deg C</td>
+</tr>
+<tr>
+<td>gamma to delta</td>
+<td>1394 deg C</td>
+</tr>
+<tr>
+<td>Peritectic</td>
+<td>1493 deg C, 0.09 wt% C</td>
+</tr>
+<tr>
+<td>Eutectic</td>
+<td>1147 deg C, 4.3 wt% C</td>
+</tr>
+<tr>
+<td>Eutectoid</td>
+<td>727 deg C, 0.76 wt% C</td>
+</tr>
+<tr>
+<td>Max C in ferrite</td>
+<td>0.022 wt% (727 deg C), 0.008 wt% (room temperature)</td>
+</tr>
+<tr>
+<td>Max C in austenite</td>
+<td>2.14 wt% at 1147 deg C</td>
+</tr>
+<tr>
+<td>Cementite</td>
+<td>6.67 wt% C</td>
+</tr>
+<tr>
+<td>Steels</td>
+<td>0.008 to 2.14 wt% C</td>
+</tr>
+<tr>
+<td>Cast irons</td>
+<td>2.14 to 6.7 wt% C</td>
+</tr>
+</tbody>
+</table></div>
+<p>Invariant reactions on cooling:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>L</mi><mo>+</mo><mi>δ</mi><mtext> </mtext><mo>⟶</mo><mtext> </mtext><mi>γ</mi><mspace width="2em"/><mo stretchy="false">(</mo><mtext>peritectic</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L+\delta\ \longrightarrow\ \gamma\qquad(\text{peritectic})</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>L</mi><mtext> </mtext><mo>⟶</mo><mtext> </mtext><mi>γ</mi><mo>+</mo><mrow><mi mathvariant="normal">F</mi><msub><mi mathvariant="normal">e</mi><mn>3</mn></msub><mi mathvariant="normal">C</mi></mrow><mspace width="2em"/><mo stretchy="false">(</mo><mtext>eutectic</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L\ \longrightarrow\ \gamma+\mathrm{Fe_3C}\qquad(\text{eutectic})</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>γ</mi><mtext> </mtext><mo>⟶</mo><mtext> </mtext><mi>α</mi><mo>+</mo><mrow><mi mathvariant="normal">F</mi><msub><mi mathvariant="normal">e</mi><mn>3</mn></msub><mi mathvariant="normal">C</mi></mrow><mspace width="2em"/><mo stretchy="false">(</mo><mtext>eutectoid</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\gamma\ \longrightarrow\ \alpha+\mathrm{Fe_3C}\qquad(\text{eutectoid})</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="steelfrac">1.5a Phase fractions in slowly cooled steel (lever rule with Fe-Fe3C values)</h3>
+<p>Just below 727 deg C, using 0.022, 0.76 and 6.67 wt% C. These formulas apply the lever rule of 1.3; they are not printed as formulas on the slides.</p>
+<p>Hypo-eutectoid, carbon C0 less than 0.76:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><msup><mi>α</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></msub><mo>=</mo><mfrac><mrow><mn>0.76</mn><mo>−</mo><msub><mi>C</mi><mn>0</mn></msub></mrow><mrow><mn>0.76</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac><mspace width="2em"/><msub><mi>W</mi><mi>P</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>−</mo><mn>0.022</mn></mrow><mrow><mn>0.76</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_{\alpha&#x27;}=\dfrac{0.76-C_0}{0.76-0.022}\qquad W_P=\dfrac{C_0-0.022}{0.76-0.022}</annotation></semantics></math></span></p>
+<p>Hyper-eutectoid, carbon C0 above 0.76:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mrow><mi>F</mi><msub><mi>e</mi><mn>3</mn></msub><msup><mi>C</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>−</mo><mn>0.76</mn></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.76</mn></mrow></mfrac><mspace width="2em"/><msub><mi>W</mi><mi>P</mi></msub><mo>=</mo><mfrac><mrow><mn>6.67</mn><mo>−</mo><msub><mi>C</mi><mn>0</mn></msub></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.76</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_{Fe_3C&#x27;}=\dfrac{C_0-0.76}{6.67-0.76}\qquad W_P=\dfrac{6.67-C_0}{6.67-0.76}</annotation></semantics></math></span></p>
+<p>Total ferrite and cementite in any steel:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><mn>6.67</mn><mo>−</mo><msub><mi>C</mi><mn>0</mn></msub></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac><mspace width="2em"/><msub><mi>W</mi><mrow><mi>F</mi><msub><mi>e</mi><mn>3</mn></msub><mi>C</mi></mrow></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>−</mo><mn>0.022</mn></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_\alpha=\dfrac{6.67-C_0}{6.67-0.022}\qquad W_{Fe_3C}=\dfrac{C_0-0.022}{6.67-0.022}</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="classes">1.6 Classification and microstructure</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Steel</th>
+<th>Carbon</th>
+<th>Structure after slow cooling</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Steel">Hypo-eutectoid</td><td data-l="Carbon">below 0.76 wt%</td><td data-l="Structure after slow cooling">pro-eutectoid ferrite + pearlite</td></tr>
+<tr><td data-l="Steel">Eutectoid</td><td data-l="Carbon">0.76 wt%</td><td data-l="Structure after slow cooling">100 % pearlite</td></tr>
+<tr><td data-l="Steel">Hyper-eutectoid</td><td data-l="Carbon">0.76 to 2.14 wt%</td><td data-l="Structure after slow cooling">pearlite + cementite network</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="ttt-sheet">1.7 TTT products</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Product</th>
+<th>Temperature</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Product">Coarse pearlite</td><td data-l="Temperature">about 650 to 727 deg C</td><td data-l="Notes">thick lamellae, soft, ductile</td></tr>
+<tr><td data-l="Product">Fine pearlite</td><td data-l="Temperature">about 540 to 650 deg C</td><td data-l="Notes">near the nose, harder</td></tr>
+<tr><td data-l="Product">Upper bainite</td><td data-l="Temperature">about 300 to 540 deg C</td><td data-l="Notes">feathery</td></tr>
+<tr><td data-l="Product">Lower bainite</td><td data-l="Temperature">about 200 to 300 deg C</td><td data-l="Notes">needle-like</td></tr>
+<tr><td data-l="Product">Spheroidite</td><td data-l="Temperature">e.g. 700 deg C for 24 h</td><td data-l="Notes">softest</td></tr>
+<tr><td data-l="Product">Martensite</td><td data-l="Temperature">quench past CCR</td><td data-l="Notes">BCT, hardest, brittle; Ms about 240, Mf about 25 deg C</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="ht-sheet">1.8 Heat-treatment table</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Process</th>
+<th>Heating</th>
+<th>Cooling</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Process">Full annealing</td><td data-l="Heating">hypo: above A3 (notes: 30 to 50 deg C above)</td><td data-l="Cooling">slow, in furnace</td><td data-l="Result">coarse pearlite + ferrite; soft</td></tr>
+<tr><td data-l="Process">Normalizing</td><td data-l="Heating">30 to 80 deg C above A3 (hyper: above A1 or Acm)</td><td data-l="Cooling">still air</td><td data-l="Result">fine pearlite; stronger than annealed</td></tr>
+<tr><td data-l="Process">Process annealing</td><td data-l="Heating">below A1 (notes 550 to 650 deg C)</td><td data-l="Cooling">air or any</td><td data-l="Result">restores ductility; no phase change</td></tr>
+<tr><td data-l="Process">Spheroidising</td><td data-l="Heating">about A1 (727), or just below</td><td data-l="Cooling">slow</td><td data-l="Result">spheroidite; best machinability</td></tr>
+<tr><td data-l="Process">Hardening</td><td data-l="Heating">hypo: 30 to 50 deg C above A3; hyper: 30 to 50 deg C above A1</td><td data-l="Cooling">quench faster than CCR</td><td data-l="Result">martensite</td></tr>
+<tr><td data-l="Process">Tempering low</td><td data-l="Heating">150 to 200 deg C</td><td data-l="Cooling">any</td><td data-l="Result">stress relief, hardness kept</td></tr>
+<tr><td data-l="Process">Tempering medium</td><td data-l="Heating">200 to 450 deg C</td><td data-l="Cooling">any</td><td data-l="Result">secondary troostite; springs, dies</td></tr>
+<tr><td data-l="Process">Tempering high</td><td data-l="Heating">450 to 700 deg C</td><td data-l="Cooling">any</td><td data-l="Result">sorbite; shafts, axles</td></tr>
+<tr><td data-l="Process">Martempering</td><td data-l="Heating">bath just above Ms, 180 to 250 deg C</td><td data-l="Cooling">hold briefly, then air</td><td data-l="Result">martensite, little distortion</td></tr>
+<tr><td data-l="Process">Austempering</td><td data-l="Heating">bath 300 to 400 deg C</td><td data-l="Cooling">hold, then any</td><td data-l="Result">lower bainite, no tempering</td></tr>
+<tr><td data-l="Process">Precipitation hardening</td><td data-l="Heating">solution treat, quench, age</td><td data-l="Cooling"></td><td data-l="Result">fine precipitates, high strength</td></tr>
+</tbody>
+</table></div>
+<p>Where the notes and slides give different temperatures, see the Flagged list and Concepts M8.</p>
+</div><div class="sub"><h3 id="surface-sheet">1.9 Surface treatment table</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Process</th>
+<th>Composition change</th>
+<th>Temperature</th>
+<th>Medium or source</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Process">Pack carburizing</td><td data-l="Composition change">yes, carbon</td><td data-l="Temperature">900 deg C</td><td data-l="Medium or source">charcoal + barium carbonate 15 to 20 %</td></tr>
+<tr><td data-l="Process">Salt bath carburizing</td><td data-l="Composition change">yes, carbon</td><td data-l="Temperature">900 deg C, 1 h</td><td data-l="Medium or source">70 to 80 % Na2CO3, 10 to 15 % NaCl, 6 to 10 % SiC</td></tr>
+<tr><td data-l="Process">Cyanide bath</td><td data-l="Composition change">yes, carbon</td><td data-l="Temperature">870 to 950 deg C</td><td data-l="Medium or source">NaCN + NaCl</td></tr>
+<tr><td data-l="Process">Gas carburizing</td><td data-l="Composition change">yes, carbon</td><td data-l="Temperature">about 900 deg C</td><td data-l="Medium or source">methane, propane or butane; case 0.25 to 1 mm</td></tr>
+<tr><td data-l="Process">Nitriding</td><td data-l="Composition change">yes, nitrogen</td><td data-l="Temperature">about 500 deg C, 100 h</td><td data-l="Medium or source">ammonia</td></tr>
+<tr><td data-l="Process">Induction hardening</td><td data-l="Composition change">no</td><td data-l="Temperature">fast heating</td><td data-l="Medium or source">coil, eddy currents; depth set by frequency</td></tr>
+<tr><td data-l="Process">Flame hardening</td><td data-l="Composition change">no</td><td data-l="Temperature">above upper critical</td><td data-l="Medium or source">oxy-acetylene torch</td></tr>
+</tbody>
+</table></div>
+</div></section><section class="sec"><h2 id="methods">2. Methods with one solved example each</h2>
+<div class="sub"><h3 id="m1">Method 1. Gibbs phase rule: degrees of freedom</h3>
+<ol>
+<li>Write the rule: P + F = C + N.</li>
+<li>Fix N: at constant pressure only temperature varies, so N = 1.</li>
+<li>Count components C and phases P at the point.</li>
+<li>Solve F = C + N - P.</li>
+</ol>
+<p><strong>Solved example: Cu-Ag alloy, single phase.</strong></p>
+<p>Given: C = 2, N = 1, P = 1.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo>=</mo><mi>C</mi><mo>+</mo><mi>N</mi><mo>−</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">F=C+N-P</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo>=</mo><mn>2</mn><mo>+</mo><mn>1</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">F=2+1-1</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">F=2</annotation></semantics></math></span></p>
+<p>Answer: F = 2 (temperature and composition can both be changed without leaving the phase).</p>
+<p>Two-phase region of a binary diagram (same rule, not worked on the slide):</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo>=</mo><mn>2</mn><mo>+</mo><mn>1</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">F=2+1-2=1</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="m2">Method 2. Tie line and lever rule</h3>
+<ol>
+<li>Locate the point (temperature, C0) on the diagram. Check it is in a two-phase region.</li>
+<li>Draw the horizontal tie line at that temperature.</li>
+<li>Read C_L (left end) and C_alpha (right end).</li>
+<li>Apply the lever rule: the fraction of a phase is the arm on the opposite side, divided by the whole tie line.</li>
+<li>Check that the two fractions add to 1.</li>
+<li>Multiply by 100 for percent, by the total mass for kilograms.</li>
+</ol>
+<p><strong>Solved example: 35 wt% Ni, 1250 deg C.</strong></p>
+<p>Given: C0 = 35, C_L = 32, C_alpha = 43 (read from the tie line on the slide).</p>
+<p>To find: W_L and W_alpha.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mn>0</mn></msub></mrow><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_L=\dfrac{C_\alpha-C_0}{C_\alpha-C_L}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>=</mo><mfrac><mrow><mn>43</mn><mo>−</mo><mn>35</mn></mrow><mrow><mn>43</mn><mo>−</mo><mn>32</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_L=\dfrac{43-35}{43-32}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>L</mi></msub><mo>=</mo><mfrac><mn>8</mn><mn>11</mn></mfrac><mo>=</mo><mn>0.727</mn></mrow><annotation encoding="application/x-tex">W_L=\dfrac{8}{11}=0.727</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow><mrow><msub><mi>C</mi><mi>α</mi></msub><mo>−</mo><msub><mi>C</mi><mi>L</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_\alpha=\dfrac{C_0-C_L}{C_\alpha-C_L}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><mn>35</mn><mo>−</mo><mn>32</mn></mrow><mrow><mn>43</mn><mo>−</mo><mn>32</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">W_\alpha=\dfrac{35-32}{43-32}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mn>3</mn><mn>11</mn></mfrac><mo>=</mo><mn>0.273</mn></mrow><annotation encoding="application/x-tex">W_\alpha=\dfrac{3}{11}=0.273</annotation></semantics></math></span></p>
+<p>Check: 0.727 + 0.273 = 1.</p>
+<p>Answer: 72.7 % liquid, 27.3 % alpha (the slide rounds to 73 and 27).</p>
+<p>With the other reading (31.5 and 42.5): W_L = 7.5/11 = 0.68 and W_alpha = 3.5/11 = 0.32. State which reading you use.</p>
+<p>Mass: for 10 kg of this alloy, M_L = 7.27 kg and M_alpha = 2.73 kg.</p>
+</div><div class="sub"><h3 id="m3">Method 3. Phase fractions in slowly cooled steel</h3>
+<ol>
+<li>Find the carbon content C0 and compare with 0.76 wt%.</li>
+<li>If C0 is below 0.76: pro-eutectoid ferrite + pearlite. Use the austenite side (0.76) and ferrite (0.022).</li>
+<li>If C0 is above 0.76: pro-eutectoid cementite + pearlite. Use 0.76 and 6.67.</li>
+<li>Apply the lever rule just below 727 deg C.</li>
+<li>Check that the fractions add to 1.</li>
+</ol>
+<p>The slides give no numerical example for steels. These examples are illustrations of the lever rule with the diagram values (0.022, 0.76, 6.67 wt% C), and are marked as such.</p>
+<p><strong>Illustration A: 0.4 wt% C steel.</strong></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><msup><mi>α</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></msub><mo>=</mo><mfrac><mrow><mn>0.76</mn><mo>−</mo><mn>0.40</mn></mrow><mrow><mn>0.76</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac><mo>=</mo><mn>0.488</mn></mrow><annotation encoding="application/x-tex">W_{\alpha&#x27;}=\dfrac{0.76-0.40}{0.76-0.022}=0.488</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>P</mi></msub><mo>=</mo><mfrac><mrow><mn>0.40</mn><mo>−</mo><mn>0.022</mn></mrow><mrow><mn>0.76</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac><mo>=</mo><mn>0.512</mn></mrow><annotation encoding="application/x-tex">W_P=\dfrac{0.40-0.022}{0.76-0.022}=0.512</annotation></semantics></math></span></p>
+<p>Answer: 48.8 % pro-eutectoid ferrite, 51.2 % pearlite.</p>
+<p><strong>Illustration B: 1.2 wt% C steel.</strong></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mrow><mi>F</mi><msub><mi>e</mi><mn>3</mn></msub><msup><mi>C</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow></msub><mo>=</mo><mfrac><mrow><mn>1.2</mn><mo>−</mo><mn>0.76</mn></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.76</mn></mrow></mfrac><mo>=</mo><mn>0.0745</mn></mrow><annotation encoding="application/x-tex">W_{Fe_3C&#x27;}=\dfrac{1.2-0.76}{6.67-0.76}=0.0745</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>P</mi></msub><mo>=</mo><mfrac><mrow><mn>6.67</mn><mo>−</mo><mn>1.2</mn></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.76</mn></mrow></mfrac><mo>=</mo><mn>0.926</mn></mrow><annotation encoding="application/x-tex">W_P=\dfrac{6.67-1.2}{6.67-0.76}=0.926</annotation></semantics></math></span></p>
+<p>Answer: 7.4 % pro-eutectoid cementite, 92.6 % pearlite.</p>
+<p><strong>Illustration C: total ferrite and cementite in eutectoid steel.</strong></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><mn>6.67</mn><mo>−</mo><mn>0.76</mn></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac><mo>=</mo><mn>0.889</mn></mrow><annotation encoding="application/x-tex">W_\alpha=\dfrac{6.67-0.76}{6.67-0.022}=0.889</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>W</mi><mrow><mi>F</mi><msub><mi>e</mi><mn>3</mn></msub><mi>C</mi></mrow></msub><mo>=</mo><mfrac><mrow><mn>0.76</mn><mo>−</mo><mn>0.022</mn></mrow><mrow><mn>6.67</mn><mo>−</mo><mn>0.022</mn></mrow></mfrac><mo>=</mo><mn>0.111</mn></mrow><annotation encoding="application/x-tex">W_{Fe_3C}=\dfrac{0.76-0.022}{6.67-0.022}=0.111</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="m4">Method 4. Hume-Rothery size check</h3>
+<ol>
+<li>Get the atomic radii of solute and solvent.</li>
+<li>Compute the percentage difference.</li>
+<li>Compare with the 15 % limit.</li>
+<li>Then check crystal structure, valence and electronegativity.</li>
+</ol>
+<p>The course material gives the 15 % limit and the formula but no table of radii, so the example uses made-up round numbers, labelled as an illustration.</p>
+<p><strong>Illustration:</strong> r_solute = 1.15 and r_solvent = 1.00 (any consistent unit).</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> size difference</mtext><mo>=</mo><mfrac><mrow><mn>1.15</mn><mo>−</mo><mn>1.00</mn></mrow><mn>1.00</mn></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\%\ \text{size difference}=\dfrac{1.15-1.00}{1.00}\times100</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> size difference</mtext><mo>=</mo><mn>15</mn><mtext> </mtext><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\%\ \text{size difference}=15\ \%</annotation></semantics></math></span></p>
+<p>Answer: right at the 15 % limit. Size alone allows extensive solubility only if the other three rules are also met.</p>
+</div><div class="sub"><h3 id="m5">Method 5. Classify an iron-carbon alloy by carbon</h3>
+<ol>
+<li>Compare the carbon content (wt%) with the ranges below.</li>
+<li>If it is a steel, compare with 0.76 to name it hypo-, eutectoid or hyper-eutectoid.</li>
+</ol>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Carbon (wt%)</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>below 0.008</td>
+<td>iron</td>
+</tr>
+<tr>
+<td>0.008 to 2.14</td>
+<td>steel</td>
+</tr>
+<tr>
+<td>2.14 to 6.7</td>
+<td>cast iron</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Example (illustration):</strong> 0.4 wt% C is between 0.008 and 2.14, so it is a steel. It is below 0.76, so it is hypo-eutectoid: ferrite + pearlite.</p>
+</div><div class="sub"><h3 id="m6">Method 6. Read the product from a cooling path on the TTT diagram</h3>
+<ol>
+<li>Draw or note the cooling path against the start and finish curves.</li>
+<li>Does it enter the start curve? If not, the austenite stays until Ms.</li>
+<li>If it enters, note where: just below 727 deg C gives coarse pearlite, near the nose fine pearlite, lower gives bainite.</li>
+<li>If the path leaves before the finish curve, the rest of the austenite can turn to martensite below Ms.</li>
+<li>Compare the rate with the critical cooling rate (the path touching the nose).</li>
+</ol>
+<p><strong>Example (curve 7):</strong> the curve is tangent to the nose, so it is the critical cooling rate. Faster than this gives fully martensite. Slower gives at least some pearlite.</p>
+</div></section><section class="sec"><h2 id="tables">3. Reactions and microconstituents table</h2>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Name</th>
+<th>What</th>
+<th>When or how</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Name">Peritectic</td><td data-l="What">L + delta gives gamma</td><td data-l="When or how">1493 deg C, 0.09 wt% C</td><td data-l="Why it matters">little engineering importance</td></tr>
+<tr><td data-l="Name">Eutectic</td><td data-l="What">L gives gamma + Fe3C (ledeburite)</td><td data-l="When or how">1147 deg C, 4.3 wt% C</td><td data-l="Why it matters">cast irons</td></tr>
+<tr><td data-l="Name">Eutectoid</td><td data-l="What">gamma gives alpha + Fe3C (pearlite)</td><td data-l="When or how">727 deg C, 0.76 wt% C</td><td data-l="Why it matters">steels</td></tr>
+<tr><td data-l="Name">Pearlite</td><td data-l="What">ferrite + cementite layers</td><td data-l="When or how">slow cooling of austenite</td><td data-l="Why it matters">strength with some ductility</td></tr>
+<tr><td data-l="Name">Ledeburite</td><td data-l="What">austenite + cementite eutectic</td><td data-l="When or how">cast iron</td><td data-l="Why it matters">hard, brittle</td></tr>
+<tr><td data-l="Name">Bainite</td><td data-l="What">non-lamellar ferrite + cementite</td><td data-l="When or how">isothermal, 200 to 540 deg C</td><td data-l="Why it matters">tough, less hard than martensite</td></tr>
+<tr><td data-l="Name">Spheroidite</td><td data-l="What">cementite spheres in ferrite</td><td data-l="When or how">long hold near 700 deg C</td><td data-l="Why it matters">softest, best machinability</td></tr>
+<tr><td data-l="Name">Martensite</td><td data-l="What">BCT, shear transformation</td><td data-l="When or how">quench past the critical rate</td><td data-l="Why it matters">hardest, brittle</td></tr>
+<tr><td data-l="Name">Tempered martensite</td><td data-l="What">martensite after tempering</td><td data-l="When or how">reheat 150 to 700 deg C</td><td data-l="Why it matters">toughness back</td></tr>
+<tr><td data-l="Name">Precipitates</td><td data-l="What">fine second-phase particles</td><td data-l="When or how">aging after quench</td><td data-l="Why it matters">block dislocations, raise strength</td></tr>
+</tbody>
+</table></div>
+</section><section class="sec"><h2 id="which">4. Which method to pick</h2>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>You are asked</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number of independent variables at a point</td>
+<td>Method 1, Gibbs rule</td>
+</tr>
+<tr>
+<td>amounts of liquid and solid in a two-phase region</td>
+<td>Method 2, lever rule</td>
+</tr>
+<tr>
+<td>amounts of ferrite, cementite, pearlite in steel</td>
+<td>Method 3</td>
+</tr>
+<tr>
+<td>will two metals dissolve completely</td>
+<td>Method 4 and the other three rules</td>
+</tr>
+<tr>
+<td>name of an iron-carbon alloy</td>
+<td>Method 5</td>
+</tr>
+<tr>
+<td>structure after a cooling path</td>
+<td>Method 6 and the TTT table</td>
+</tr>
+<tr>
+<td>harder or softer: annealing, normalizing, quenching</td>
+<td>heat-treatment table, sheet 1.8</td>
+</tr>
+</tbody>
+</table></div></section></main><a class="fab" href="#top">Top &uarr;</a></body></html>

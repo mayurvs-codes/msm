@@ -1,0 +1,1831 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Unit 4: Material Characterization, Testing and Surface Coating Technologies - Concepts</title><style>
+:root{--u:#3b6fd4;--bg:#f6f6f3;--fg:#1d2125;--mut:#5d646d;--card:#ffffff;--soft:#f3f4f6;--line:#e2e4e8;--box:#f5f8fc;--boxl:#dce5f2;--ok:#eef6f0;--okl:#b9d9c3}
+@media (prefers-color-scheme:dark){:root{--bg:#17191d;--fg:#e3e5e8;--mut:#a2a9b2;--card:#1f2227;--soft:#262a30;--line:#33383f;--box:#1d2330;--boxl:#2f3b50;--ok:#1b2a21;--okl:#2f4a39}}
+*{box-sizing:border-box}
+html{scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+[id]{scroll-margin-top:64px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16.5px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ut:color-mix(in srgb,var(--u) 80%,#000000)}
+@media (prefers-color-scheme:dark){body{--ut:color-mix(in srgb,var(--u) 45%,#ffffff)}}
+main{max-width:880px;margin:0 auto;padding:16px 20px 96px}
+.top{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:3px solid var(--u);display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:8px 12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.top a,.top .off{white-space:nowrap;color:var(--fg);text-decoration:none;padding:6px 12px;border-radius:7px;font-size:14px;line-height:1.2;border:1px solid var(--line);background:var(--card)}
+.top a:hover{background:var(--soft)}
+.top a.on{background:var(--u);border-color:var(--u);color:#fff;font-weight:600}
+.top .off{color:var(--mut);opacity:.6;cursor:not-allowed}
+.top .sep{width:1px;align-self:stretch;background:var(--line);margin:2px 4px}
+h1{font-size:1.55em;line-height:1.3;margin:.6em 0 .15em;font-weight:700}
+h1+p{color:var(--mut);margin:0 0 10px}
+h2{font-size:1.28em;line-height:1.35;border-bottom:2px solid var(--u);padding-bottom:5px;margin:2.4em 0 .8em;font-weight:700}
+h3{font-size:1.08em;margin:1.8em 0 .55em;font-weight:700;color:var(--fg);padding-left:10px;border-left:4px solid var(--u)}
+a{color:var(--ut)}
+p{margin:.6em 0}
+ul,ol{padding-left:1.5em;margin:.55em 0}
+li{margin:.35em 0}
+strong,b{font-weight:650}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:0 4px;font-size:.9em}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 24px;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.jump a{border:1px solid var(--line);color:var(--fg);background:var(--soft);border-radius:999px;padding:5px 12px;font-size:14px;line-height:1.3;text-decoration:none}
+.jump a:hover{border-color:var(--u)}
+table{border-collapse:collapse;margin:14px 0;width:100%;font-size:15px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:8px 11px;vertical-align:top;text-align:left;overflow-wrap:break-word}
+th{background:var(--soft);font-weight:650}
+.box{background:var(--box);border:1px solid var(--boxl);border-radius:10px;margin:14px 0 16px;overflow:hidden}
+.frow{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4px 18px;padding:10px 16px;border-top:1px solid var(--boxl);align-items:baseline}
+.frow:first-child{border-top:0}
+.frow.wide{grid-template-columns:minmax(0,1fr)}
+.flab{font-weight:650;font-size:14.5px;color:var(--fg)}
+.fml{min-width:0}
+.fml>p{margin:.2em 0}
+.fml math{font-size:1.12em}
+.fml math[display=block]{width:fit-content;max-width:100%;margin:2px 0}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:20px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--mut);margin-bottom:8px;line-height:1.4}
+.qhead .id{background:var(--soft);border:1px solid var(--line);color:var(--fg);border-radius:6px;padding:1px 8px;font-weight:700}
+.qhead .mk{border:1px solid var(--line);color:var(--fg);border-radius:999px;padding:0 8px;font-weight:600}
+.qtext>p:first-child{margin-top:0}
+.opts{list-style:none;padding:0;margin:10px 0 6px;display:grid;gap:6px}
+.opts.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts li{margin:0;padding:6px 11px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}
+.opts .ok{color:var(--mut);margin-right:2px}
+details{margin-top:10px}
+details>summary{cursor:pointer;font-weight:650;color:var(--fg);list-style:none;padding:4px 0;display:inline-flex;align-items:center;gap:8px}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";width:7px;height:7px;border-right:2px solid var(--u);border-bottom:2px solid var(--u);transform:rotate(-45deg)}
+details[open]>summary::before{transform:rotate(45deg)}
+.ans{border-top:1px solid var(--line);margin-top:6px;padding-top:8px}
+.ans li{margin:.45em 0}
+math{font-size:1.07em}
+math:not([display=block]),mstyle[displaystyle=false]{math-style:normal}
+math:not([display=block]) munder,math:not([display=block]) munderover{math-style:compact}
+math[display=block]{overflow-x:auto;overflow-y:hidden;padding:6px 0;margin:4px 0}
+.mw{display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding:2px 0}
+.texerr{color:#cf222e}
+.mw,math[display=block]{scrollbar-width:thin}
+menclose[notation~=box]{border:1.5px solid var(--okl);padding:4px 10px;border-radius:6px;background:var(--ok)}
+.home{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:18px}
+.card{border:1px solid var(--line);border-top:4px solid var(--c);border-radius:10px;padding:16px 18px;background:var(--card)}
+.card h2{margin:0 0 2px;font-size:1.2em;border:0;padding:0}
+.card p{color:var(--mut);margin:0 0 12px}
+.card a{display:block;margin:8px 0;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--soft);color:var(--fg);text-decoration:none;font-weight:600}
+.card a:hover{border-color:var(--c)}
+.fab{position:fixed;right:14px;bottom:14px;z-index:6;background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.dm-w{display:block}.dm-n{display:none}
+.tsc{overflow-x:auto;scrollbar-width:thin;margin:14px 0}.tsc table{margin:0}
+table.t-alt{display:none;width:auto;min-width:60%}
+@media (max-width:1000px){table.t-wide.t10{display:none}table.t-alt.t10{display:table}}
+@media (max-width:700px){table.t-wide{display:none}table.t-alt{display:table}}
+@media (max-width:700px){.dm-w{display:none}.dm-n{display:block}table.stk,table.stk tbody,table.stk tr,table.stk td{display:block;width:100%}table.stk thead{display:none}table.stk tr{border:1px solid var(--line);border-radius:8px;margin:0 0 10px;overflow:hidden;background:var(--card)}table.stk td{border:0;border-top:1px solid var(--line);padding:6px 10px}table.stk td:first-child{border-top:0;background:var(--soft);font-weight:600}table.stk td[data-l]:not(:first-child)::before{content:attr(data-l);display:block;font-size:12px;font-weight:700;color:var(--mut)}}
+@media (max-width:640px){body{font-size:16px}main{padding:10px 12px 88px}.q{padding:12px 13px}h1{font-size:1.32em}h2{font-size:1.16em}.opts.two{grid-template-columns:1fr}table{font-size:14px}th,td{padding:6px 7px}.frow{grid-template-columns:minmax(0,1fr);padding:9px 12px}.flab{font-size:13.5px;color:var(--mut)}.top{gap:5px;padding:6px 8px}.top a,.top .off{padding:5px 9px;font-size:13.5px}.fab{right:10px;bottom:10px;padding:7px 13px;font-size:13px}}
+:root{--navh:52px;--h2h:46px}
+.lg{display:inline}.sh{display:none}
+.sec>h2{position:sticky;top:var(--navh);z-index:3;background:var(--bg);height:var(--h2h);margin:2.2em 0 .6em;padding:12px 0 6px;font-size:1.15em;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box}
+.sub>h3{position:sticky;top:calc(var(--navh) + var(--h2h));z-index:2;background:var(--bg);margin:1.4em 0 .5em;padding:7px 10px;line-height:1.35;font-size:1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 6px 6px -6px rgba(0,0,0,.12)}
+[id]{scroll-margin-top:calc(var(--navh) + var(--h2h) + 44px)}
+.sec>h2[id],.sub>h3[id]{scroll-margin-top:var(--navh)}
+.idx{display:none}
+.idx b,.idxp b{display:block;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);margin:4px 8px 8px}
+.idx a,.idxp a{display:flex;justify-content:space-between;gap:8px;text-decoration:none;color:var(--fg);border-radius:6px;padding:5px 8px;font-size:13.5px;line-height:1.35}
+.idx a:hover,.idxp a:hover{background:var(--soft)}
+.idx a.i2,.idxp a.i2{font-weight:700;margin-top:10px;border-top:1px solid var(--line);border-radius:0 0 6px 6px;padding-top:9px}
+.idx a.i3,.idxp a.i3{padding-left:18px;color:var(--fg)}
+.idx .n,.idxp .n{flex:0 0 auto;color:var(--mut);font-size:12px;font-weight:600;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:0 7px;height:fit-content}
+.idxm{position:static;margin-left:auto}
+.idxm>summary{list-style:none;cursor:pointer;white-space:nowrap;padding:6px 12px;border-radius:7px;font-size:14px;line-height:1.2;border:1px solid var(--u);background:var(--u);color:#fff;font-weight:600}
+.idxm>summary::-webkit-details-marker{display:none}
+.idxm>summary::before{content:"³0  Index"}
+.idxm[open]>summary::before{content:"¹5  Close"}
+.top .idxp a{border:0;background:none;white-space:normal;color:var(--fg);font-size:14px;padding:7px 8px}
+.top .idxp a:hover{background:var(--soft)}
+.top .idxp a.i2{border-top:1px solid var(--line);border-radius:0}
+.idxm[open]>summary{background:var(--card);color:var(--fg)}
+details.idxm>summary::before,details.idxm[open]>summary::before{width:auto;height:auto;border:0;transform:none;display:inline}
+.idxp{position:absolute;left:8px;right:8px;top:100%;margin-top:6px;max-height:62vh;overflow-y:auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.18);z-index:9}
+@media (min-width:1180px){
+ body.has-idx{padding-left:290px}
+ body.has-idx .idx{display:block;position:fixed;left:0;top:var(--navh);bottom:0;width:280px;overflow-y:auto;padding:12px 10px 40px;border-right:1px solid var(--line);background:var(--card);z-index:4}
+ body.has-idx .idxm{display:none}
+}
+@media (min-width:701px) and (max-width:1179px){:root{--navh:60px}}
+@media (max-width:700px){:root{--navh:86px;--h2h:42px}.lg{display:none}.sh{display:inline}.top{height:var(--navh);align-content:flex-start}.sec>h2{font-size:1.02em;padding:11px 0 6px}.sub>h3{font-size:.95em}}
+@media print{.idx,.idxm{display:none}body.has-idx{padding-left:0}.sec>h2,.sub>h3{position:static}}
+.exam{border:1px solid var(--u);border-left:5px solid var(--u);border-radius:10px;padding:10px 16px;margin:12px 0 18px;background:color-mix(in srgb,var(--u) 7%,transparent)}.exam>p:first-child{margin-top:0;color:var(--u);font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.04em}.exam h4{margin:12px 0 4px}.fig{margin:14px auto;text-align:center}.fig svg{max-width:100%;height:auto}.fig figcaption{font-size:14px;color:var(--mut)}
+.fig svg text{fill:var(--fg)}
+/* reading layout modelled on a clean chat-style page: 16px/26px text, one idea per line, centred equations */
+body{font-size:16px;line-height:1.5}
+main{max-width:760px}
+p{margin:5px 0}
+ul,ol{margin:4px 0 8px;padding-left:1.6em}
+li{margin:2px 0;line-height:1.5}
+li>p{margin:2px 0}
+li>ul,li>ol{margin:2px 0}
+.ans{padding-top:8px}
+.ans>p,.qtext>p{margin:5px 0}
+.ans>p>strong:first-child{display:block;margin-bottom:2px}
+math{line-height:1.4;font-size:1.1em}
+math[display=block]{margin:8px 0;padding:2px 0;white-space:nowrap}
+.q{padding:14px 18px;margin:20px 0}
+.qhead{margin-bottom:8px}
+.box{margin:14px 0}
+table{margin:10px 0;line-height:1.45}
+th,td{padding:6px 10px}
+.fig{margin:14px auto}
+h2{margin:1.8em 0 .6em}
+h3{margin:1.2em 0 .4em}
+.exam h4{margin:8px 0 2px}
+@media (max-width:640px){body{font-size:16px}.q{padding:14px 12px}}
+@media print{.top,.jump,.fab{display:none}body{font-size:12pt;background:#fff;color:#000}.q,.box{break-inside:avoid;box-shadow:none}details>summary{display:none}}
+:root{--u:#b5652a}</style></head><body id="top" class="has-idx"><nav class="top"><a href="index.html">Home</a><span class="off" title="Not built yet"><span class="lg">Unit </span><span class="sh">U</span>1</span><span class="off" title="Not built yet"><span class="lg">Unit </span><span class="sh">U</span>2</span><a href="Unit-3_Concepts.html"><span class="lg">Unit </span><span class="sh">U</span>3</a><a href="Unit-4_Concepts.html" class="on"><span class="lg">Unit </span><span class="sh">U</span>4</a><span class="sep"></span><a href="Unit-4_Concepts.html" class="on"><span class="lg">Concepts</span><span class="sh">Concepts</span></a><a href="Unit-4_Formulas-and-Methods.html"><span class="lg">Formulas</span><span class="sh">Formulas</span></a><a href="Unit-4_Question-Bank-Solved.html"><span class="lg">Question Bank</span><span class="sh">QB</span></a><details class="idxm"><summary></summary><div class="idxp"><b>On this page</b><a class="i2" href="#a">A. Material properties and deformation</a><a class="i3" href="#a1">A1. Why we test materials</a><a class="i3" href="#a2">A2. Strength and hardness</a><a class="i3" href="#a3">A3. Elastic and plastic, temporary and permanent</a><a class="i3" href="#a4">A4. Material properties</a><a class="i3" href="#a5">A5. What a tensile test finds</a><a class="i2" href="#b">B. Tensile testing</a><a class="i3" href="#b1">B1. The idea</a><a class="i3" href="#b2">B2. Equipment</a><a class="i3" href="#b3">B3. Terms</a><a class="i3" href="#b4">B4. The specimen</a><a class="i3" href="#b5">B5. The equations</a><a class="i3" href="#b6">B6. Step by step</a><a class="i2" href="#c">C. The stress-strain curve and elastic behaviour</a><a class="i3" href="#c1">C1. The curve</a><a class="i3" href="#c2">C2. Proportional limit and Hooke&#x27;s law</a><a class="i3" href="#c3">C3. Elastic limit</a><a class="i3" href="#c4">C4. Three properties in the linear elastic region</a><a class="i3" href="#c5">C5. Modulus of resilience</a><a class="i3" href="#c6">C6. Non-linear elastic behaviour</a><a class="i3" href="#c7">C7. Secant and tangent modulus</a><a class="i3" href="#c8">C8. Resilience of a non-linear material (rubber)</a><a class="i2" href="#d">D. The plastic region of the curve</a><a class="i3" href="#d1">D1. Yield point</a><a class="i3" href="#d2">D2. Which yield stress to use</a><a class="i3" href="#d3">D3. Offset method and proof stress</a><a class="i3" href="#d4">D4. Ultimate tensile stress</a><a class="i3" href="#d5">D5. Ductility</a><a class="i3" href="#d6">D6. Fracture strength</a><a class="i3" href="#d7">D7. Nominal and true breaking stress</a><a class="i3" href="#d8">D8. Toughness and malleability</a><a class="i3" href="#d9">D9. Summary of the points of the curve</a><a class="i2" href="#e">E. Strain hardening, Luder&#x27;s bands and strain aging</a><a class="i3" href="#e1">E1. Strain hardening</a><a class="i3" href="#e2">E2. The puzzle and the answer</a><a class="i3" href="#e3">E3. Yield-point phenomenon and Luder&#x27;s bands</a><a class="i3" href="#e4">E4. Strain aging</a><a class="i3" href="#e5">E5. Summary</a><a class="i2" href="#f">F. Plastic deformation of crystals: slip and twinning</a><a class="i3" href="#f1">F1. Single crystal and polycrystal</a><a class="i3" href="#f2">F2. Slip</a><a class="i3" href="#f3">F3. Slip plane, slip direction, slip system</a><a class="i3" href="#f4">F4. Rules of slip</a><a class="i3" href="#f5">F5. Twinning</a><a class="i3" href="#f6">F6. Slip compared with twinning</a><a class="i2" href="#g">G. Fracture</a><a class="i3" href="#g1">G1. What fracture is</a><a class="i3" href="#g2">G2. Three types</a><a class="i3" href="#g3">G3. Completely ductile fracture</a><a class="i3" href="#g4">G4. Moderately ductile fracture: cup and cone</a><a class="i3" href="#g5">G5. Brittle fracture</a><a class="i3" href="#g6">G6. Shear fracture</a><a class="i3" href="#g7">G7. Ductile-to-brittle transition</a><a class="i3" href="#g8">G8. Griffith&#x27;s criterion</a><a class="i3" href="#g9">G9. Summary</a><a class="i2" href="#h">H. Creep</a><a class="i3" href="#h1">H1. What creep is</a><a class="i3" href="#h2">H2. The creep test</a><a class="i3" href="#h3">H3. The creep curve</a><a class="i3" href="#h4">H4. Primary creep</a><a class="i3" href="#h5">H5. Secondary creep</a><a class="i3" href="#h6">H6. Tertiary creep</a><a class="i3" href="#h7">H7. Summary of the stages</a><a class="i3" href="#h8">H8. Effect of temperature and stress</a><a class="i3" href="#h9">H9. Logarithmic creep</a><a class="i3" href="#h10">H10. High-temperature mechanisms</a><a class="i2" href="#i">I. Fatigue</a><a class="i3" href="#i1">I1. What fatigue is</a><a class="i3" href="#i2">I2. Types of loading</a><a class="i3" href="#i3">I3. Stress parameters</a><a class="i3" href="#i4">I4. Three steps of failure</a><a class="i3" href="#i5">I5. Fatigue properties</a><a class="i3" href="#i6">I6. The S-N curve</a><a class="i3" href="#i7">I7. Low-cycle and high-cycle fatigue</a><a class="i3" href="#i8">I8. Rotating-bending fatigue machine</a><a class="i3" href="#i9">I9. Factors affecting fatigue life</a><a class="i3" href="#i10">I10. Summary</a><a class="i2" href="#j">J. Hardness testing</a><a class="i3" href="#j1">J1. What hardness is</a><a class="i3" href="#j2">J2. Brinell test</a><a class="i3" href="#j3">J3. Brinell hardness number</a><a class="i3" href="#j4">J4. Rockwell test</a><a class="i3" href="#j5">J5. Vickers test</a><a class="i3" href="#j6">J6. Knoop test</a><a class="i3" href="#j7">J7. The tests compared</a><a class="i2" href="#k">K. Impact testing</a><a class="i3" href="#k1">K1. Why and what</a><a class="i3" href="#k2">K2. Principle</a><a class="i3" href="#k3">K3. Charpy and Izod</a><a class="i3" href="#k4">K4. Cautions</a><a class="i2" href="#l">L. Material characterization: SEM and XRD</a><a class="i3" href="#l1">L1. Scanning electron microscope (SEM)</a><a class="i3" href="#l2">L2. SEM construction</a><a class="i3" href="#l3">L3. SEM working</a><a class="i3" href="#l4">L4. SEM signals</a><a class="i3" href="#l5">L5. SEM advantages and limits</a><a class="i3" href="#l6">L6. X-ray diffraction (XRD)</a><a class="i3" href="#l7">L7. XRD construction</a><a class="i3" href="#l8">L8. What XRD gives, and its limits</a><a class="i3" href="#l9">L9. SEM and XRD compared</a><a class="i2" href="#m">M. Surface coating technologies</a><a class="i3" href="#m1">M1. What a coating is</a><a class="i3" href="#m2">M2. Coating material families</a><a class="i2" href="#m-ep">Electroplating</a><a class="i3" href="#m3">M3. Principle and construction</a><a class="i3" href="#m4">M4. Steps</a><a class="i3" href="#m5">M5. Advantages and disadvantages</a><a class="i2" href="#m-cvd">Chemical vapour deposition (CVD)</a><a class="i3" href="#m6">M6. Construction</a><a class="i3" href="#m7">M7. Working</a><a class="i3" href="#m8">M8. CVD advantages and disadvantages</a><a class="i2" href="#m-pvd">Physical vapour deposition (PVD)</a><a class="i3" href="#m9">M9. Construction</a><a class="i3" href="#m10">M10. Working</a><a class="i3" href="#m11">M11. PVD advantages and disadvantages</a><a class="i2" href="#m-hvof">High velocity oxy-fuel (HVOF)</a><a class="i3" href="#m12">M12. Construction</a><a class="i3" href="#m13">M13. Working</a><a class="i3" href="#m14">M14. HVOF advantages and disadvantages</a><a class="i2" href="#m-compare">Comparison of the processes</a><a class="i3" href="#m15">M15. Quick comparison</a></div></details></nav><aside class="idx"><b>On this page</b><a class="i2" href="#a">A. Material properties and deformation</a><a class="i3" href="#a1">A1. Why we test materials</a><a class="i3" href="#a2">A2. Strength and hardness</a><a class="i3" href="#a3">A3. Elastic and plastic, temporary and permanent</a><a class="i3" href="#a4">A4. Material properties</a><a class="i3" href="#a5">A5. What a tensile test finds</a><a class="i2" href="#b">B. Tensile testing</a><a class="i3" href="#b1">B1. The idea</a><a class="i3" href="#b2">B2. Equipment</a><a class="i3" href="#b3">B3. Terms</a><a class="i3" href="#b4">B4. The specimen</a><a class="i3" href="#b5">B5. The equations</a><a class="i3" href="#b6">B6. Step by step</a><a class="i2" href="#c">C. The stress-strain curve and elastic behaviour</a><a class="i3" href="#c1">C1. The curve</a><a class="i3" href="#c2">C2. Proportional limit and Hooke&#x27;s law</a><a class="i3" href="#c3">C3. Elastic limit</a><a class="i3" href="#c4">C4. Three properties in the linear elastic region</a><a class="i3" href="#c5">C5. Modulus of resilience</a><a class="i3" href="#c6">C6. Non-linear elastic behaviour</a><a class="i3" href="#c7">C7. Secant and tangent modulus</a><a class="i3" href="#c8">C8. Resilience of a non-linear material (rubber)</a><a class="i2" href="#d">D. The plastic region of the curve</a><a class="i3" href="#d1">D1. Yield point</a><a class="i3" href="#d2">D2. Which yield stress to use</a><a class="i3" href="#d3">D3. Offset method and proof stress</a><a class="i3" href="#d4">D4. Ultimate tensile stress</a><a class="i3" href="#d5">D5. Ductility</a><a class="i3" href="#d6">D6. Fracture strength</a><a class="i3" href="#d7">D7. Nominal and true breaking stress</a><a class="i3" href="#d8">D8. Toughness and malleability</a><a class="i3" href="#d9">D9. Summary of the points of the curve</a><a class="i2" href="#e">E. Strain hardening, Luder&#x27;s bands and strain aging</a><a class="i3" href="#e1">E1. Strain hardening</a><a class="i3" href="#e2">E2. The puzzle and the answer</a><a class="i3" href="#e3">E3. Yield-point phenomenon and Luder&#x27;s bands</a><a class="i3" href="#e4">E4. Strain aging</a><a class="i3" href="#e5">E5. Summary</a><a class="i2" href="#f">F. Plastic deformation of crystals: slip and twinning</a><a class="i3" href="#f1">F1. Single crystal and polycrystal</a><a class="i3" href="#f2">F2. Slip</a><a class="i3" href="#f3">F3. Slip plane, slip direction, slip system</a><a class="i3" href="#f4">F4. Rules of slip</a><a class="i3" href="#f5">F5. Twinning</a><a class="i3" href="#f6">F6. Slip compared with twinning</a><a class="i2" href="#g">G. Fracture</a><a class="i3" href="#g1">G1. What fracture is</a><a class="i3" href="#g2">G2. Three types</a><a class="i3" href="#g3">G3. Completely ductile fracture</a><a class="i3" href="#g4">G4. Moderately ductile fracture: cup and cone</a><a class="i3" href="#g5">G5. Brittle fracture</a><a class="i3" href="#g6">G6. Shear fracture</a><a class="i3" href="#g7">G7. Ductile-to-brittle transition</a><a class="i3" href="#g8">G8. Griffith&#x27;s criterion</a><a class="i3" href="#g9">G9. Summary</a><a class="i2" href="#h">H. Creep</a><a class="i3" href="#h1">H1. What creep is</a><a class="i3" href="#h2">H2. The creep test</a><a class="i3" href="#h3">H3. The creep curve</a><a class="i3" href="#h4">H4. Primary creep</a><a class="i3" href="#h5">H5. Secondary creep</a><a class="i3" href="#h6">H6. Tertiary creep</a><a class="i3" href="#h7">H7. Summary of the stages</a><a class="i3" href="#h8">H8. Effect of temperature and stress</a><a class="i3" href="#h9">H9. Logarithmic creep</a><a class="i3" href="#h10">H10. High-temperature mechanisms</a><a class="i2" href="#i">I. Fatigue</a><a class="i3" href="#i1">I1. What fatigue is</a><a class="i3" href="#i2">I2. Types of loading</a><a class="i3" href="#i3">I3. Stress parameters</a><a class="i3" href="#i4">I4. Three steps of failure</a><a class="i3" href="#i5">I5. Fatigue properties</a><a class="i3" href="#i6">I6. The S-N curve</a><a class="i3" href="#i7">I7. Low-cycle and high-cycle fatigue</a><a class="i3" href="#i8">I8. Rotating-bending fatigue machine</a><a class="i3" href="#i9">I9. Factors affecting fatigue life</a><a class="i3" href="#i10">I10. Summary</a><a class="i2" href="#j">J. Hardness testing</a><a class="i3" href="#j1">J1. What hardness is</a><a class="i3" href="#j2">J2. Brinell test</a><a class="i3" href="#j3">J3. Brinell hardness number</a><a class="i3" href="#j4">J4. Rockwell test</a><a class="i3" href="#j5">J5. Vickers test</a><a class="i3" href="#j6">J6. Knoop test</a><a class="i3" href="#j7">J7. The tests compared</a><a class="i2" href="#k">K. Impact testing</a><a class="i3" href="#k1">K1. Why and what</a><a class="i3" href="#k2">K2. Principle</a><a class="i3" href="#k3">K3. Charpy and Izod</a><a class="i3" href="#k4">K4. Cautions</a><a class="i2" href="#l">L. Material characterization: SEM and XRD</a><a class="i3" href="#l1">L1. Scanning electron microscope (SEM)</a><a class="i3" href="#l2">L2. SEM construction</a><a class="i3" href="#l3">L3. SEM working</a><a class="i3" href="#l4">L4. SEM signals</a><a class="i3" href="#l5">L5. SEM advantages and limits</a><a class="i3" href="#l6">L6. X-ray diffraction (XRD)</a><a class="i3" href="#l7">L7. XRD construction</a><a class="i3" href="#l8">L8. What XRD gives, and its limits</a><a class="i3" href="#l9">L9. SEM and XRD compared</a><a class="i2" href="#m">M. Surface coating technologies</a><a class="i3" href="#m1">M1. What a coating is</a><a class="i3" href="#m2">M2. Coating material families</a><a class="i2" href="#m-ep">Electroplating</a><a class="i3" href="#m3">M3. Principle and construction</a><a class="i3" href="#m4">M4. Steps</a><a class="i3" href="#m5">M5. Advantages and disadvantages</a><a class="i2" href="#m-cvd">Chemical vapour deposition (CVD)</a><a class="i3" href="#m6">M6. Construction</a><a class="i3" href="#m7">M7. Working</a><a class="i3" href="#m8">M8. CVD advantages and disadvantages</a><a class="i2" href="#m-pvd">Physical vapour deposition (PVD)</a><a class="i3" href="#m9">M9. Construction</a><a class="i3" href="#m10">M10. Working</a><a class="i3" href="#m11">M11. PVD advantages and disadvantages</a><a class="i2" href="#m-hvof">High velocity oxy-fuel (HVOF)</a><a class="i3" href="#m12">M12. Construction</a><a class="i3" href="#m13">M13. Working</a><a class="i3" href="#m14">M14. HVOF advantages and disadvantages</a><a class="i2" href="#m-compare">Comparison of the processes</a><a class="i3" href="#m15">M15. Quick comparison</a></aside><main><h1>Unit 4: Material Characterization, Testing and Surface Coating Technologies - Concepts</h1><p>Material Science and Metallurgy (UE25ME231A)</p><div class="jump"><a href="#a">A. Material properties and deformation</a><a href="#b">B. Tensile testing</a><a href="#c">C. The stress-strain curve and elastic behaviour</a><a href="#d">D. The plastic region of the curve</a><a href="#e">E. Strain hardening, Luder's bands and strain aging</a><a href="#f">F. Plastic deformation of crystals: slip and twinning</a><a href="#g">G. Fracture</a><a href="#h">H. Creep</a><a href="#i">I. Fatigue</a><a href="#j">J. Hardness testing</a><a href="#k">K. Impact testing</a><a href="#l">L. Material characterization: SEM and XRD</a><a href="#m">M. Surface coating technologies</a><a href="#m-ep">Electroplating</a><a href="#m-cvd">Chemical vapour deposition (CVD)</a><a href="#m-pvd">Physical vapour deposition (PVD)</a><a href="#m-hvof">High velocity oxy-fuel (HVOF)</a><a href="#m-compare">Comparison of the processes</a></div><p>This page is the learning-note side of Unit 4. Each topic goes in small steps, with an everyday example.</p>
+<p>Where a line says it points to the short notes; means page 27 of the merged slides (Unit-4_All-Slides.pdf); the class number is the deck whose block of pages contains it. Exam-format answers for the question-bank questions are on the Question Bank page.</p>
+<p><strong>Topics on this page so far:</strong> A material properties and deformation, B tensile testing, C the stress-strain curve and elastic behaviour.</p>
+<section class="sec"><h2 id="a">A. Material properties and deformation</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definitions</h4>
+<ul>
+<li><strong>Deformation:</strong> a change in shape (distortion), size or volume, or both, under force.</li>
+<li><strong>Material testing:</strong> measures how shape or size changes under load.</li>
+</ul>
+<h4>2. Elastic, plastic and time-dependent deformation</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Type">Elastic</td><td data-l="Meaning">temporary, recovered on unloading</td><td data-l="Key point">within the elastic range</td></tr>
+<tr><td data-l="Type">Plastic</td><td data-l="Meaning">permanent, stays after unloading</td><td data-l="Key point">after yielding</td></tr>
+<tr><td data-l="Type">Time-dependent</td><td data-l="Meaning">grows with time under sustained stress</td><td data-l="Key point">creep is an example</td></tr>
+</tbody>
+</table></div>
+<h4>3. Material properties</h4>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strength</td>
+<td>greatest stress a material withstands before failure (yield, tensile, fracture strength)</td>
+</tr>
+<tr>
+<td>Ductility</td>
+<td>considerable plastic deformation before failure; measured by elongation or reduction in area</td>
+</tr>
+<tr>
+<td>Elasticity</td>
+<td>retains original dimensions after unloading</td>
+</tr>
+<tr>
+<td>Stiffness</td>
+<td>withstands stress without great strain; Young's modulus is the measure</td>
+</tr>
+<tr>
+<td>Hardness</td>
+<td>resistance to indentation or scratching</td>
+</tr>
+<tr>
+<td>Resilience</td>
+<td>absorbs energy elastically and recovers it</td>
+</tr>
+<tr>
+<td>Toughness</td>
+<td>absorbs energy up to fracture</td>
+</tr>
+<tr>
+<td>Malleability</td>
+<td>large plastic deformation under compressive stress</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Exam-ready conclusion:</strong> a tensile test gives strength, ductility, elasticity and stiffness.</p>
+</div>
+<div class="sub"><h3 id="a1">A1. Why we test materials</h3>
+<p>Materials meet forces while they are made and while they are used.</p>
+<p>A force can move the material, turn it, or deform it.</p>
+<p>Material testing measures how the shape or size changes under load.</p>
+<p>Deformation means a change in shape (distortion), a change in size or volume, or both.</p>
+</div><div class="sub"><h3 id="a2">A2. Strength and hardness</h3>
+<p>The ability to stand a force without deforming is shown in two ways:</p>
+<ul>
+<li><strong>Strength:</strong> defined in different ways to suit the design.</li>
+<li><strong>Hardness:</strong> resistance to indentation or scratch.</li>
+</ul>
+</div><div class="sub"><h3 id="a3">A3. Elastic and plastic, temporary and permanent</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Type">Elastic</td><td data-l="Meaning">temporary, recoverable after unloading</td><td data-l="Key point">occurs within the elastic range</td></tr>
+<tr><td data-l="Type">Plastic</td><td data-l="Meaning">permanent, stays after unloading</td><td data-l="Key point">occurs after yielding</td></tr>
+<tr><td data-l="Type">Time-dependent</td><td data-l="Meaning">grows with time under sustained stress</td><td data-l="Key point">creep is an example</td></tr>
+</tbody>
+</table></div>
+<p>Everyday picture: a spring stretched a little returns (elastic). A paper clip bent too far stays bent (plastic).</p>
+<p>Both kinds of deformation can depend on time or not.</p>
+</div><div class="sub"><h3 id="a4">A4. Material properties</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strength</td>
+<td>the greatest stress a material can withstand before failure; yield, tensile or fracture strength</td>
+</tr>
+<tr>
+<td>Ductility</td>
+<td>considerable plastic deformation under load before failure; measured by elongation or reduction in area</td>
+</tr>
+<tr>
+<td>Elasticity</td>
+<td>retains the original dimensions after the load is removed</td>
+</tr>
+<tr>
+<td>Stiffness</td>
+<td>withstands high stress without great strain; Young's modulus is the measure in the linear elastic region</td>
+</tr>
+<tr>
+<td>Hardness</td>
+<td>resistance to indentation or scratching</td>
+</tr>
+<tr>
+<td>Resilience</td>
+<td>absorbs energy elastically and recovers it on unloading</td>
+</tr>
+<tr>
+<td>Toughness</td>
+<td>absorbs energy up to fracture</td>
+</tr>
+<tr>
+<td>Malleability</td>
+<td>large plastic deformation under compressive stress</td>
+</tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="a5">A5. What a tensile test finds</h3>
+<p>A tensile test gives strength, ductility, elasticity and stiffness.</p>
+</div></section><section class="sec"><h2 id="b">B. Tensile testing</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>A tensile test applies an increasing axial load to a standard specimen until it breaks; load and extension are recorded and plotted as the stress-strain curve.</p>
+<h4>2. Equipment</h4>
+<ul>
+<li><strong>Universal testing machine (UTM):</strong> applies and measures the load.</li>
+<li><strong>Specimen:</strong> standard shape with a gauge length (at most 100 mm) in the middle; mild steel specimens follow IS 1608:2005.</li>
+<li><strong>Extensometer or strain gauge:</strong> measures the change in gauge length.</li>
+</ul>
+<h4>3. Equations</h4>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>σ</mi><mo>=</mo><mfrac><mi>P</mi><msub><mi>A</mi><mn>0</mn></msub></mfrac><mspace width="2em"/><mi>ε</mi><mo>=</mo><mfrac><mrow><mi>L</mi><mo>−</mo><msub><mi>L</mi><mn>0</mn></msub></mrow><msub><mi>L</mi><mn>0</mn></msub></mfrac><mspace width="2em"/><mi>E</mi><mo>=</mo><mfrac><mi>σ</mi><mi>ε</mi></mfrac></mrow><annotation encoding="application/x-tex">\sigma=\dfrac{P}{A_0}\qquad\varepsilon=\dfrac{L-L_0}{L_0}\qquad E=\dfrac{\sigma}{\varepsilon}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> elongation</mtext><mo>=</mo><mfrac><mrow><msub><mi>L</mi><mi>f</mi></msub><mo>−</mo><msub><mi>L</mi><mn>0</mn></msub></mrow><msub><mi>L</mi><mn>0</mn></msub></mfrac><mo>×</mo><mn>100</mn><mspace width="2em"/><mi mathvariant="normal">%</mi><mtext> reduction in area</mtext><mo>=</mo><mfrac><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>−</mo><msub><mi>A</mi><mi>f</mi></msub></mrow><msub><mi>A</mi><mn>0</mn></msub></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\%\ \text{elongation}=\dfrac{L_f-L_0}{L_0}\times100\qquad\%\ \text{reduction in area}=\dfrac{A_0-A_f}{A_0}\times100</annotation></semantics></math></span></p>
+<p>P in N and A0 in mm2 give stress in N/mm2 = MPa.</p>
+<h4>4. Procedure</h4>
+<ol>
+<li>Measure A0 and L0.</li>
+<li>Load slowly and record P and L.</li>
+<li>Calculate stress and strain at each reading.</li>
+<li>Plot stress against strain.</li>
+<li>After fracture measure final length and area.</li>
+</ol>
+<p><strong>Exam-ready conclusion:</strong> engineering stress and strain use the original area and length; Young's modulus is the slope of the linear elastic region.</p>
+</div>
+<div class="sub"><h3 id="b1">B1. The idea</h3>
+<p>A tensile test applies an increasing axial load to a standard specimen until it deforms and breaks.</p>
+<p>Load and extension are recorded.</p>
+<p>Stress and strain are calculated from them. Plotting them gives the stress-strain curve.</p>
+</div><div class="sub"><h3 id="b2">B2. Equipment</h3>
+<ul>
+<li><strong>Universal testing machine (UTM):</strong> applies and measures the tensile load.</li>
+<li><strong>Specimen:</strong> standard shape with a gauge length in the middle where elongation is measured.</li>
+<li><strong>Extensometer or strain gauge:</strong> measures the change in gauge length.</li>
+</ul>
+</div><div class="sub"><h3 id="b3">B3. Terms</h3>
+<ul>
+<li><strong>Load:</strong> the force applied to the material during testing.</li>
+<li><strong>Strain gauge or extensometer:</strong> a device that measures change in length (strain).</li>
+<li><strong>Engineering stress:</strong> the load divided by the original cross-sectional area.</li>
+<li><strong>Engineering strain:</strong> how much the material deforms per unit length.</li>
+</ul>
+</div><div class="sub"><h3 id="b4">B4. The specimen</h3>
+<p>For mild steel the specimen is round with a uniform cross-section. It follows IS 1608:2005, identical to ISO 6892:1998.</p>
+<p>A gauge length of at most 4 inch or 100 mm is marked in the middle part.</p>
+<p>The elongation is studied over this length.</p>
+</div><div class="sub"><h3 id="b5">B5. The equations</h3>
+<p>Engineering stress uses the original area:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>σ</mi><mo>=</mo><mfrac><mi>P</mi><msub><mi>A</mi><mn>0</mn></msub></mfrac></mrow><annotation encoding="application/x-tex">\sigma=\dfrac{P}{A_0}</annotation></semantics></math></span></p>
+<p>P is the load in N and A0 is the original area in mm2, so the unit is N/mm2 = MPa.</p>
+<p>Engineering strain uses the original length:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ε</mi><mo>=</mo><mfrac><mrow><mi>L</mi><mo>−</mo><msub><mi>L</mi><mn>0</mn></msub></mrow><msub><mi>L</mi><mn>0</mn></msub></mfrac></mrow><annotation encoding="application/x-tex">\varepsilon=\dfrac{L-L_0}{L_0}</annotation></semantics></math></span></p>
+<p>Young's modulus is the slope of the linear elastic region:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mfrac><mi>σ</mi><mi>ε</mi></mfrac></mrow><annotation encoding="application/x-tex">E=\dfrac{\sigma}{\varepsilon}</annotation></semantics></math></span></p>
+<p>Percentage elongation:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> elongation</mtext><mo>=</mo><mfrac><mrow><msub><mi>L</mi><mi>f</mi></msub><mo>−</mo><msub><mi>L</mi><mn>0</mn></msub></mrow><msub><mi>L</mi><mn>0</mn></msub></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\%\ \text{elongation}=\dfrac{L_f-L_0}{L_0}\times100</annotation></semantics></math></span></p>
+<p>Percentage reduction in area:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> reduction in area</mtext><mo>=</mo><mfrac><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>−</mo><msub><mi>A</mi><mi>f</mi></msub></mrow><msub><mi>A</mi><mn>0</mn></msub></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\%\ \text{reduction in area}=\dfrac{A_0-A_f}{A_0}\times100</annotation></semantics></math></span></p>
+<p>L_f is the final gauge length and A_f the final minimum area.</p>
+</div><div class="sub"><h3 id="b6">B6. Step by step</h3>
+<ol>
+<li>Measure the original area A0 and the gauge length L0.</li>
+<li>Load the specimen slowly and record load P and length L.</li>
+<li>For each reading, find stress P/A0 and strain (L - L0)/L0.</li>
+<li>Plot stress against strain.</li>
+<li>After fracture, measure the final length and final area, and find % elongation and % reduction in area.</li>
+</ol>
+</div></section><section class="sec"><h2 id="c">C. The stress-strain curve and elastic behaviour</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Points on the curve</h4>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proportional limit</td>
+<td>up to it stress is proportional to strain (Hooke's law)</td>
+</tr>
+<tr>
+<td>Elastic limit</td>
+<td>highest stress from which the specimen recovers fully</td>
+</tr>
+</tbody>
+</table></div>
+<p>Hooke's law: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mi>E</mi><mtext> </mtext><mi>ε</mi></mrow><annotation encoding="application/x-tex">\sigma=E\,\varepsilon</annotation></semantics></math></span> up to the proportional limit.</p>
+<h4>2. Properties in the linear elastic region</h4>
+<ul>
+<li><strong>Stiffness:</strong> resistance to elastic deformation; measured by Young's modulus E.</li>
+<li><strong>Elastic strength:</strong> stress at the change from the elastic to the plastic range.</li>
+<li><strong>Resilience:</strong> absorbs energy elastically and recovers it.</li>
+</ul>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>U</mi><mi>r</mi></msub><mo>=</mo><mfrac><msup><mi>σ</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>E</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">U_r=\dfrac{\sigma^2}{2E}</annotation></semantics></math></span></p>
+<p>Modulus of resilience: strain energy per unit volume at the elastic limit; gives the capacity to withstand shock and vibration (springs).</p>
+<h4>3. Linear and non-linear elastic</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Linear</th>
+<th>Non-linear</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Curve</td><td data-l="Linear">straight</td><td data-l="Non-linear">curved (rubber, polymers, grey cast iron)</td></tr>
+<tr><td data-l="">Stiffness</td><td data-l="Linear">Young's modulus</td><td data-l="Non-linear">secant modulus (average) and tangent modulus (instantaneous)</td></tr>
+<tr><td data-l="">Resilience</td><td data-l="Linear"><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mn>2</mn><mi>E</mi></mrow><annotation encoding="application/x-tex">\sigma^2/2E</annotation></semantics></math></span></td><td data-l="Non-linear">area under unloading curve over area under loading curve, x 100</td></tr>
+</tbody>
+</table></div>
+<p>Secant modulus: slope of the line from the origin to a point. Tangent modulus: slope of the tangent at a point.</p>
+<p><strong>Exam-ready conclusion:</strong> Hooke's law holds to the proportional limit; for non-linear materials the secant and tangent moduli replace Young's modulus.</p>
+</div>
+<div class="sub"><h3 id="c1">C1. The curve</h3>
+<figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" width="560" role="img" aria-label="Schematic engineering stress-strain curve of a ductile steel with yield points, tensile strength and fracture" font-family="sans-serif" font-size="12" fill="none" stroke="currentColor" stroke-width="1.6">
+<line x1="60" y1="290" x2="520" y2="290"/><line x1="60" y1="290" x2="60" y2="30"/>
+<polyline points="60,290 140,120 150,112 170,150 190,138 330,70 400,60 440,90 470,150" stroke="#2f855a" stroke-width="2.4"/>
+<circle cx="140" cy="120" r="4" fill="#c0392b" stroke="none"/><text x="70" y="108" fill="currentColor" stroke="none" font-size="11">proportional limit</text>
+<circle cx="150" cy="112" r="4" fill="#c0392b" stroke="none"/><text x="156" y="100" fill="currentColor" stroke="none" font-size="11">elastic limit, upper yield</text>
+<circle cx="170" cy="150" r="4" fill="#c0392b" stroke="none"/><text x="176" y="172" fill="currentColor" stroke="none" font-size="11">lower yield</text>
+<circle cx="400" cy="60" r="4" fill="#c0392b" stroke="none"/><text x="360" y="48" fill="currentColor" stroke="none" font-size="11">UTS (tensile strength)</text>
+<circle cx="470" cy="150" r="4" fill="#c0392b" stroke="none"/><text x="415" y="172" fill="currentColor" stroke="none" font-size="11">fracture</text>
+<text x="80" y="230" fill="currentColor" stroke="none" font-size="11">linear elastic: slope = E</text>
+<text x="395" y="115" fill="currentColor" stroke="none" font-size="11">necking</text>
+<text x="2" y="160" fill="currentColor" stroke="none" font-size="11">stress</text>
+<text x="260" y="316" fill="currentColor" stroke="none">strain</text>
+<text x="62" y="334" fill="currentColor" stroke="none" font-size="10">Schematic of the curve (load-extension graph); no values read.</text>
+</svg><figcaption>Schematic engineering stress-strain curve of a ductile steel with the points named in the notes (no values read).</figcaption></figure>
+
+<p>The slide shows a load-extension graph with these marked: limit of proportionality, elastic limit, upper and lower yield points, tensile strength, necking at maximum load, and fracture of a cup-and-cone type.</p>
+</div><div class="sub"><h3 id="c2">C2. Proportional limit and Hooke's law</h3>
+<ul>
+<li><strong>Proportional limit:</strong> the point up to which the plot is a straight line and stress is proportional to strain. Up to it the material is elastic and follows Hooke's law.</li>
+<li><strong>Hooke's law:</strong> stress is proportional to strain up to the proportional limit.</li>
+</ul>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>σ</mi><mo>=</mo><mi>E</mi><mtext> </mtext><mi>ε</mi></mrow><annotation encoding="application/x-tex">\sigma=E\,\varepsilon</annotation></semantics></math></span></p>
+<p>( gives E = sigma over epsilon.)</p>
+</div><div class="sub"><h3 id="c3">C3. Elastic limit</h3>
+<p>The elastic limit is the point just beyond the proportional limit.</p>
+<p>From the proportional limit to the elastic limit the material is still elastic, but stress and strain are no longer proportional.</p>
+<p>The notes define it as the highest stress from which the specimen recovers fully on unloading.</p>
+</div><div class="sub"><h3 id="c4">C4. Three properties in the linear elastic region</h3>
+<p>Almost every material shows linear elastic behaviour. The properties identified in it are stiffness, elastic strength and resilience.</p>
+<ul>
+<li><strong>Stiffness:</strong> the ability to resist elastic deformation under load. Young's modulus E is the measure of stiffness.</li>
+<li><strong>Elastic strength:</strong> the stress at the change from the elastic range (small, recoverable strains) to the plastic range (larger, partly non-recoverable strains).</li>
+<li><strong>Resilience:</strong> the property of absorbing energy when loaded elastically and recovering it on unloading.</li>
+</ul>
+<p>also says stiffness can be seen as the ability to absorb energy in the elastic range. That is what the other slides call resilience; this is logged under Flagged.</p>
+</div><div class="sub"><h3 id="c5">C5. Modulus of resilience</h3>
+<p>The modulus of resilience is the strain energy stored per unit volume at the elastic limit.</p>
+<p>It gives the capacity to withstand shock and vibration. Example: springs.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>U</mi><mi>r</mi></msub><mo>=</mo><mfrac><msup><mi>σ</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>E</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">U_r=\dfrac{\sigma^2}{2E}</annotation></semantics></math></span></p>
+<p>sigma is the stress at point A (the elastic limit or yield stress used) and E is Young's modulus.</p>
+<p>Worked check with made-up round numbers (an illustration, not course data): sigma = 200 MPa and E = 200 000 MPa.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>U</mi><mi>r</mi></msub><mo>=</mo><mfrac><mrow><mn>20</mn><msup><mn>0</mn><mn>2</mn></msup></mrow><mrow><mn>2</mn><mo>×</mo><mn>200</mn><mtext> </mtext><mn>000</mn></mrow></mfrac><mo>=</mo><mn>0.1</mn><mtext> </mtext><msup><mtext>MJ/m</mtext><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">U_r=\dfrac{200^2}{2\times200\,000}=0.1\ \text{MJ/m}^3</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="c6">C6. Non-linear elastic behaviour</h3>
+<p>Sometimes stress is not proportional to strain in the elastic range. That is non-linear elastic behaviour.</p>
+<p>Examples: rubber, polymers, grey cast iron.</p>
+<p>Three properties apply here: secant modulus, tangent modulus and resilience.</p>
+</div><div class="sub"><h3 id="c7">C7. Secant and tangent modulus</h3>
+<p>There is no single Young's modulus on a curved line, so two moduli are used.</p>
+<ul>
+<li><strong>Secant modulus:</strong> the slope of a line from the origin to a chosen point. It is the average stiffness between the origin and that stress.</li>
+<li><strong>Tangent modulus:</strong> the slope of the tangent at a chosen point. It is the instantaneous stiffness at that stress.</li>
+</ul>
+</div><div class="sub"><h3 id="c8">C8. Resilience of a non-linear material (rubber)</h3>
+<p>The modulus of resilience does not apply, because there is no proportional limit.</p>
+<p>The strain energy stored per unit volume is the area under the stress-strain curve. For an elastic material it is not always fully recovered.</p>
+<p>For rubber, the loading curve and the unloading curve enclose different areas:</p>
+<ul>
+<li>area under the loading curve: energy put in</li>
+<li>area under the unloading curve: energy recovered</li>
+</ul>
+<p>The recovered energy is less. The difference is lost as internal friction in the rubber.</p>
+<p>Resilience for a non-linear elastic material is the ratio of the recoverable energy to the energy invested, as a percentage:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Resilience</mtext><mo>=</mo><mfrac><mtext>area under the unloading curve</mtext><mtext>area under the loading curve</mtext></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\text{Resilience}=\dfrac{\text{area under the unloading curve}}{\text{area under the loading curve}}\times100</annotation></semantics></math></span></p>
+<p>A low resilience is wanted for good damping. A high resilience gives low internal heat generation.</p>
+</div></section><section class="sec"><h2 id="d">D. The plastic region of the curve</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Points after the elastic limit</h4>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yield point</td>
+<td>considerable elongation without a rise in load</td>
+</tr>
+<tr>
+<td>Upper and lower yield points</td>
+<td>peak before the stress drop and level after it</td>
+</tr>
+<tr>
+<td>Proof stress</td>
+<td>yield strength by the 0.2 % offset method</td>
+</tr>
+<tr>
+<td>UTS</td>
+<td>maximum engineering stress, without necking</td>
+</tr>
+<tr>
+<td>Fracture strength</td>
+<td>stress at fracture load: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi>f</mi></msub><mo>=</mo><msub><mi>P</mi><mi>f</mi></msub><mi mathvariant="normal">/</mi><msub><mi>A</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_f=P_f/A_0</annotation></semantics></math></span></td>
+</tr>
+<tr>
+<td>Nominal breaking stress</td>
+<td>on the original area; lower than UTS</td>
+</tr>
+<tr>
+<td>True breaking stress</td>
+<td>on the reduced neck area; higher than UTS</td>
+</tr>
+</tbody>
+</table></div>
+<h4>2. Which yield stress</h4>
+<p>The lower yield stress is taken as the yield stress, because the upper one depends on testing speed, specimen form and cross-section shape.</p>
+<h4>3. Offset method (materials with no sharp yield)</h4>
+<ol>
+<li>Mark 0.2 % (0.002) on the strain axis.</li>
+<li>Draw a line from it parallel to the initial straight part.</li>
+<li>The stress where the line cuts the curve is the 0.2 % offset yield strength (proof stress).</li>
+</ol>
+<h4>4. Why breaking stress looks lower than UTS</h4>
+<p>After the UTS the neck forms; the extensometer cannot account for it, and the stress is still worked out on the original area, so it appears lower. On the neck area it is higher than the UTS.</p>
+<h4>5. Toughness and malleability</h4>
+<p>Toughness: energy absorbed up to fracture, related to the area under the stress-strain curve. Fracture toughness is different: resistance to fracture when a crack is present.</p>
+<p><strong>Exam-ready conclusion:</strong> yield stress is the lower yield point or the 0.2 % offset stress; UTS is the maximum engineering stress.</p>
+</div>
+<div class="sub"><h3 id="d1">D1. Yield point</h3>
+<p>Load the specimen beyond the elastic limit. It enters the elasto-plastic zone.</p>
+<p>Here the specimen lengthens by a large amount with no visible rise in load.</p>
+<p>Sometimes the yielding comes with a sudden drop of load and stress. Then there are two stress values:</p>
+<ul>
+<li><strong>upper yield point (stress):</strong> the peak before the drop</li>
+<li><strong>lower yield point (stress):</strong> the level after the drop</li>
+</ul>
+</div><div class="sub"><h3 id="d2">D2. Which yield stress to use</h3>
+<p>The lower yield stress is normally taken as the yield stress of the material.</p>
+<p>Reason: the upper yield stress depends on the speed of testing, the form of the specimen and the shape of the cross-section.</p>
+<p>For a material with a sharp yield point, the lower yield point is the yield strength used for design.</p>
+<p>The notes say the same: lower yield stress is commonly used.</p>
+</div><div class="sub"><h3 id="d3">D3. Offset method and proof stress</h3>
+<p>Some materials show no sharp yield point. The offset method is used for them.</p>
+<figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" width="640" role="img" aria-label="Left: the 0.2 percent offset method for proof stress. Right: upper and lower yield points of a low-carbon steel" font-family="sans-serif" font-size="12" fill="none" stroke="currentColor" stroke-width="1.6">
+<line x1="40" y1="250" x2="290" y2="250"/><line x1="40" y1="250" x2="40" y2="30"/>
+<path d="M40,250 C70,190 100,120 150,95 C200,75 250,62 285,58" stroke="#2f855a" stroke-width="2.4"/>
+<line x1="85" y1="250" x2="215" y2="78" stroke-dasharray="5 4"/>
+<line x1="40" y1="78" x2="215" y2="78" stroke-dasharray="3 3" stroke-opacity=".6"/>
+<line x1="215" y1="78" x2="215" y2="250" stroke-dasharray="3 3" stroke-opacity=".6"/>
+<circle cx="215" cy="78" r="4" fill="#c0392b" stroke="none"/>
+<text x="95" y="68" fill="currentColor" stroke="none" font-size="11">0.2 % offset yield strength</text>
+<text x="70" y="270" fill="currentColor" stroke="none" font-size="11">0.002 offset on the strain axis</text>
+<text x="120" y="196" fill="currentColor" stroke="none" font-size="11">line parallel to the</text><text x="120" y="210" fill="currentColor" stroke="none" font-size="11">initial path of the curve</text>
+<text x="150" y="290" fill="currentColor" stroke="none">(a) strain</text><text x="2" y="150" fill="currentColor" stroke="none" font-size="11">stress</text>
+<line x1="360" y1="250" x2="610" y2="250"/><line x1="360" y1="250" x2="360" y2="30"/>
+<polyline points="360,250 420,70 430,60 440,100 500,102 560,80 600,66" stroke="#2f855a" stroke-width="2.4"/>
+<circle cx="430" cy="60" r="4" fill="#c0392b" stroke="none"/><text x="440" y="54" fill="currentColor" stroke="none" font-size="11">upper yield point</text>
+<circle cx="440" cy="100" r="4" fill="#c0392b" stroke="none"/><text x="446" y="124" fill="currentColor" stroke="none" font-size="11">lower yield point</text>
+<text x="470" y="290" fill="currentColor" stroke="none">(b) strain</text><text x="322" y="150" fill="currentColor" stroke="none" font-size="11">stress</text>
+<text x="40" y="12" fill="currentColor" stroke="none" font-size="10">Schematics after (gray cast iron offset; low-carbon steel yield points). No values read except 0.2 %.</text>
+</svg><figcaption>(a) 0.2 % offset method; (b) upper and lower yield points. Schematics after.</figcaption></figure>
+
+<p>Steps for the 0.2 % offset yield strength:</p>
+<ol>
+<li>Mark a strain of 0.2 % (0.002) on the strain axis.</li>
+<li>Draw a line from that point parallel to the initial straight part of the curve.</li>
+<li>Read the stress where this line cuts the curve.</li>
+<li>That stress is the 0.2 % offset yield strength, the proof stress.</li>
+</ol>
+<p>The slide shows the method on grey cast iron and the two yield points on a low-carbon steel.</p>
+</div><div class="sub"><h3 id="d4">D4. Ultimate tensile stress</h3>
+<p>After yield the load rises again as the material strain-hardens, and the curve goes up to its highest point, the ultimate stress.</p>
+<p>The <strong>ultimate tensile stress (UTS)</strong>, also called tensile strength, is the maximum stress the material can withstand in the plastic region without necking or failure. In a brittle material the UTS is also the breaking stress.</p>
+</div><div class="sub"><h3 id="d5">D5. Ductility</h3>
+<p>Percentage elongation and percentage reduction in cross-sectional area measure ductility.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> elongation</mtext><mo>=</mo><mfrac><mrow><msub><mi>L</mi><mi>f</mi></msub><mo>−</mo><msub><mi>L</mi><mn>0</mn></msub></mrow><msub><mi>L</mi><mn>0</mn></msub></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\%\ \text{elongation}=\dfrac{L_f-L_0}{L_0}\times100</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">%</mi><mtext> reduction in area</mtext><mo>=</mo><mfrac><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>−</mo><msub><mi>A</mi><mi>f</mi></msub></mrow><msub><mi>A</mi><mn>0</mn></msub></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\%\ \text{reduction in area}=\dfrac{A_0-A_f}{A_0}\times100</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="d6">D6. Fracture strength</h3>
+<p>After the ultimate load the load falls. Fracture happens at a particular load.</p>
+<p>The stress at that load is the fracture strength, also called breaking stress.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>σ</mi><mi>f</mi></msub><mo>=</mo><mfrac><msub><mi>P</mi><mi>f</mi></msub><msub><mi>A</mi><mn>0</mn></msub></mfrac></mrow><annotation encoding="application/x-tex">\sigma_f=\dfrac{P_f}{A_0}</annotation></semantics></math></span></p>
+<p>P_f is the fracture load and A_0 the original cross-sectional area. The unit is N/mm2.</p>
+</div><div class="sub"><h3 id="d7">D7. Nominal and true breaking stress</h3>
+<p>The curve of a ductile metal shows a breaking stress lower than the UTS. This is misleading.</p>
+<p>What happens:</p>
+<ol>
+<li>Beyond the UTS, the cross-section shrinks near the middle of the gauge length. This is necking, or forming a waist.</li>
+<li>The extensometer is fixed at the ends of the gauge length, so it cannot account for the thinner neck.</li>
+<li>The stress is still worked out with the original area, so it appears lower. This is the <strong>nominal breaking stress</strong>.</li>
+<li>Using the reduced area at the neck gives the <strong>true breaking stress</strong>, which is considerably higher than the UTS.</li>
+<li>In a brittle material the UTS equals the breaking stress.</li>
+</ol>
+<p>The notes say the same: the fracture stress on the original area is often below the UTS, and the true fracture stress, on the reduced neck area, may exceed it.</p>
+</div><div class="sub"><h3 id="d8">D8. Toughness and malleability</h3>
+<ul>
+<li><strong>Toughness:</strong> the ability to absorb energy up to fracture, that is in the plastic range. It is the total area under the stress-strain curve up to fracture.</li>
+<li><strong>Fracture toughness:</strong> a property showing a material's resistance to fracture when a crack is present.</li>
+<li><strong>Malleability:</strong> the ability to undergo large plastic deformation under compressive stress.</li>
+</ul>
+</div><div class="sub"><h3 id="d9">D9. Summary of the points of the curve</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proportional limit</td>
+<td>highest stress with stress proportional to strain</td>
+</tr>
+<tr>
+<td>Elastic limit</td>
+<td>highest stress from which full recovery occurs</td>
+</tr>
+<tr>
+<td>Yield point</td>
+<td>start of substantial plastic deformation</td>
+</tr>
+<tr>
+<td>Proof stress</td>
+<td>yield strength by the offset method</td>
+</tr>
+<tr>
+<td>UTS</td>
+<td>maximum engineering stress</td>
+</tr>
+<tr>
+<td>Necking</td>
+<td>local reduction of area after the UTS</td>
+</tr>
+<tr>
+<td>Breaking stress</td>
+<td>engineering stress at fracture on the original area</td>
+</tr>
+<tr>
+<td>True fracture stress</td>
+<td>fracture load over the actual neck area</td>
+</tr>
+</tbody>
+</table></div>
+</div></section><section class="sec"><h2 id="e">E. Strain hardening, Luder's bands and strain aging</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definitions</h4>
+<ul>
+<li><strong>Strain hardening (work hardening):</strong> a ductile metal becomes harder and stronger as it is deformed plastically, at a temperature well below its melting point. Example: rolled sheet.</li>
+<li><strong>Lüders bands (Hartmann lines):</strong> bands of deformed metal at about 45 degrees to the tensile axis at the yield point.</li>
+</ul>
+<h4>2. Why strain hardening happens</h4>
+<p>Plastic deformation raises the dislocation density. The dislocations block each other, so motion along slip planes becomes harder; the metal is stronger.</p>
+<h4>3. Yield-point phenomenon</h4>
+<ol>
+<li>A band of deformed metal forms at a stress raiser at the upper yield point.</li>
+<li>The load drops to the lower yield point.</li>
+<li>The band travels along the specimen: this is the yield point elongation.</li>
+<li>Several slip systems are active while it travels.</li>
+</ol>
+<h4>4. Strain aging (read from figure)</h4>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yield stress</td>
+<td>higher</td>
+</tr>
+<tr>
+<td>UTS</td>
+<td>higher</td>
+</tr>
+<tr>
+<td>Total elongation</td>
+<td>smaller</td>
+</tr>
+<tr>
+<td>Lower yield extension</td>
+<td>appears again</td>
+</tr>
+</tbody>
+</table></div>
+<p>No mechanism is given in the course.</p>
+<p><strong>Exam-ready conclusion:</strong> strain hardening is strengthening by plastic deformation through dislocation interactions; Lüders bands travel at yield.</p>
+</div>
+<div class="sub"><h3 id="e1">E1. Strain hardening</h3>
+<p>A ductile material becomes harder and stronger as it is deformed plastically, at a temperature well below its melting point.</p>
+<p>It is also called work hardening.</p>
+<p>Example from the slide: sheet metal in a rolling plant is harder and stronger after passing through the rollers to reduce thickness.</p>
+</div><div class="sub"><h3 id="e2">E2. The puzzle and the answer</h3>
+<p>After plastic deformation the yield stress is higher than before.</p>
+<p>Plastic deformation raises the dislocation density. Dislocations weaken a crystal, so the deformed crystal should be weaker. That is the puzzle.</p>
+<p>Experiments show the deformed crystal is stronger.</p>
+<p>The reason: dislocations get in each other's way. One dislocation moving is blocked by the others, so motion along the slip planes is harder. This gives the strengthening.</p>
+</div><div class="sub"><h3 id="e3">E3. Yield-point phenomenon and Luder's bands</h3>
+<p>At the upper yield point a small band of deformed metal, often visible by eye, appears at stress raisers such as fillets and grooves.</p>
+<p>When it forms, the load drops to the lower yield point.</p>
+<p>The band then travels along the specimen. That causes the yield point elongation.</p>
+<p>These bands lie at about 45 degrees to the tensile axis (the slide and). They are called Luder's bands, or Hartmann lines.</p>
+<p>While the bands travel, several slip systems are active, and they give a roughly uniform dislocation distribution through the sample.</p>
+</div><div class="sub"><h3 id="e4">E4. Strain aging</h3>
+<p>shows a curve of a pre-strained steel with the effects of strain aging marked. Read from the figure:</p>
+<ul>
+<li><strong>Delta Y:</strong> change in yield stress due to strain aging. The aged curve restarts at a higher yield stress (point C above point B).</li>
+<li><strong>Delta U:</strong> change in UTS due to strain aging. The aged curve reaches a higher UTS.</li>
+<li><strong>Delta e:</strong> change in total elongation due to strain aging. The aged specimen breaks at a smaller total strain, so its elongation is smaller.</li>
+<li>A strain-aged lower yield extension appears again after the pre-strain.</li>
+</ul>
+<p>The slide gives no explanation of the mechanism, so none is added here. The effects are read from the figure and labelled as such.</p>
+</div><div class="sub"><h3 id="e5">E5. Summary</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Phenomenon</th>
+<th>What happens</th>
+<th>Cause (course)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Phenomenon">Strain hardening</td><td data-l="What happens">harder, stronger after plastic deformation</td><td data-l="Cause (course)">dislocation interactions block dislocation motion</td></tr>
+<tr><td data-l="Phenomenon">Yield-point phenomenon</td><td data-l="What happens">load drop and a travelling band at the yield point</td><td data-l="Cause (course)">bands form at stress raisers and spread; several slip systems act</td></tr>
+<tr><td data-l="Phenomenon">Strain aging</td><td data-l="What happens">higher yield stress and UTS, lower total elongation (read from the figure)</td><td data-l="Cause (course)">not explained on the slides</td></tr>
+</tbody>
+</table></div>
+</div></section><section class="sec"><h2 id="f">F. Plastic deformation of crystals: slip and twinning</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definitions</h4>
+<ul>
+<li><strong>Single crystal:</strong> one grain, no grain boundaries. <strong>Polycrystal:</strong> many crystals of different orientation with boundaries.</li>
+<li><strong>Slip:</strong> plastic deformation by movement of dislocations along preferred planes and directions.</li>
+<li><strong>Slip system:</strong> the slip plane (preferred plane) plus the slip direction (direction in that plane).</li>
+<li><strong>Twinning:</strong> the atoms on one side of the twin boundary are a mirror image of those on the other; a shear force along the boundary shifts them.</li>
+</ul>
+<h4>2. Rules of slip</h4>
+<ol>
+<li>Slip occurs along certain planes and directions.</li>
+<li>The slip direction is the most closely packed direction.</li>
+<li>Slip occurs on the system with maximum shear stress, at about 45 degrees to the tensile load.</li>
+</ol>
+<h4>3. Twin types</h4>
+<p>Annealing twins: FCC metals. Mechanical twins: BCC and HCP metals.</p>
+<h4>4. Slip against twinning</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Slip</th>
+<th>Twinning</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Atom movement</td><td data-l="Slip">all atoms in a block move the same distance</td><td data-l="Twinning">planes move a fraction of a distance</td></tr>
+<tr><td data-l="">Microscope</td><td data-l="Slip">thin lines</td><td data-l="Twinning">broad lines or bands</td></tr>
+<tr><td data-l="">Shear stress</td><td data-l="Slip">lower</td><td data-l="Twinning">higher</td></tr>
+<tr><td data-l="">Metals</td><td data-l="Slip">many slip systems, Cu (FCC)</td><td data-l="Twinning">few slip systems, Zn (HCP)</td></tr>
+<tr><td data-l="">Favoured by</td><td data-l="Slip">higher temperature, gradual loading</td><td data-l="Twinning">low temperature, impact loading</td></tr>
+<tr><td data-l="">Orientation</td><td data-l="Slip">little change</td><td data-l="Twinning">changes in twinned region</td></tr>
+</tbody>
+</table></div>
+<p><strong>Exam-ready conclusion:</strong> slip is the easier mode; twinning takes over where slip systems are limited.</p>
+</div>
+<div class="sub"><h3 id="f1">F1. Single crystal and polycrystal</h3>
+<p>A single crystal is one grain. It has no grain boundaries.</p>
+<p>A polycrystal is many single crystals with different orientations, with a grain boundary between neighbours.</p>
+<p>In a single crystal, plastic deformation happens by slip and by twinning.</p>
+</div><div class="sub"><h3 id="f2">F2. Slip</h3>
+<p>Slip is plastic deformation caused by the movement of dislocations along preferred crystal planes and directions.</p>
+<p>Step by step:</p>
+<ol>
+<li>Stress a single crystal in tension beyond its elastic limit.</li>
+<li>A step appears: the crystal divides into two blocks.</li>
+<li>One block moves relative to the other.</li>
+<li>If the load rises further, more blocks form and move.</li>
+</ol>
+<p>The cause is pure shear stress across the specimen. Slip happens by the movement of dislocations.</p>
+</div><div class="sub"><h3 id="f3">F3. Slip plane, slip direction, slip system</h3>
+<p>Dislocations do not move equally easily on all planes and in all directions.</p>
+<ul>
+<li><strong>Slip plane:</strong> the preferred plane.</li>
+<li><strong>Slip direction:</strong> the direction in that plane along which the dislocation moves.</li>
+<li><strong>Slip system:</strong> the combination of slip plane and slip direction.</li>
+</ul>
+</div><div class="sub"><h3 id="f4">F4. Rules of slip</h3>
+<ol>
+<li>Slip occurs along certain crystal planes and directions.</li>
+<li>The slip direction is the one in which the atoms are most closely packed.</li>
+<li>Of the available slip systems, slip occurs on the one with the maximum shear stress, which is at about 45 degrees to the applied tensile load.</li>
+</ol>
+<p>Slip often shows as thin lines under a microscope.</p>
+</div><div class="sub"><h3 id="f5">F5. Twinning</h3>
+<p>Twinning is a surface imperfection. The atoms on one side of the twin boundary are a mirror image of those on the other side.</p>
+<p>A shear force along the boundary makes the atoms shift out of position.</p>
+<p>It occurs during deformation or heat treatment of some metals.</p>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Annealing twins</td>
+<td>FCC metals</td>
+</tr>
+<tr>
+<td>Mechanical twins</td>
+<td>BCC and HCP metals</td>
+</tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="f6">F6. Slip compared with twinning</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Slip</th>
+<th>Twinning</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Atom movement</td><td data-l="Slip">all atoms in a block move the same distance</td><td data-l="Twinning">different planes move a fraction of a distance, depending on distance from the twinning plane</td></tr>
+<tr><td data-l="">Under the microscope</td><td data-l="Slip">thin lines</td><td data-l="Twinning">broad lines or bands</td></tr>
+<tr><td data-l="">Shear stress needed</td><td data-l="Slip">lower</td><td data-l="Twinning">higher</td></tr>
+<tr><td data-l="">Metals</td><td data-l="Slip">many slip systems, for example Cu (FCC)</td><td data-l="Twinning">few slip systems, for example Zn (HCP)</td></tr>
+<tr><td data-l="">Favoured by</td><td data-l="Slip">higher temperature and gradual loading</td><td data-l="Twinning">low temperature and impact loading</td></tr>
+<tr><td data-l="">Lattice orientation</td><td data-l="Slip">very little change</td><td data-l="Twinning">changes in the twinned region</td></tr>
+</tbody>
+</table></div>
+<p>(the also say twinning can be important where slip systems are limited.)</p>
+</div></section><section class="sec"><h2 id="g">G. Fracture</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>Fracture is failure in which a metal separates into pieces under stress, below its melting point. It breaks atomic bonds and makes new surfaces. Three stages: crack initiation, crack propagation, failure.</p>
+<h4>2. Types</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Features</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Type">I</td><td data-l="Name">ductile</td><td data-l="Features">extensive plastic deformation, slow crack, dull surface</td></tr>
+<tr><td data-l="Type">II</td><td data-l="Name">brittle</td><td data-l="Features">little deformation, fast crack, little energy absorbed, no warning</td></tr>
+<tr><td data-l="Type">III</td><td data-l="Name">shear</td><td data-l="Features">extensive shear and slip</td></tr>
+</tbody>
+</table></div>
+<h4>3. Ductile fractures</h4>
+<ul>
+<li><strong>Completely ductile:</strong> necks to a point, 100 % reduction in area (gold, lead).</li>
+<li><strong>Moderately ductile (cup and cone):</strong> necking, microvoids form in the neck, voids join into a crack, crack spreads, rapid final fracture. Shear lip at the rim at about 45 degrees; fibrous interior.</li>
+</ul>
+<h4>4. Brittle fracture</h4>
+<p>Crack moves along cleavage planes. Transgranular: through grains, grainy surface. Intergranular: along grain boundaries. Likelier at low temperature, high strain rate or loading rate.</p>
+<h4>5. Ductile-to-brittle transition</h4>
+<p>Below the transition temperature some steels fracture in a brittle way. Alloying usually raises it; use such alloys above it.</p>
+<h4>6. Griffith's criterion</h4>
+<p>A brittle material has micro-cracks that raise the stress locally. A crack propagates when the elastic strain energy released is at least the surface energy needed for the new crack surface.</p>
+<p><strong>Exam-ready conclusion:</strong> ductile fracture is slow with large deformation, brittle fracture is fast without warning; Griffith's criterion balances released elastic energy against surface energy.</p>
+</div>
+<div class="sub"><h3 id="g1">G1. What fracture is</h3>
+<p>Fracture is a failure in which the metal separates into pieces under stress, at a temperature below the melting point.</p>
+<p>It breaks atomic bonds and makes new surfaces.</p>
+<p>Three stages: crack initiation, crack propagation and failure.</p>
+</div><div class="sub"><h3 id="g2">G2. Three types</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Main points</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Type">Type I</td><td data-l="Name">ductile fracture</td><td data-l="Main points">extensive plastic deformation, slow crack growth, dull surface</td></tr>
+<tr><td data-l="Type">Type II</td><td data-l="Name">brittle fracture</td><td data-l="Main points">little plastic deformation, fast crack growth, low energy absorbed</td></tr>
+<tr><td data-l="Type">Type III</td><td data-l="Name">shear fracture</td><td data-l="Main points">extensive shear deformation and slip</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="g3">G3. Completely ductile fracture</h3>
+<p>The material necks down to a point. The reduction in cross-sectional area is 100 %.</p>
+<p>It happens in soft metals such as pure gold and lead.</p>
+</div><div class="sub"><h3 id="g4">G4. Moderately ductile fracture: cup and cone</h3>
+<p>It is called cup-and-cone because the fracture surface has a cup on one side and a cone on the other.</p>
+<p>Stages:</p>
+<ol>
+<li>The specimen necks, so the cross-section shrinks.</li>
+<li>Small cavities (microvoids) form inside the neck.</li>
+<li>They join into an elliptical crack with its long axis perpendicular to the load.</li>
+<li>The crack spreads in the direction of its long axis, and final fracture comes by rapid crack growth.</li>
+</ol>
+<p>Two zones on the surface:</p>
+<ul>
+<li>the outer rim of the neck, where shear at about 45 degrees to the load gives the fracture. It is the shear lip, with a shiny look.</li>
+<li>the interior, with an irregular, fibrous look.</li>
+</ul>
+</div><div class="sub"><h3 id="g5">G5. Brittle fracture</h3>
+<p>There is no appreciable deformation and the crack moves fast.</p>
+<p>In most brittle materials the crack moves by breaking atomic bonds along particular crystal planes, called cleavage planes.</p>
+<ul>
+<li><strong>Transgranular:</strong> the crack goes through the grains and gives a grainy texture.</li>
+<li><strong>Intergranular:</strong> the crack goes along the grain boundaries.</li>
+</ul>
+<p>It is a catastrophic failure, with negligible plastic deformation and no prior warning. It can happen in ships, pressure vessels and bridges.</p>
+<p>A material tends to fail by brittle fracture when the temperature drops, the strain rate rises or the loading rate rises.</p>
+</div><div class="sub"><h3 id="g6">G6. Shear fracture</h3>
+<p>Shear fracture is breakage caused by a force that shifts layers laterally. It results from extensive slip on the active slip plane.</p>
+</div><div class="sub"><h3 id="g7">G7. Ductile-to-brittle transition</h3>
+<p>Some materials, especially certain steels, get less ductile as temperature falls. Below a transition temperature the fracture is brittle, with little plastic deformation.</p>
+<ul>
+<li>Alloying usually raises the transition temperature.</li>
+<li>For an alloy the change happens over a range of temperature.</li>
+<li>Such alloys should be used above the transition temperature to avoid brittle fracture.</li>
+</ul>
+</div><div class="sub"><h3 id="g8">G8. Griffith's criterion</h3>
+<p>Griffith said that a brittle material has many micro-cracks. They raise the stress locally at a nominal stress well below the theoretical value.</p>
+<p>When a crack spreads, its sides gain surface energy. The source of that energy is the elastic strain energy released as the crack opens.</p>
+<p>Criterion:</p>
+<ul>
+<li>A crack propagates when the decrease in elastic energy is at least equal to the energy needed to make the new crack surface.</li>
+<li>Part of the released energy goes to the new surface, and the rest becomes kinetic energy.</li>
+<li>The crack propagates when a small increase of its length causes no net energy change in the system.</li>
+</ul>
+<p>The criterion gives the tensile stress that just makes a critical-size crack spread as a brittle fracture.</p>
+<p>Everyday picture: a tiny nick in a sheet of paper makes it tear easily. The nick is the micro-crack.</p>
+</div><div class="sub"><h3 id="g9">G9. Summary</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Fracture</th>
+<th>Plastic deformation</th>
+<th>Crack speed</th>
+<th>Surface</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Fracture">Completely ductile</td><td data-l="Plastic deformation">extensive, 100 % reduction</td><td data-l="Crack speed">slow</td><td data-l="Surface">dull, necks to a point</td><td data-l="Example">gold, lead</td></tr>
+<tr><td data-l="Fracture">Cup and cone</td><td data-l="Plastic deformation">considerable</td><td data-l="Crack speed">slow, then rapid at the end</td><td data-l="Surface">cup and cone, shear lip</td><td data-l="Example">ductile metal specimen</td></tr>
+<tr><td data-l="Fracture">Brittle</td><td data-l="Plastic deformation">negligible</td><td data-l="Crack speed">fast</td><td data-l="Surface">cleavage, grainy (transgranular)</td><td data-l="Example">ships, pressure vessels, bridges</td></tr>
+<tr><td data-l="Fracture">Shear</td><td data-l="Plastic deformation">extensive shear and slip</td><td data-l="Crack speed">not stated</td><td data-l="Surface">not stated</td><td data-l="Example">not stated</td></tr>
+</tbody>
+</table></div>
+</div></section><section class="sec"><h2 id="h">H. Creep</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>Creep is a time-dependent, slow, progressive deformation at constant stress, usually at high temperature. It becomes noticeable at about 30 % of the melting point (the slide also writes 0.5 Tm). Found in boilers, gas turbines and ovens.</p>
+<h4>2. Creep test and curve</h4>
+<p>A constant tensile load below yield acts on a specimen at constant temperature; strain is recorded against time. The instantaneous strain at loading is not creep.</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Stage</th>
+<th>Rate</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Stage">Primary (transient)</td><td data-l="Rate">decreasing</td><td data-l="Cause">work hardening</td></tr>
+<tr><td data-l="Stage">Secondary (steady state)</td><td data-l="Rate">constant, minimum creep rate</td><td data-l="Cause">work hardening and recovery balance</td></tr>
+<tr><td data-l="Stage">Tertiary</td><td data-l="Rate">increasing, to rupture</td><td data-l="Cause">necking, internal voids, smaller section</td></tr>
+</tbody>
+</table></div>
+<p>Secondary creep is the most important stage, since most working components are in it.</p>
+<h4>3. Logarithmic creep</h4>
+<p>At low temperature: <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>=</mo><mi>α</mi><mi>ln</mi><mo>⁡</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">\varepsilon=\alpha\ln t</annotation></semantics></math></span>.</p>
+<h4>4. High-temperature mechanisms</h4>
+<ul>
+<li>Vacancy concentration rises and diffusion speeds up.</li>
+<li>Dislocations climb over obstacles.</li>
+<li>Grain-boundary sliding gives intergranular cracks.</li>
+</ul>
+<p><strong>Exam-ready conclusion:</strong> creep has three stages; the steady secondary stage sets the design life and the tertiary stage ends in rupture.</p>
+</div>
+<div class="sub"><h3 id="h1">H1. What creep is</h3>
+<p>Creep is a time-dependent deformation. It is a slow, progressive deformation at constant stress, usually at high temperature.</p>
+<p>Components that meet it: boilers, gas turbines, ovens.</p>
+<p>Creep becomes noticeable at about 30 % of the melting point. For ceramics it is 40 to 50 %. The slide also writes creep as significant at T above 0.5 Tm.</p>
+<p>Factors: melting point, grain size, thermal stability, and also temperature and applied stress.</p>
+<p>Everyday picture: a heavy book on a plastic shelf, left for years, slowly bends the shelf.</p>
+</div><div class="sub"><h3 id="h2">H2. The creep test</h3>
+<p>A constant tensile load, below the yield point, is put on a specimen kept at constant temperature.</p>
+<p>The strain is recorded against time.</p>
+<p>At loading there is an instantaneous strain. Only the deformation after it is creep deformation.</p>
+</div><div class="sub"><h3 id="h3">H3. The creep curve</h3>
+<figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330" width="560" role="img" aria-label="Schematic creep curve with instantaneous strain, primary, secondary and tertiary creep and rupture" font-family="sans-serif" font-size="12" fill="none" stroke="currentColor" stroke-width="1.6">
+<line x1="60" y1="280" x2="520" y2="280"/><line x1="60" y1="280" x2="60" y2="30"/>
+<path d="M60,235 C80,185 105,170 150,160 L330,125 C400,108 450,85 490,40" stroke="#b5652a" stroke-width="2.4"/>
+<line x1="150" y1="280" x2="150" y2="60" stroke-dasharray="3 3" stroke-opacity=".6"/>
+<line x1="350" y1="280" x2="350" y2="60" stroke-dasharray="3 3" stroke-opacity=".6"/>
+<line x1="490" y1="280" x2="490" y2="40" stroke-dasharray="4 3" stroke-opacity=".6"/>
+<text x="75" y="75" fill="currentColor" stroke="none">primary</text><text x="75" y="92" fill="currentColor" stroke="none" font-size="11">rate falls</text>
+<text x="205" y="75" fill="currentColor" stroke="none">secondary</text><text x="205" y="92" fill="currentColor" stroke="none" font-size="11">constant rate</text>
+<text x="385" y="75" fill="currentColor" stroke="none">tertiary</text><text x="385" y="92" fill="currentColor" stroke="none" font-size="11">rate rises</text>
+<text x="472" y="30" fill="currentColor" stroke="none" font-size="11">rupture</text>
+<line x1="60" y1="235" x2="60" y2="280" stroke="#c0392b" stroke-width="3"/><text x="66" y="262" fill="#c0392b" stroke="none" font-size="11">instantaneous strain</text>
+<text x="18" y="150" fill="currentColor" stroke="none" font-size="11">strain</text>
+<text x="270" y="312" fill="currentColor" stroke="none">time</text>
+<text x="62" y="326" fill="currentColor" stroke="none" font-size="10">Schematic of the curve (no values read).</text>
+</svg><figcaption>Schematic creep curve: instantaneous strain, primary, secondary and tertiary creep, then rupture (after).</figcaption></figure>
+
+</div><div class="sub"><h3 id="h4">H4. Primary creep</h3>
+<ul>
+<li>The creep rate decreases.</li>
+<li>Deformation is rapid at first, then slower and slower as the rate approaches a fixed value.</li>
+<li>The cause is work hardening of the metal.</li>
+<li>It is also called transient creep, and cold creep.</li>
+<li>It matters for materials that creep at room temperature.</li>
+</ul>
+</div><div class="sub"><h3 id="h5">H5. Secondary creep</h3>
+<ul>
+<li>Called steady-state creep: the creep rate is constant.</li>
+<li>The rate is constant because work hardening and recovery balance each other.</li>
+<li>The average rate here is the minimum creep rate.</li>
+<li>It is the important part of the curve, because most working components are in this state.</li>
+<li>Creep here takes place by viscous flow in the material.</li>
+</ul>
+</div><div class="sub"><h3 id="h6">H6. Tertiary creep</h3>
+<ul>
+<li>The strain rate increases.</li>
+<li>It occurs when the cross-section is reduced by necking or by internal voids.</li>
+<li>The stress on the smaller section rises, so strain increases faster, until fracture.</li>
+</ul>
+</div><div class="sub"><h3 id="h7">H7. Summary of the stages</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Stage</th>
+<th>Creep rate</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Stage">Primary (transient)</td><td data-l="Creep rate">decreasing</td><td data-l="Cause">work hardening raises resistance</td></tr>
+<tr><td data-l="Stage">Secondary (steady state)</td><td data-l="Creep rate">constant (minimum creep rate)</td><td data-l="Cause">work hardening and recovery balance</td></tr>
+<tr><td data-l="Stage">Tertiary</td><td data-l="Creep rate">increasing</td><td data-l="Cause">necking, voids, smaller section, higher stress</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="h8">H8. Effect of temperature and stress</h3>
+<p>shows how temperature or applied stress changes the creep curve. At higher temperature the creep rate increases and structural changes take place.</p>
+<p>No numbers are given on the slide, so none are quoted here.</p>
+</div><div class="sub"><h3 id="h9">H9. Logarithmic creep</h3>
+<p>Creep at lower temperature is logarithmic creep:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ε</mi><mo>=</mo><mi>α</mi><mtext> </mtext><mi>ln</mi><mo>⁡</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">\varepsilon=\alpha\,\ln t</annotation></semantics></math></span></p>
+<p>epsilon is the strain, alpha is a constant and t is time.</p>
+<p>At low temperature it obeys a mechanical equation of state. The strain rate at a given time depends only on the instantaneous stress and strain, not on the earlier strain history.</p>
+</div><div class="sub"><h3 id="h10">H10. High-temperature mechanisms</h3>
+<ul>
+<li>The vacancy concentration rises with temperature, and diffusion speeds up.</li>
+<li>Recrystallization occurs because of the faster diffusion.</li>
+<li>Grains in a polycrystal move relative to each other. This is grain-boundary sliding, a shear process along the boundary. It leads to intergranular cracks.</li>
+<li>Atoms are more mobile and move to lower-energy positions.</li>
+<li>Dislocations are also more mobile and overcome obstacles by climb.</li>
+</ul>
+<p>( adds that diffusion, dislocation mobility, grain-boundary sliding and structural changes can contribute.)</p>
+</div></section><section class="sec"><h2 id="i">I. Fatigue</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>Fatigue is failure of a component under cyclic loading at a stress considerably lower than the static yield stress. It is progressive, localised damage under repeated loading.</p>
+<h4>2. Loading and stress parameters</h4>
+<ul>
+<li><strong>Completely reversed:</strong> equal peak in both directions, mean stress zero (rotating axle).</li>
+<li><strong>Repeated:</strong> from zero to a peak in one direction.</li>
+</ul>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>σ</mi><mo>=</mo><msub><mi>σ</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>−</mo><msub><mi>σ</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><mspace width="2em"/><msub><mi>σ</mi><mi>a</mi></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>σ</mi></mrow><mn>2</mn></mfrac><mspace width="2em"/><msub><mi>σ</mi><mi>m</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>σ</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>+</mo><msub><mi>σ</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow><mn>2</mn></mfrac><mspace width="2em"/><mi>R</mi><mo>=</mo><mfrac><msub><mi>σ</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><msub><mi>σ</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">\Delta\sigma=\sigma_{max}-\sigma_{min}\qquad\sigma_a=\dfrac{\Delta\sigma}{2}\qquad\sigma_m=\dfrac{\sigma_{max}+\sigma_{min}}{2}\qquad R=\dfrac{\sigma_{min}}{\sigma_{max}}</annotation></semantics></math></span></p>
+<h4>3. Three steps of failure</h4>
+<ol>
+<li>Crack initiation at the surface, often at a stress concentration.</li>
+<li>Crack growth, a little each cycle.</li>
+<li>Final fracture at the critical crack size.</li>
+</ol>
+<h4>4. S-N curve and fatigue properties</h4>
+<p>Stress against number of cycles on a log scale. Fatigue strength: stress for failure after a specified number of cycles. Fatigue limit (endurance limit): stress below which failure does not occur; some Fe and Ti alloys show it, non-ferrous materials do not. Fatigue life: cycles to failure at a stress.</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Low-cycle</th>
+<th>High-cycle</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Cycles</td><td data-l="Low-cycle">below 10^5</td><td data-l="High-cycle">above 10^5</td></tr>
+<tr><td data-l="">Loads</td><td data-l="Low-cycle">high</td><td data-l="High-cycle">low</td></tr>
+<tr><td data-l="">Deformation</td><td data-l="Low-cycle">plastic and elastic</td><td data-l="High-cycle">elastic</td></tr>
+</tbody>
+</table></div>
+<h4>5. Rotating-bending test</h4>
+<p>Circular specimen in a chuck with a weight pan; a motor rotates it, so the surface swings between equal tension and compression; revolutions to failure are counted at several weights.</p>
+<h4>6. Factors shortening life</h4>
+<p>Stress concentrations (keyways, holes, grooves), corrosion, residual stress, rough surface, high temperature.</p>
+<p><strong>Exam-ready conclusion:</strong> fatigue needs cyclic stress, a crack starting point and enough cycles; smooth surfaces and no stress raisers lengthen life.</p>
+</div>
+<div class="sub"><h3 id="i1">I1. What fatigue is</h3>
+<p>Fatigue is the failure of a component under cyclic loading, at a stress considerably lower than the yield stress of a static load.</p>
+<p>It is progressive, localised structural damage. It occurs under repeated loading and unloading.</p>
+<p>If the load is above a threshold, tiny cracks start at the surface. A crack grows to a critical size, and the structure then fractures suddenly.</p>
+<p>Structures where it appears: planes, boats, bridges, frames, cranes, machine parts, turbines, reactor vessels, offshore platforms, transmission towers, chimneys.</p>
+<p>Everyday picture: a paper clip bent back and forth breaks, though a single bend does not.</p>
+</div><div class="sub"><h3 id="i2">I2. Types of loading</h3>
+<p><strong>Completely reversed loading.</strong> The load goes from some magnitude in one direction to the same magnitude in the opposite direction. It is periodic and symmetrical. Examples on the slide: a rotating car axle. The mean stress is zero.</p>
+<p><strong>Repeated loading.</strong> The load changes from zero to some value in one direction. It is periodic and asymmetrical.</p>
+<p>The slides also show random stress fluctuations.</p>
+</div><div class="sub"><h3 id="i3">I3. Stress parameters</h3>
+<p>Stress range:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>σ</mi><mo>=</mo><msub><mi>σ</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>−</mo><msub><mi>σ</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta\sigma=\sigma_{max}-\sigma_{min}</annotation></semantics></math></span></p>
+<p>Stress amplitude:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>σ</mi><mi>a</mi></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>σ</mi></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\sigma_a=\dfrac{\Delta\sigma}{2}</annotation></semantics></math></span></p>
+<p>Mean stress:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>σ</mi><mi>m</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>σ</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>+</mo><msub><mi>σ</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\sigma_m=\dfrac{\sigma_{max}+\sigma_{min}}{2}</annotation></semantics></math></span></p>
+<p>Stress ratio:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>R</mi><mo>=</mo><mfrac><msub><mi>σ</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><msub><mi>σ</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">R=\dfrac{\sigma_{min}}{\sigma_{max}}</annotation></semantics></math></span></p>
+<p>The notes say to follow the convention given in a problem for R.</p>
+<p>writes the stress range as sigma_max + sigma_min for the completely reversed case, where sigma_min is the compressive peak taken as a magnitude. The notes write it as sigma_max - sigma_min with the sign of sigma_min kept. They give the same value; this is logged under Flagged.</p>
+<p>For completely reversed loading the mean stress is zero.</p>
+</div><div class="sub"><h3 id="i4">I4. Three steps of failure</h3>
+<ol>
+<li><strong>Crack initiation (nucleation):</strong> a small crack forms on the surface, often at a stress concentration. Several theories explain it, named on the slide as Orowan's theory and Cottrell and Hull's theory.</li>
+<li><strong>Crack growth:</strong> the crack grows slowly. Each stress cycle lengthens it by a small amount.</li>
+<li><strong>Final fracture:</strong> when the crack reaches the critical size, it spreads. The area carrying the load falls, so the stress rises, and the part finally fractures.</li>
+</ol>
+</div><div class="sub"><h3 id="i5">I5. Fatigue properties</h3>
+<ul>
+<li><strong>Fatigue strength:</strong> the stress at which failure occurs after a specified number of cycles.</li>
+<li><strong>Fatigue limit (endurance limit):</strong> the limiting stress level below which fatigue failure does not occur. Non-ferrous materials have no endurance limit.</li>
+<li><strong>Fatigue life:</strong> the number of cycles to cause failure at a specified stress, from the S-N diagram.</li>
+</ul>
+</div><div class="sub"><h3 id="i6">I6. The S-N curve</h3>
+<p>The S-N curve plots applied stress against the number of cycles of loading on a log scale.</p>
+<p>Some Fe and Ti alloys show a fatigue limit: the curve becomes horizontal at large N. Below that stress amplitude the material never fails, however many cycles.</p>
+<p>Other metals have no such flat part. The notes say that non-ferrous materials have no endurance limit.</p>
+</div><div class="sub"><h3 id="i7">I7. Low-cycle and high-cycle fatigue</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Low-cycle fatigue</th>
+<th>High-cycle fatigue</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Number of cycles</td><td data-l="Low-cycle fatigue">small, N below <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">10^5</annotation></semantics></math></span></td><td data-l="High-cycle fatigue">large, N above <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">10^5</annotation></semantics></math></span></td></tr>
+<tr><td data-l="">Loads</td><td data-l="Low-cycle fatigue">high</td><td data-l="High-cycle fatigue">low</td></tr>
+<tr><td data-l="">Deformation</td><td data-l="Low-cycle fatigue">plastic and elastic</td><td data-l="High-cycle fatigue">elastic</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="i8">I8. Rotating-bending fatigue machine</h3>
+<p>The test:</p>
+<ol>
+<li>A specimen of circular cross-section is held in a chuck with a weight pan hanging from the free end.</li>
+<li>A motor turns it. Each revolution bends the specimen, so the surface stress swings between equal tensile and compressive values. The mean is zero. Tension is on the top and compression on the bottom (slide figure).</li>
+<li>The test is repeated with different weights, so different stress levels.</li>
+<li>The specimen is rotated until it fails, and the number of revolutions is counted.</li>
+</ol>
+<p>The results are plotted as the S-N curve.</p>
+</div><div class="sub"><h3 id="i9">I9. Factors affecting fatigue life</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stress concentrations</td>
+<td>keyways, holes, grooves and undercuts start cracks</td>
+</tr>
+<tr>
+<td>Corrosion</td>
+<td>weakens the metal; surface damage forms stress raisers; some corrosion spreads along grain boundaries</td>
+</tr>
+<tr>
+<td>Residual stresses</td>
+<td>left in the material by bending; a permanent stress</td>
+</tr>
+<tr>
+<td>Surface finish</td>
+<td>a very smooth surface has no points for a crack to start and no stress raisers</td>
+</tr>
+<tr>
+<td>High temperature</td>
+<td>oxidation and degradation of the surface, so shorter life</td>
+</tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="i10">I10. Summary</h3>
+<p>Fatigue needs a cyclic stress, a place for a crack to start (a stress raiser or surface damage), and enough cycles. The factors in the table above are the ones the course lists as shortening life: stress concentrations, corrosion, residual stress, a rough surface and high temperature.</p>
+</div></section><section class="sec"><h2 id="j">J. Hardness testing</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>Hardness is the ability of a material to withstand indentation or scratches. Macro hardness (Brinell, Rockwell) uses more than 1 kg; micro hardness (Knoop) uses less than 1 kg for thin parts and plated surfaces.</p>
+<h4>2. Tests compared</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Brinell</th>
+<th>Rockwell</th>
+<th>Vickers</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Indenter</td><td data-l="Brinell">steel ball 1 to 10 mm</td><td data-l="Rockwell">ball (B) or 120 degree diamond cone (C)</td><td data-l="Vickers">diamond pyramid, 136 degrees</td></tr>
+<tr><td data-l="">Load</td><td data-l="Brinell">chosen load, held 10 to 15 s</td><td data-l="Rockwell">minor then major load</td><td data-l="Vickers">load P in kgf</td></tr>
+<tr><td data-l="">Reading</td><td data-l="Brinell">impression diameter, formula</td><td data-l="Rockwell">scale reading, no formula</td><td data-l="Vickers">mean diagonal, formula</td></tr>
+<tr><td data-l="">Suited to</td><td data-l="Brinell">less hard, bulk material</td><td data-l="Rockwell">B: low and medium carbon steels; C: harder material</td><td data-l="Vickers">very hard material; small regions</td></tr>
+</tbody>
+</table></div>
+<h4>3. Formulas</h4>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>B</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mi>P</mi><mrow><mfrac><mrow><mi>π</mi><mi>D</mi></mrow><mn>2</mn></mfrac><mrow><mo fence="true">[</mo><mi>D</mi><mo>−</mo><msqrt><mrow><msup><mi>D</mi><mn>2</mn></msup><mo>−</mo><msup><mi>d</mi><mn>2</mn></msup></mrow></msqrt><mo fence="true">]</mo></mrow></mrow></mfrac><mspace width="2em"/><mi>V</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mrow><mn>1.854</mn><mtext> </mtext><mi>P</mi></mrow><msup><mi>d</mi><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">BHN=\dfrac{P}{\dfrac{\pi D}{2}\left[D-\sqrt{D^2-d^2}\right]}\qquad VHN=\dfrac{1.854\,P}{d^2}</annotation></semantics></math></span></p>
+<p>P in kgf; D, d in mm. Rockwell has no formula.</p>
+<p><strong>Exam-ready conclusion:</strong> Brinell and Vickers give a number from the impression size; Rockwell reads it directly from the scale.</p>
+</div>
+<div class="sub"><h3 id="j1">J1. What hardness is</h3>
+<p>Hardness is the ability to withstand indentation or scratches.</p>
+<p>Hardness tests are grouped by the load used:</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Group</th>
+<th>Tests</th>
+<th>Load</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Group">Macro hardness</td><td data-l="Tests">Brinell, Rockwell</td><td data-l="Load">more than 1 kg on the indenter</td><td data-l="Use">tools, dies, heavier sheet</td></tr>
+<tr><td data-l="Group">Micro hardness</td><td data-l="Tests">Knoop</td><td data-l="Load">less than 1 kg, and the material is thin</td><td data-l="Use">small parts, thin hardened surface layers, plated surfaces</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="j2">J2. Brinell test</h3>
+<p>Steps:</p>
+<ol>
+<li>A steel ball indenter of 1 to 10 mm diameter is used.</li>
+<li>A suitable load is chosen with the load selector.</li>
+<li>The specimen is brought to the indenter and the load is applied.</li>
+<li>The full load is held, normally for 10 to 15 s for iron and steel.</li>
+<li>The diameter of the indentation is measured with a microscope.</li>
+</ol>
+<p>The large impression averages the response over a bigger region.</p>
+</div><div class="sub"><h3 id="j3">J3. Brinell hardness number</h3>
+<p>BHN is the load divided by the surface area of the indentation:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>B</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mi>P</mi><mrow><mfrac><mrow><mi>π</mi><mi>D</mi></mrow><mn>2</mn></mfrac><mrow><mo fence="true">[</mo><mi>D</mi><mo>−</mo><msqrt><mrow><msup><mi>D</mi><mn>2</mn></msup><mo>−</mo><msup><mi>d</mi><mn>2</mn></msup></mrow></msqrt><mo fence="true">]</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">BHN=\dfrac{P}{\dfrac{\pi D}{2}\left[D-\sqrt{D^2-d^2}\right]}</annotation></semantics></math></span></p>
+<ul>
+<li>P: test load (in kg, kgf)</li>
+<li>D: diameter of the ball (mm)</li>
+<li>d: average diameter of the impression (mm)</li>
+</ul>
+<p>(Read from the rendered slide: the extracted text of the notes dropped the pi and the square root.)</p>
+<p>Use consistent units and the test standard.</p>
+<p><strong>Illustration with made-up round numbers (not course data):</strong> P = 3000 kgf, D = 10 mm, d = 4 mm.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>B</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mn>3000</mn><mrow><mfrac><mrow><mi>π</mi><mo>×</mo><mn>10</mn></mrow><mn>2</mn></mfrac><mrow><mo fence="true">[</mo><mn>10</mn><mo>−</mo><msqrt><mrow><mn>1</mn><msup><mn>0</mn><mn>2</mn></msup><mo>−</mo><msup><mn>4</mn><mn>2</mn></msup></mrow></msqrt><mo fence="true">]</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">BHN=\dfrac{3000}{\dfrac{\pi\times10}{2}\left[10-\sqrt{10^2-4^2}\right]}</annotation></semantics></math></span></p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>B</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mn>3000</mn><mrow><mn>15.708</mn><mo>×</mo><mn>0.8348</mn></mrow></mfrac><mo>≈</mo><mn>228.8</mn></mrow><annotation encoding="application/x-tex">BHN=\dfrac{3000}{15.708\times0.8348}\approx228.8</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="j4">J4. Rockwell test</h3>
+<ul>
+<li>Two indenters are used: a steel ball, and a diamond cone (the notes give a 120 degree diamond cone).</li>
+<li>The steel ball and the B scale are for less hard materials, such as low and medium carbon steels.</li>
+<li>The diamond cone and the C scale are for harder materials such as cast iron.</li>
+<li>A <strong>minor load</strong> is applied first. It seats the indenter and sets a reference depth.</li>
+<li>Then a <strong>major load</strong> is applied. It increases the penetration.</li>
+<li><strong>No formula</strong> is used. The hardness number is read directly from the scale.</li>
+</ul>
+<p>The scales are not directly interchangeable: use the right scale and indenter.</p>
+</div><div class="sub"><h3 id="j5">J5. Vickers test</h3>
+<ul>
+<li>The indenter is a square-based diamond pyramid. The angle between opposite faces is 136 degrees (slide figure).</li>
+<li>The indentation is observed, and its diagonals are measured and converted to a hardness number.</li>
+<li>Diamond does not deform at high loads, so results on very hard material are more reliable.</li>
+</ul>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>V</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mrow><mn>1.854</mn><mtext> </mtext><mi>P</mi></mrow><msup><mi>d</mi><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">VHN=\dfrac{1.854\,P}{d^2}</annotation></semantics></math></span></p>
+<p>P is the load in kgf and d is the mean diagonal in mm.</p>
+<p><strong>Illustration with made-up round numbers (not course data):</strong> P = 30 kgf and d = 0.5 mm.</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>V</mi><mi>H</mi><mi>N</mi><mo>=</mo><mfrac><mrow><mn>1.854</mn><mo>×</mo><mn>30</mn></mrow><mrow><mn>0.</mn><msup><mn>5</mn><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mn>222.5</mn></mrow><annotation encoding="application/x-tex">VHN=\dfrac{1.854\times30}{0.5^2}=222.5</annotation></semantics></math></span></p>
+</div><div class="sub"><h3 id="j6">J6. Knoop test</h3>
+<p>Knoop is a microhardness method. It uses an elongated diamond with a small load. It suits small parts, thin layers and superficially hardened regions.</p>
+</div><div class="sub"><h3 id="j7">J7. The tests compared</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Test</th>
+<th>Indenter</th>
+<th>What is read</th>
+<th>Features</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Test">Brinell</td><td data-l="Indenter">steel ball, 1 to 10 mm</td><td data-l="What is read">indentation diameter, with a formula</td><td data-l="Features">bulk material; large impression</td></tr>
+<tr><td data-l="Test">Rockwell</td><td data-l="Indenter">ball (B scale) or 120 degree diamond cone (C scale)</td><td data-l="What is read">scale reading from penetration; no formula</td><td data-l="Features">fast, direct reading; many scales</td></tr>
+<tr><td data-l="Test">Vickers</td><td data-l="Indenter">square-based diamond pyramid, 136 degrees</td><td data-l="What is read">mean diagonal, with a formula</td><td data-l="Features">wide hardness range; small test regions</td></tr>
+<tr><td data-l="Test">Knoop</td><td data-l="Indenter">elongated diamond, small load</td><td data-l="What is read">indentation diagonals</td><td data-l="Features">thin layers; microhardness</td></tr>
+</tbody>
+</table></div>
+<p>( table)</p>
+<p>The notes' table lists the readings in rows that run together in the extracted text. The row meaning above follows the section texts to 7.3 and the slides.</p>
+</div></section><section class="sec"><h2 id="k">K. Impact testing</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>An impact test shows how a material behaves under shock loading; it finds the energy absorbed in a collision and so toughness and notch behaviour.</p>
+<h4>2. Principle</h4>
+<ol>
+<li>The specimen sits in a fixture.</li>
+<li>A pendulum of known weight is released from a known height.</li>
+<li>It hits the specimen suddenly.</li>
+<li>The energy lost by the pendulum is the energy absorbed, read on a dial.</li>
+</ol>
+<h4>3. Charpy and Izod</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>Charpy</th>
+<th>Izod</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Specimen</td><td data-l="Charpy">simply supported, horizontal</td><td data-l="Izod">vertical cantilever</td></tr>
+<tr><td data-l="">Hit</td><td data-l="Charpy">opposite the notch</td><td data-l="Izod">on the notched side</td></tr>
+<tr><td data-l="">Bar length</td><td data-l="Charpy">55 mm (10 mm x 10 mm)</td><td data-l="Izod">75 mm (10 mm x 10 mm)</td></tr>
+</tbody>
+</table></div>
+<p>Results depend on temperature, notch geometry, specimen size and procedure.</p>
+<p><strong>Exam-ready conclusion:</strong> Charpy and Izod measure the energy absorbed in fracture of a notched bar; compare values only under the same standard.</p>
+</div>
+<div class="sub"><h3 id="k1">K1. Why and what</h3>
+<p>An impact test shows how a material behaves under shock loading, which makes the specimen deform, fracture or break at once.</p>
+<p>Most engineering parts have notches and stress raisers. So it matters how the material behaves with a notch under impact loading.</p>
+<p>The purpose is to find the ability of the material to absorb energy in a collision. The energy is used to judge toughness, impact strength and fracture resistance.</p>
+</div><div class="sub"><h3 id="k2">K2. Principle</h3>
+<ol>
+<li>The specimen is placed in a holding fixture. Its geometry and orientation depend on the test type.</li>
+<li>A pendulum of known weight is released from a known height.</li>
+<li>It hits the specimen with a sudden force.</li>
+<li>The energy lost by the pendulum shows the energy absorbed by the specimen.</li>
+</ol>
+<p>The slide figure shows the starting height h0, the height after the swing, and a dial for the direct reading of the absorbed energy.</p>
+</div><div class="sub"><h3 id="k3">K3. Charpy and Izod</h3>
+<p>The two common tests for a single impact are Charpy and Izod. They find about the same properties, but differ in how the specimen is oriented, so it is stressed in different directions.</p>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Feature</th>
+<th>Charpy</th>
+<th>Izod</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Feature">Specimen</td><td data-l="Charpy">simply supported, horizontal</td><td data-l="Izod">held vertically as a cantilever</td></tr>
+<tr><td data-l="Feature">Hit</td><td data-l="Charpy">on the side opposite the notch</td><td data-l="Izod">on the notched side</td></tr>
+<tr><td data-l="Feature">Measured</td><td data-l="Charpy">energy absorbed in fracture</td><td data-l="Izod">energy absorbed in fracture</td></tr>
+<tr><td data-l="Feature">Purpose</td><td data-l="Charpy">impact toughness and notch sensitivity</td><td data-l="Izod">same general purpose</td></tr>
+</tbody>
+</table></div>
+<p>Specimen sizes as labelled: both bars have a 10 mm by 10 mm section. The Charpy bar is 55 mm long and the Izod bar 75 mm long. The Izod bar is marked with a 45 degree, 2 mm deep notch.</p>
+</div><div class="sub"><h3 id="k4">K4. Cautions</h3>
+<p>Impact results depend on temperature, notch geometry, specimen size and test procedure. Use the standard when comparing values.</p>
+</div></section><section class="sec"><h2 id="l">L. Material characterization: SEM and XRD</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. SEM</h4>
+<p>A focused electron beam is raster-scanned over the specimen and the signals are detected.</p>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electron gun</td>
+<td>source of electrons (tungsten, LaB6 or field emission)</td>
+</tr>
+<tr>
+<td>Anode</td>
+<td>accelerates the electrons</td>
+</tr>
+<tr>
+<td>Electromagnetic lenses</td>
+<td>focus the beam to a fine spot</td>
+</tr>
+<tr>
+<td>Scan coils</td>
+<td>raster the beam over the surface</td>
+</tr>
+<tr>
+<td>Sample chamber</td>
+<td>stage for position, tilt, rotation</td>
+</tr>
+<tr>
+<td>Detectors</td>
+<td>SED for topography, BSE for composition contrast</td>
+</tr>
+</tbody>
+</table></div>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Signal</th>
+<th>Origin</th>
+<th>Information</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Signal">Secondary electrons</td><td data-l="Origin">inelastic scattering</td><td data-l="Information">surface topography</td></tr>
+<tr><td data-l="Signal">Backscattered electrons</td><td data-l="Origin">elastic scattering</td><td data-l="Information">composition contrast</td></tr>
+<tr><td data-l="Signal">Characteristic X-rays</td><td data-l="Origin">inner-shell ionization</td><td data-l="Information">elements (EDS)</td></tr>
+</tbody>
+</table></div>
+<p>Advantages: high magnification, large depth of field. Limits: conductive sample (or coating), usually high vacuum.</p>
+<h4>2. XRD</h4>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>n</mi><mi>λ</mi><mo>=</mo><mn>2</mn><mi>d</mi><mi>sin</mi><mo>⁡</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">n\lambda=2d\sin\theta</annotation></semantics></math></span></p>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-ray source</td>
+<td>tube with metal target (usually copper)</td>
+</tr>
+<tr>
+<td>Sample holder</td>
+<td>holds and rotates the sample</td>
+</tr>
+<tr>
+<td>Goniometer</td>
+<td>controls beam, sample and detector angles</td>
+</tr>
+<tr>
+<td>Detector</td>
+<td>records diffracted intensity</td>
+</tr>
+</tbody>
+</table></div>
+<p>Gives crystalline phases and interplanar spacing; non-destructive; needs powder or thin sample; poor for amorphous materials.</p>
+<p><strong>Exam-ready conclusion:</strong> SEM gives surface morphology and composition; XRD gives crystal structure and phases.</p>
+</div>
+<div class="sub"><h3 id="l1">L1. Scanning electron microscope (SEM)</h3>
+<p>SEM makes high-magnification images. A focused electron beam is scanned over the specimen and the signals made by the electron and sample interaction are detected.</p>
+</div><div class="sub"><h3 id="l2">L2. SEM construction</h3>
+<ol>
+<li><strong>Electron gun:</strong> the source of electrons. It is usually a tungsten filament, a lanthanum hexaboride (LaB6) filament or a field-emission gun.</li>
+<li><strong>Anode:</strong> near the gun. It attracts and accelerates the electrons, typically to a few hundred eV up to tens of keV.</li>
+<li><strong>Electromagnetic lenses:</strong> condenser and objective lenses. They focus the beam into a fine spot. Adjusting them changes the spot size and resolution.</li>
+<li><strong>Scan coils:</strong> move the focused beam across the surface in a raster pattern, to image the whole area of interest.</li>
+<li><strong>Sample chamber:</strong> holds the sample on a stage that can be adjusted for position, tilt and rotation.</li>
+<li><strong>Detectors:</strong> collect the signals. The secondary electron detector (SED) gives topography. The backscattered electron detector (BSE) gives compositional contrast.</li>
+</ol>
+</div><div class="sub"><h3 id="l3">L3. SEM working</h3>
+<ol>
+<li>The gun makes electrons, which are accelerated and focused into a narrow spot on the specimen.</li>
+<li>The beam is raster-scanned across the surface.</li>
+<li>The electrons interact with the atoms of the specimen and make signals.</li>
+<li>The detectors turn the signals into an electrical signal, which is processed into images or element maps.</li>
+</ol>
+</div><div class="sub"><h3 id="l4">L4. SEM signals</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Signal</th>
+<th>Origin</th>
+<th>Information</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Signal">Secondary electrons (SE)</td><td data-l="Origin">inelastic scattering</td><td data-l="Information">high-resolution surface topography and fine surface detail</td></tr>
+<tr><td data-l="Signal">Backscattered electrons (BSE)</td><td data-l="Origin">elastic scattering</td><td data-l="Information">compositional contrast; distinguishes materials of different atomic number</td></tr>
+<tr><td data-l="Signal">Characteristic X-rays</td><td data-l="Origin">inner-shell ionization; the atoms emit characteristic X-rays</td><td data-l="Information">elemental identification and local composition (EDS or EDX)</td></tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="l5">L5. SEM advantages and limits</h3>
+<ul>
+<li><strong>Advantages:</strong> high magnification and resolution, often better than an optical microscope. It shows surface morphology and topography. The depth of field is much greater than in light microscopy, so the image looks three-dimensional.</li>
+<li><strong>Limitations:</strong> the specimen should be conductive. Non-conductive specimens can be coated. It usually needs high vacuum, which may affect some samples. Preparation and imaging can take time.</li>
+</ul>
+</div><div class="sub"><h3 id="l6">L6. X-ray diffraction (XRD)</h3>
+<p>XRD studies crystalline materials by measuring the angles and intensities of diffracted X-rays.</p>
+<p><strong>Bragg's law</strong>:</p>
+<p><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>n</mi><mi>λ</mi><mo>=</mo><mn>2</mn><mi>d</mi><mi>sin</mi><mo>⁡</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">n\lambda=2d\sin\theta</annotation></semantics></math></span></p>
+<ul>
+<li>n: order of diffraction (an integer)</li>
+<li>lambda: wavelength of the X-rays</li>
+<li>d: spacing between crystal planes</li>
+<li>theta: angle of incidence, the Bragg angle</li>
+</ul>
+<p>When X-rays hit a crystal they are scattered by the electrons. At particular angles the scattered waves reinforce each other, giving intense diffracted beams. Measuring these angles gives the interplanar spacings, which tell about the atomic structure.</p>
+</div><div class="sub"><h3 id="l7">L7. XRD construction</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-ray source</td>
+<td>an X-ray tube with a metal target, usually copper, giving characteristic X-ray wavelengths</td>
+</tr>
+<tr>
+<td>Sample holder</td>
+<td>holds the sample in a fixed position; the stage can rotate so different planes diffract</td>
+</tr>
+<tr>
+<td>Detector</td>
+<td>at an angle to the beam; it moves around the sample and records the intensity of the diffracted X-rays</td>
+</tr>
+<tr>
+<td>Goniometer</td>
+<td>controls precisely the angles of the beam, the sample and the detector</td>
+</tr>
+</tbody>
+</table></div>
+</div><div class="sub"><h3 id="l8">L8. What XRD gives, and its limits</h3>
+<p>The diffraction pattern identifies crystalline phases and gives the interplanar spacing and information about the crystal structure.</p>
+<p><strong>Advantages:</strong> non-destructive; high accuracy; qualitative and quantitative analysis (it can identify phases and give their relative amounts); it can estimate crystallite size and lattice strain.</p>
+<p><strong>Disadvantages:</strong> the sample must be a fine powder or thin, which is not always possible; it is surface sensitive, so it may not represent bulk properties; it does not work well with amorphous materials, which give no clear pattern; X-rays have limited penetration, so very thick or dense materials cannot be probed well.</p>
+</div><div class="sub"><h3 id="l9">L9. SEM and XRD compared</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th></th>
+<th>SEM</th>
+<th>XRD</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="">Main information</td><td data-l="SEM">surface morphology; with EDS, local composition</td><td data-l="XRD">crystal structure and phases</td></tr>
+<tr><td data-l="">Probe</td><td data-l="SEM">focused electron beam</td><td data-l="XRD">X-rays</td></tr>
+<tr><td data-l="">Key requirement</td><td data-l="SEM">conductive surface, vacuum</td><td data-l="XRD">crystalline sample</td></tr>
+</tbody>
+</table></div>
+<p>The experiential-learning sheet (EL-2) uses both: SEM micrographs for microstructural features and XRD patterns for the major crystalline phases and crystal structures of two non-ferrous metals or alloys.</p>
+</div></section><section class="sec"><h2 id="m">M. Surface coating technologies</h2>
+<div class="exam">
+<p><strong>Exam-ready answer: copy and write</strong></p>
+<h4>1. Definition</h4>
+<p>A coating is a protective or functional layer on a surface that improves wear resistance, corrosion protection, friction, appearance or high-temperature resistance.</p>
+<h4>2. Coating materials</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Family</th>
+<th>Examples</th>
+<th>Benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Family">Metallic</td><td data-l="Examples">chromium, nickel, zinc, aluminium</td><td data-l="Benefit">hardness, wear and corrosion protection</td></tr>
+<tr><td data-l="Family">Ceramic</td><td data-l="Examples">aluminium oxide, zirconium oxide, titanium dioxide</td><td data-l="Benefit">hardness, thermal stability</td></tr>
+<tr><td data-l="Family">Polymeric</td><td data-l="Examples">PTFE, polyurethane, epoxy</td><td data-l="Benefit">low friction, chemical resistance</td></tr>
+<tr><td data-l="Family">Cermet</td><td data-l="Examples">WC-Co, chromium carbide with Ni-Cr</td><td data-l="Benefit">hardness with toughness</td></tr>
+<tr><td data-l="Family">Composite</td><td data-l="Examples">DLC, TiAlN</td><td data-l="Benefit">hardness with low friction; oxidation resistance</td></tr>
+</tbody>
+</table></div>
+<h4>3. Processes</h4>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Process</th>
+<th>How the layer forms</th>
+<th>Strengths</th>
+<th>Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Process">Electroplating</td><td data-l="How the layer forms">DC electrolysis; metal ions reduce on the cathode workpiece</td><td data-l="Strengths">corrosion resistance, appearance, hardness</td><td data-l="Limits">hazardous waste, uneven thickness</td></tr>
+<tr><td data-l="Process">CVD</td><td data-l="How the layer forms">gaseous precursors react on a hot substrate (500 to 1100 deg C)</td><td data-l="Strengths">pure, adherent, uniform, complex shapes</td><td data-l="Limits">high temperature, toxic by-products</td></tr>
+<tr><td data-l="Process">PVD</td><td data-l="How the layer forms">target vapour condenses in vacuum (TiN, CrN)</td><td data-l="Strengths">hard, thin, clean, strong adhesion</td><td data-l="Limits">vacuum, line-of-sight</td></tr>
+<tr><td data-l="Process">HVOF</td><td data-l="How the layer forms">powder driven at supersonic speed (up to 1000 m/s) by a fuel-oxygen flame</td><td data-l="Strengths">dense, low porosity, bond strong</td><td data-l="Limits">cost, line-of-sight</td></tr>
+</tbody>
+</table></div>
+<p><strong>Exam-ready conclusion:</strong> coating choice depends on the benefit needed and the process limits; CVD is hot, PVD is vacuum and line-of-sight, HVOF is dense thermal spray, electroplating is electrochemical.</p>
+</div>
+<div class="sub"><h3 id="m1">M1. What a coating is</h3>
+<p>A coating is a protective or functional layer put on the surface of a material, usually a metal, to improve its performance.</p>
+<p>Benefits: wear resistance, corrosion protection, lower friction, better appearance, and resistance to high temperature or chemicals.</p>
+<p>It is used in the automotive, aerospace, electronics and manufacturing industries.</p>
+</div><div class="sub"><h3 id="m2">M2. Coating material families</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Family</th>
+<th>Examples</th>
+<th>Purpose and use</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Family">Metallic</td><td data-l="Examples">hard chromium; electroless nickel; aluminium and zinc</td><td data-l="Purpose and use">hardness, wear and corrosion protection; chromium in automotive parts and machinery; nickel with uniform thickness; zinc and aluminium for corrosion resistance, for example galvanized steel</td></tr>
+<tr><td data-l="Family">Ceramic</td><td data-l="Examples">aluminium oxide; zirconium oxide; titanium dioxide</td><td data-l="Purpose and use">hardness and wear resistance (cutting tools, high temperature); thermal stability (turbine blades); UV resistance and hardness (aerospace, automotive, medical implants)</td></tr>
+<tr><td data-l="Family">Polymeric</td><td data-l="Examples">PTFE (Teflon); polyurethane and epoxy</td><td data-l="Purpose and use">low friction, non-stick, chemical resistance (cookware, chemical equipment); corrosion resistance, toughness and adhesion (industrial, marine)</td></tr>
+<tr><td data-l="Family">Cermet</td><td data-l="Examples">chromium carbide with nickel-chromium; tungsten carbide with cobalt (WC-Co)</td><td data-l="Purpose and use">wear resistance with hardness plus toughness; WC-Co for extreme hardness in cutting tools</td></tr>
+<tr><td data-l="Family">Composite or advanced</td><td data-l="Examples">diamond-like carbon (DLC); TiAlN</td><td data-l="Purpose and use">DLC combines hardness with low friction (automotive, medical); TiAlN gives hardness and oxidation resistance for high-speed machining and aerospace</td></tr>
+</tbody>
+</table></div>
+</div></section><section class="sec"><h2 id="m-ep">Electroplating</h2>
+<div class="sub"><h3 id="m3">M3. Principle and construction</h3>
+<figure class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 280" width="520" role="img" aria-label="Schematic electroplating cell with DC supply, anode, cathode workpiece and electrolyte" font-family="sans-serif" font-size="12" fill="none" stroke="currentColor" stroke-width="1.6">
+<rect x="110" y="110" width="300" height="140" rx="4"/>
+<rect x="111" y="150" width="298" height="99" fill="#2f855a" fill-opacity=".18" stroke="none"/>
+<rect x="150" y="90" width="22" height="130" fill="#b5652a" fill-opacity=".4"/>
+<rect x="348" y="90" width="22" height="130" fill="#7a5bc7" fill-opacity=".4"/>
+<line x1="161" y1="90" x2="161" y2="40"/><line x1="359" y1="90" x2="359" y2="40"/>
+<line x1="161" y1="40" x2="225" y2="40"/><line x1="295" y1="40" x2="359" y2="40"/>
+<line x1="225" y1="28" x2="225" y2="52"/><line x1="240" y1="34" x2="240" y2="46"/><line x1="280" y1="28" x2="280" y2="52"/><line x1="295" y1="34" x2="295" y2="46"/>
+<text x="232" y="22" fill="currentColor" stroke="none">DC supply</text>
+<text x="150" y="70" fill="currentColor" stroke="none">+</text><text x="352" y="70" fill="currentColor" stroke="none">-</text>
+<text x="120" y="268" fill="currentColor" stroke="none" font-size="11">anode (+): plating metal, dissolves</text>
+<text x="290" y="268" fill="currentColor" stroke="none" font-size="11">cathode (-): workpiece</text>
+<text x="205" y="190" fill="currentColor" stroke="none" font-size="11">electrolyte with metal ions</text>
+<path d="M190,175 L335,175" stroke-dasharray="4 3"/><polyline points="325,170 335,175 325,180"/>
+<text x="196" y="170" fill="currentColor" stroke="none" font-size="10">metal ions move to the cathode</text>
+<text x="2" y="12" fill="currentColor" stroke="none" font-size="10">Schematic from the description (not to scale).</text>
+</svg><figcaption>Schematic electroplating cell (from the description).</figcaption></figure>
+
+<ul>
+<li><strong>Power supply:</strong> direct current. The positive terminal goes to the anode and the negative to the cathode.</li>
+<li><strong>Anode (positive):</strong> often made of the plating metal, for example nickel or chromium. It dissolves and releases metal ions.</li>
+<li><strong>Cathode (negative):</strong> the workpiece to be plated. The metal ions deposit on it.</li>
+<li><strong>Electrolyte:</strong> a solution of metal salts and other chemicals that lets the ions move.</li>
+</ul>
+<p>The principle is electrolysis. With DC applied, the metal ions move toward the cathode. At the cathode they gain electrons (reduction) and deposit as a solid metal layer. A soluble anode replenishes the ions.</p>
+<p>Coating thickness and quality depend on current density, temperature and plating time.</p>
+</div><div class="sub"><h3 id="m4">M4. Steps</h3>
+<ol>
+<li>Clean and prepare the substrate to remove oil, oxides and contaminants.</li>
+<li>Place the workpiece and the counter electrode in an electrolyte containing coating-metal ions.</li>
+<li>Apply direct current. The ions are reduced at the cathode and form the deposit.</li>
+<li>Rinse, dry and inspect thickness, adhesion and surface quality.</li>
+</ol>
+</div><div class="sub"><h3 id="m5">M5. Advantages and disadvantages</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>better corrosion resistance</td>
+<td>complex, hazardous waste (heavy metals, toxic chemicals)</td>
+</tr>
+<tr>
+<td>better appearance, a bright finish</td>
+<td>uneven coating: high current density areas get thicker deposits</td>
+</tr>
+<tr>
+<td>more hardness and wear resistance</td>
+<td>needs careful control of temperature, current density and pH</td>
+</tr>
+<tr>
+<td>lower friction in some cases</td>
+<td>high energy consumption</td>
+</tr>
+<tr>
+<td>good electrical conductivity</td>
+<td>thorough cleaning and preparation needed</td>
+</tr>
+</tbody>
+</table></div>
+<p>Examples in the notes: chromium for hardness and wear resistance, nickel for corrosion resistance, zinc for corrosion protection of steel.</p>
+</div></section><section class="sec"><h2 id="m-cvd">Chemical vapour deposition (CVD)</h2>
+<div class="sub"><h3 id="m6">M6. Construction</h3>
+<ul>
+<li><strong>Reactor chamber:</strong> a sealed chamber that withstands high temperature and keeps a controlled environment.</li>
+<li><strong>Gas delivery system:</strong> supplies the gaseous precursors, which decompose at high temperature into a solid coating.</li>
+<li><strong>Heating system:</strong> heats the chamber to the needed temperature, often 500 to 1100 deg C. Heating can be resistive, induction or microwave.</li>
+<li><strong>Substrate holder:</strong> holds the substrate so the reactant gases reach it evenly.</li>
+<li><strong>Exhaust system:</strong> removes by-products and unreacted gases.</li>
+</ul>
+</div><div class="sub"><h3 id="m7">M7. Working</h3>
+<p>The gaseous precursors enter the hot chamber and react on or near the heated substrate. They decompose and leave a thin solid coating. Temperature, pressure and the gases used decide the quality, thickness and uniformity.</p>
+<p>Steps:</p>
+<ol>
+<li>Precursor delivery: reactive gases enter the chamber.</li>
+<li>Adsorption onto the hot substrate.</li>
+<li>Reaction and decomposition: a solid stays on the surface and gaseous by-products form.</li>
+<li>Desorption: the by-products leave and are removed by the exhaust.</li>
+</ol>
+</div><div class="sub"><h3 id="m8">M8. CVD advantages and disadvantages</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>high purity, good adherence, uniform thickness</td>
+<td>high temperature limits the substrates and can distort them</td>
+</tr>
+<tr>
+<td>many materials: metals, ceramics, diamond-like coatings</td>
+<td>expensive equipment and operation</td>
+</tr>
+<tr>
+<td>good conformity on complex shapes</td>
+<td>toxic by-products need careful handling</td>
+</tr>
+<tr>
+<td>high hardness, chemical stability, wear and thermal resistance</td>
+<td>limited to thin coatings; thick layers take long and may be stressed or defective</td>
+</tr>
+</tbody>
+</table></div>
+<p>Used for hard and functional films, for example on cutting tools.</p>
+</div></section><section class="sec"><h2 id="m-pvd">Physical vapour deposition (PVD)</h2>
+<div class="sub"><h3 id="m9">M9. Construction</h3>
+<ul>
+<li><strong>Vacuum chamber:</strong> keeps a high vacuum, which reduces contamination.</li>
+<li><strong>Target (source) material:</strong> for example titanium or chromium, in solid form. It is the source of the vapour.</li>
+<li><strong>Substrate holder:</strong> holds the part, and may rotate for an even coating.</li>
+<li><strong>Power supply:</strong> gives the energy (heat or plasma) to vaporize the target.</li>
+</ul>
+</div><div class="sub"><h3 id="m10">M10. Working</h3>
+<ol>
+<li><strong>Vaporization:</strong> a high-energy source such as an electric arc, an electron beam or sputtering turns the target into vapour.</li>
+<li><strong>Transport:</strong> the vapour moves in a straight line in the vacuum toward the substrate.</li>
+<li><strong>Deposition:</strong> the atoms condense on the cooler substrate into a thin, uniform film. With a reactive gas, compounds form, such as titanium nitride (TiN) or chromium nitride (CrN).</li>
+</ol>
+<p>The notes name evaporation and sputtering as the common approaches.</p>
+</div><div class="sub"><h3 id="m11">M11. PVD advantages and disadvantages</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>very hard and wear resistant</td>
+<td>expensive equipment, high-vacuum system</td>
+</tr>
+<tr>
+<td>thin (often microns) but durable; hardly changes the dimensions</td>
+<td>needs a vacuum, which limits the size of parts</td>
+</tr>
+<tr>
+<td>clean: no toxic by-products</td>
+<td>line-of-sight: complex shapes and hidden recesses coat poorly</td>
+</tr>
+<tr>
+<td>wide range of materials: metals, alloys, ceramics</td>
+<td>longer process time</td>
+</tr>
+<tr>
+<td>strong adhesion</td>
+<td>high energy consumption</td>
+</tr>
+</tbody>
+</table></div>
+<p>adds that many PVD processes run at lower substrate temperatures than conventional CVD.</p>
+</div></section><section class="sec"><h2 id="m-hvof">High velocity oxy-fuel (HVOF)</h2>
+<div class="sub"><h3 id="m12">M12. Construction</h3>
+<ul>
+<li><strong>Fuel and oxygen supply:</strong> separate tanks of fuel gas (kerosene, propane or hydrogen) and oxygen, mixed in controlled proportion.</li>
+<li><strong>Combustion chamber:</strong> the mixture is ignited and gives very high temperature.</li>
+<li><strong>Spray gun with nozzle:</strong> directs the combustion gases at supersonic speed and speeds up the particles toward the substrate.</li>
+<li><strong>Powder feeder:</strong> feeds metal or ceramic powder, which is heated to a molten or semi-molten state.</li>
+<li><strong>Cooling system:</strong> built-in, often water-cooled.</li>
+</ul>
+</div><div class="sub"><h3 id="m13">M13. Working</h3>
+<p>HVOF is a thermal-spray process.</p>
+<p>Fuel and oxygen burn and make a high-speed gas stream. It drives powder particles at supersonic speed (the slide says up to 1000 m/s) toward the surface. The particles partly melt, and on impact they flatten and form a dense, hard coating. The high speed and little melting keep oxidation and porosity low, so the bond to the substrate is strong.</p>
+<p>Steps:</p>
+<ol>
+<li>Clean and roughen the substrate to help bonding.</li>
+<li>Feed the coating powder into the high-velocity hot gas stream.</li>
+<li>Particles accelerate, strike and flatten.</li>
+<li>Overlapping particles build the coating. Finish and inspect if needed.</li>
+</ol>
+<p>Important parameters: powder feed, fuel to oxygen ratio, spray distance, substrate temperature and surface preparation.</p>
+<p>Used for wear-resistant metallic, carbide and cermet coatings, including WC-Co and chromium carbide systems.</p>
+</div><div class="sub"><h3 id="m14">M14. HVOF advantages and disadvantages</h3>
+<div class="tsc"><table>
+<thead>
+<tr>
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>high bond strength</td>
+<td>high operating cost</td>
+</tr>
+<tr>
+<td>low porosity, so good corrosion resistance</td>
+<td>line-of-sight only</td>
+</tr>
+<tr>
+<td>minimal oxidation</td>
+<td>skilled operators needed</td>
+</tr>
+<tr>
+<td>many materials: metals, alloys, ceramics</td>
+<td>limits on thick layers</td>
+</tr>
+<tr>
+<td>superior wear and corrosion resistance</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+</div></section><section class="sec"><h2 id="m-compare">Comparison of the processes</h2>
+<div class="sub"><h3 id="m15">M15. Quick comparison</h3>
+<div class="tsc"><table class="stk">
+<thead>
+<tr>
+<th>Process</th>
+<th>How the layer forms</th>
+<th>Strengths</th>
+<th>Considerations</th>
+</tr>
+</thead>
+<tbody>
+<tr><td data-l="Process">Electroplating</td><td data-l="How the layer forms">electrochemical deposition from an electrolyte</td><td data-l="Strengths">metallic layer for corrosion, appearance and wear</td><td data-l="Considerations">conductive substrate, bath chemistry, current distribution, waste</td></tr>
+<tr><td data-l="Process">CVD</td><td data-l="How the layer forms">chemical reaction of gaseous precursors at the substrate</td><td data-l="Strengths">uniform, adherent films; complex shapes possible</td><td data-l="Considerations">often high temperature; precursor and by-product safety</td></tr>
+<tr><td data-l="Process">PVD</td><td data-l="How the layer forms">vapour condenses on the substrate under vacuum or low pressure</td><td data-l="Strengths">hard thin films; many materials</td><td data-l="Considerations">vacuum and line-of-sight coverage</td></tr>
+<tr><td data-l="Process">HVOF</td><td data-l="How the layer forms">high-velocity particles hit and build the coating</td><td data-l="Strengths">dense, wear-resistant thermal-spray coatings</td><td data-l="Considerations">surface preparation and control of spray parameters</td></tr>
+</tbody>
+</table></div></div></section></main><a class="fab" href="#top">Top &uarr;</a></body></html>
